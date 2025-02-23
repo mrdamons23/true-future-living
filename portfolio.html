@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>True Future Living - Portfolio</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Orbitron:400,700|Roboto:400,300,500" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .series-group {
+      margin-bottom: 40px;
+    }
+
+    .series-group .stock {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .series-group .stock-item {
+      background: #ffffff;
+      border: none;
+      border-radius: 12px;
+      padding: 25px;
+      width: 300px;
+      min-height: 450px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .series-group .stock-item img.model-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .series-group .stock-item h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.9em;
+      margin-bottom: 15px;
+      color: #000;
+    }
+
+    .series-group .model-description {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #444;
+      white-space: pre-line;
+      margin: 10px 0;
+    }
+
+    .series-group .price-box {
+      font-weight: bold;
+      margin: 15px 0;
+      padding: 10px;
+      background: #000000;
+      color: #ffffff;
+      border-radius: 6px;
+    }
+
+    .series-group .view-more-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: linear-gradient(135deg, #00c3ff, #ffff1c);
+      color: #000;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: transform 0.3s ease;
+      margin-top: auto;
+    }
+
+    .series-group .view-more-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .series-group .stock-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <canvas id="bgCanvas"></canvas>
+  <!-- Header -->
+  <header id="header">
+    <div class="container header-container">
+      <div class="logo-container">
+        <img src="images/logo.png" alt="True Future Living Logo">
+      </div>
+      <h1 class="business-name">True Future Living</h1>
+    </div>
+  </header>
+  
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-container">
+      <ul>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="income-ideas.html" class="nav-link">Income Ideas</a></li>
+        <li><a href="enquiry.html" class="nav-link">Enquiry</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Portfolio Content -->
+  <section id="portfolio" class="container section">
+    <!-- Series Groups in Alphabetical Order -->
+    <!-- A Series -->
+    <div class="series-group">
+      <h2 class="series-title">A Series</h2>
+      <div class="stock">
+        <!-- A30 -->
+        <div class="stock-item">
+          <img class="model-img" src="images/A30.png" alt="A30">
+          <h3>A30</h3>
+          <pre class="model-description">
+Building area: 15.7㎡
+Length: 5.6m
+Width: 2.8m
+Height: 3.2m
+Occupancy: 2 people
+Maximum Power: 4KW (with floor heating)
+Total Net Weight: 2 tons
+          </pre>
+          <div class="price-box">Price: US$15,865</div>
+          <a href="product.html?model=A30" class="view-more-btn futuristic">View More</a>
+        </div>
+        <!-- A50 -->
+        <div class="stock-item">
+          <img class="model-img" src="images/A50.png" alt="A50">
+          <h3>A50</h3>
+          <pre class="model-description">
+Building area: 31.4㎡
+Length: 9.5m
+Width: 3.3m
+Height: 3.3m
+Occupancy: 2–4 people
+Maximum Power: 10KW (with floor heating)
+Total Net Weight: 5 tons
+          </pre>
+          <div class="price-box">Price: US$20,686</div>
+          <a href="product.html?model=A50" class="view-more-btn futuristic">View More</a>
+        </div>
+        <!-- A70 -->
+        <div class="stock-item">
+          <img class="model-img" src="images/A70.png" alt="A70">
+          <h3>A70</h3>
+          <pre class="model-description">
+Building area: 38.0㎡
+Length: 11.5m
+Width: 3.3m
+Height: 3.4m
+Occupancy: 2–4 people
+Maximum Power: 12KW (with floor heating)
+Total Net Weight: 6 tons
+          </pre>
+          <div class="price-box">Price: US$24,370</div>
+          <a href="product.html?model=A70" class="view-more-btn futuristic">View More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- G Series -->
+    <div class="series-group">
+      <h2 class="series-title">G Series</h2>
+      <div class="stock">
+        <!-- G30 -->
+        <div class="stock-item">
+          <img class="model-img" src="images/G30.png" alt="G30">
+          <h3>G30</h3>
+          <pre class="model-description">
+Building area: 18㎡
+Length: 5.6m
+Width: 3.6m
+Height: 3.2m
+Occupancy: 2 people
+Maximum Power: 8KW (with floor heating)
+Total Net Weight: 4 tons
+          </pre>
+          <div class="price-box">Price: US$14,920</div>
+          <a href="product.html?model=G30" class="view-more-btn futuristic">View More</a>
+        </div>
+        <!-- G50 -->
+        <div class="stock-item">
+          <img class="model-img" src="images/G50.png" alt="G50">
+          <h3>G50</h3>
+          <pre class="model-description">
+Building area: 31.4㎡
+Length: 9.5m
+Width: 3.3m
+Height: 3.2m
+Occupancy: 2 people
+Maximum Power: 10KW (with floor heating)
+Total Net Weight: 5 tons
+          </pre>
+          <div class="price-box">Price: US$25,296</div>
+          <a href="product.html?model=G50" class="view-more-btn futuristic">View More</a>
+        </div>
+        <!-- G50F -->
+        <div class="stock-item">
+          <img class="model-img" src="images/G50F.png" alt="G50F">
+          <h3>G50F</h3>
+          <pre class="model-description">
+Building area: 31.4㎡
+Length: 9.5m
+Width: 3.3m
+Height: 3.2m
+Occupancy: 2–4 people
+Maximum Power: 10KW (with floor heating)
+Total Net Weight: 5 tons
+          </pre>
+          <div class="price-box">Price: US$25,928</div>
+          <a href="product.html?model=G50F" class="view-more-btn futuristic">View More</a>
+        </div>
+        <!-- G70 -->
+        <div class="stock-item">
+          <img class="model-img" src="images/G70.png" alt="G70">
+          <h3>G70</h3>
+          <pre class="model-description">
+Building area: 38.0㎡
+Length: 11.5m
+Width: 3.3m
+Height: 3.2m
+Occupancy: 2 people
+Maximum Power: 12KW (with floor heating)
+Total Net Weight: 6 tons
+          </pre>
+          <div class="price-box">Price: US$30,754</div>
+          <a href="product.html?model=G70" class="view-more-btn futuristic">View More</a>
+        </div>
+        <!-- G70F -->
+        <div class="stock-item">
+          <img class="model-img" src="images/G70F.png" alt="G70F">
+          <h3>G70F</h3>
+          <pre class="model-description">
+Building area: 38.0㎡
+Length: 11.5m
+Width: 3.3m
+Height: 3.2m
+Occupancy: 2–4 people
+Maximum Power: 12KW (with floor heating)
+Total Net Weight: 6 tons
+          </pre>
+          <div class="price-box">Price: US$31,386</div>
+          <a href="product.html?model=G70F" class="view-more-btn futuristic">View More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- L Series -->
+    <div class="series-group">
+      <h2 class="series-title">L Series</h2>
+      <div class="stock">
+        <!-- L50 -->
+        <div class="stock-item">
+          <img class="model-img" src="images/L50.png" alt="L50">
+          <h3>L50</h3>
+          <pre class="model-description">
+Building area: 30.0㎡
+Length: 9.1m
+Width: 3.3m
+Height: 3.4m
+Occupancy: 2 people
+Maximum Power: 8KW (with floor heating)
+Total Net Weight: 4 tons
+          </pre>
+          <div class="price-box">Price: US$25,296</div>
+          <a href="product.html?model=L50" class="view-more-btn futuristic">View More</a>
+        </div>
+        <!-- L50F -->
+        <div class="stock-item">
+          <img class="model-img" src="images/L50F.png" alt="L50F">
+          <h3>L50F</h3>
+          <pre class="model-description">
+Building area: 30.0㎡
+Length: 9.1m
+Width: 3.3m
+Height: 3.4m
+Occupancy: 2 people
+Maximum Power: 8KW (with floor heating)
+Total Net Weight: 4 tons
+          </pre>
+          <div class="price-box">Price: US$25,928</div>
+          <a href="product.html?model=L50F" class="view-more-btn futuristic">View More</a>
+        </div>
+        <!-- L70 -->
+        <div class="stock-item">
+          <img class="model-img" src="images/L70.png" alt="L70">
+          <h3>L70</h3>
+          <pre class="model-description">
+Building area: 38.0㎡
+Length: 11.5m
+Width: 3.3m
+Height: 3.2m
+Occupancy: 2–4 people
+Maximum Power: 10KW (with floor heating)
+Total Net Weight: 5 tons
+          </pre>
+          <div class="price-box">Price: US$28,941</div>
+          <a href="product.html?model=L70" class="view-more-btn futuristic">View More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- M Series -->
+    <div class="series-group">
+      <h2 class="series-title">M Series</h2>
+      <div class="stock">
+        <!-- M50 -->
+        <div class="stock-item">
+          <img class="model-img" src="images/M50.png" alt="M50">
+          <h3>M50</h3>
+          <pre class="model-description">
+Building area: 29.8㎡
+Length: 9.3m
+Width: 3.2m
+Height: 3.2m
+Occupancy: 2 people
+Maximum Power: 8KW (with floor heating)
+Total Net Weight: 4 tons
+          </pre>
+          <div class="price-box">Price: US$22,866</div>
+          <a href="product.html?model=M50" class="view-more-btn futuristic">View More</a>
+        </div>
+        <!-- M70 -->
+        <div class="stock-item">
+          <img class="model-img" src="images/M70.png" alt="M70">
+          <h3>M70</h3>
+          <pre class="model-description">
+Building area: 36.8㎡
+Length: 11.5m
+Width: 3.2m
+Height: 3.2m
+Occupancy: 2 people
+Maximum Power: 10KW (with floor heating)
+Total Net Weight: 5 tons
+          </pre>
+          <div class="price-box">Price: US$28,825</div>
+          <a href="product.html?model=M70" class="view-more-btn futuristic">View More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- U Series -->
+    <div class="series-group">
+      <h2 class="series-title">U Series</h2>
+      <div class="stock">
+        <!-- U30 -->
+        <div class="stock-item">
+          <img class="model-img" src="images/U30.png" alt="U30">
+          <h3>U30</h3>
+          <pre class="model-description">
+Building area: 29.9㎡
+Length: 8.3m
+Width: 3.6m
+Height: 3.2m
+Occupancy: 2 people
+Maximum Power: 8KW (with floor heating)
+Total Net Weight: 4 tons
+          </pre>
+          <div class="price-box">Price: US$18,874</div>
+          <a href="product.html?model=U30" class="view-more-btn futuristic">View More</a>
+        </div>
+        <!-- U50 -->
+        <div class="stock-item">
+          <img class="model-img" src="images/U50.png" alt="U50">
+          <h3>U50</h3>
+          <pre class="model-description">
+Building area: 33.1㎡
+Length: 9.5m
+Width: 3.6m
+Height: 3.2m
+Occupancy: 2 people
+Maximum Power: 10KW (with floor heating)
+Total Net Weight: 5 tons
+          </pre>
+          <div class="price-box">Price: US$22,538</div>
+          <a href="product.html?model=U50" class="view-more-btn futuristic">View More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 True Future Living. All rights reserved.</p>
+      <p class="socials">
+        <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">LinkedIn</a>
+      </p>
+    </div>
+  </footer>
+  
+  <!-- Shared JS -->
+  <script src="js/script.js"></script>
+</body>
+</html> 

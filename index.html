@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>True Future Living - Home</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Orbitron:400,700|Roboto:400,300,500" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Font Awesome for 3D icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Apply a green-glow effect to the True Future Living header */
+    .business-name {
+      /* Multiple text-shadows simulate a glowing gradient effect using green hues */
+      text-shadow: 0 0 5px #00ff00,
+                   0 0 10px #00ff00,
+                   0 0 15px #00ff00,
+                   0 0 20px #006600,
+                   0 0 30px #006600;
+    }
+    .intro-background {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .intro-background h2 {
+      color: #000000;
+      margin-bottom: 20px;
+    }
+    
+    .intro-background p {
+      color: #444444;
+      line-height: 1.6;
+    }
+    /* Enhanced Income Ideas Container Appearance */
+    #income-ideas {
+      background: transparent;
+      padding: 40px 20px;
+      border-top: 2px solid #ccc;
+      margin-top: 40px;
+    }
+    #income-ideas h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 2.2em;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+    }
+    #income-ideas p {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.2em;
+      color: #555;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    #income-ideas .stock {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    #income-ideas .stock-item {
+      background: #ffffff;
+      border: none;
+      border-radius: 12px;
+      padding: 25px;
+      width: 300px;
+      min-height: 120px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 15px;
+    }
+    #income-ideas .stock-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    #income-ideas .stock-item i {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+      background: linear-gradient(135deg, #00c3ff, #ffff1c);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+      animation: icon-glow 1.5s infinite alternate;
+    }
+    #income-ideas .stock-item h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5em;
+      color: #000;
+      margin: 0;
+      margin-top: 15px;
+    }
+    #income-ideas .model-description {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #444;
+      white-space: pre-line;
+    }
+    .series-group {
+      margin-bottom: 40px;
+    }
+
+    .series-group .stock {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .series-group .stock-item {
+      background: #ffffff;
+      border: none;
+      border-radius: 12px;
+      padding: 25px;
+      width: 300px;
+      min-height: 450px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .series-group .stock-item img.model-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .series-group .stock-item h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.9em;
+      margin-bottom: 15px;
+      color: #000;
+    }
+
+    .series-group .model-description {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #444;
+      white-space: pre-line;
+      margin: 10px 0;
+    }
+
+    .series-group .price-box {
+      font-weight: bold;
+      margin: 15px 0;
+      padding: 10px;
+      background: #000000;
+      color: #ffffff;
+      border-radius: 6px;
+    }
+
+    .series-group .view-more-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: linear-gradient(135deg, #00c3ff, #ffff1c);
+      color: #000;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: transform 0.3s ease;
+      margin-top: auto;
+    }
+
+    .series-group .view-more-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .series-group .stock-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Enhanced Additional Configuration Styles */
+    .config-container {
+      margin: 10px 0;
+      padding: 20px;
+      border: none;
+      border-radius: 12px;
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    
+    .config-container legend {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: bold;
+      padding: 0 10px;
+      color: #000;
+    }
+    
+    .config-option {
+      display: flex;
+      align-items: center;
+      margin: 12px 0;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+    
+    .config-option:hover {
+      background: rgba(0, 195, 255, 0.1);
+    }
+    
+    .config-option input[type="checkbox"] {
+      display: none;
+    }
+    
+    .config-checkbox {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      margin-right: 12px;
+      border: 2px solid #ccc;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .config-option input[type="checkbox"]:checked + .config-checkbox {
+      background: linear-gradient(135deg, #00c3ff, #ffff1c);
+      border-color: transparent;
+    }
+    
+    .config-option input[type="checkbox"]:checked + .config-checkbox::after {
+      content: '';
+      width: 8px;
+      height: 14px;
+      border-right: 3px solid #000;
+      border-bottom: 3px solid #000;
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      animation: checkmark-glow 1.5s infinite alternate;
+    }
+    
+    .config-option span {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.1em;
+      color: #333;
+    }
+
+    @keyframes checkmark-glow {
+      from {
+        border-color: #000;
+        box-shadow: none;
+      }
+      to {
+        border-color: #00ff7f;
+        box-shadow: 0 0 5px #00ff7f,
+                    0 0 10px #00ff7f;
+      }
+    }
+
+    @keyframes icon-glow {
+      from {
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+      }
+      to {
+        filter: drop-shadow(0 0 5px #00ff7f)
+                 drop-shadow(0 0 10px #00ff7f)
+                 drop-shadow(0 0 15px #00ff7f);
+      }
+    }
+
+    .cta-button {
+      background: #000000;
+      color: #ffffff;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .cta-button:hover {
+      background: linear-gradient(135deg, #00c3ff, #ffff1c);
+      color: #000000;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .about-content {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .about-content p {
+      color: #444444;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    
+    .about-content p:last-child {
+      margin-bottom: 0;
+    }
+    
+    #about h2 {
+      color: #000000;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="bgCanvas"></canvas>
+  <!-- Header -->
+  <header id="header">
+    <div class="container header-container">
+      <div class="logo-container">
+        <img src="images/logo.png" alt="True Future Living Logo">
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-container">
+      <ul>
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="income-ideas.html" class="nav-link">Income Ideas</a></li>
+        <li><a href="#enquiry" class="nav-link">Enquiry</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content Wrapper -->
+  <div id="mainContent">
+    <!-- Home Section -->
+    <section id="home" class="container section">
+      <div class="intro-background">
+        <h2>Custom Tailored Futuristic Living</h2>
+        <p>Welcome to True Future Living we redefine modern living with our state-of-the-art capsule homes, designed for those who seek innovation, sustainability, and style. As a premier international agent for futuristic living concepts, we deliver fully customizable, high-tech living spaces—shipped worldwide to meet your unique needs. Whether for urban dwellings, remote retreats, or eco-friendly housing solutions, our designs merge cutting-edge technology with refined aesthetics, ensuring a seamless blend of comfort, functionality, and sophistication.
+
+          Step into the future—your perfect space awaits..</p>
+      </div>
+
+      <!-- Combined Gallery Slideshow (Inserted into Home Section) -->
+      <div class="carousel-container gallery-carousel">
+        <button class="carousel-btn left-btn">&#8249;</button>
+        <div class="carousel-slide">
+          <img src="images/gallery1.png" alt="Gallery Image 1">
+          <img src="images/gallery2.png" alt="Gallery Image 2">
+          <img src="images/gallery3.png" alt="Gallery Image 3">
+          <img src="images/gallery4.png" alt="Gallery Image 4">
+          <img src="images/gallery5.png" alt="Gallery Image 5">
+          <img src="images/gallery6.png" alt="Gallery Image 6">
+          <img src="images/gallery7.png" alt="Gallery Image 7">
+          <img src="images/gallery8.png" alt="Gallery Image 8">
+          <img src="images/gallery9.png" alt="Gallery Image 9">
+          <img src="images/gallery10.png" alt="Gallery Image 10">
+        </div>
+        <button class="carousel-btn right-btn">&#8250;</button>
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          const carouselSlide = document.querySelector(".gallery-carousel .carousel-slide");
+          const slides = document.querySelectorAll(".gallery-carousel .carousel-slide img");
+          const leftBtn = document.querySelector(".gallery-carousel .left-btn");
+          const rightBtn = document.querySelector(".gallery-carousel .right-btn");
+          let currentIndex = 0;
+          const totalSlides = slides.length;
+          
+          function showSlide(index) {
+            const slideWidth = carouselSlide.clientWidth;
+            carouselSlide.style.transform = `translateX(${-index * slideWidth}px)`;
+          }
+          
+          leftBtn.addEventListener("click", function() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            showSlide(currentIndex);
+          });
+          
+          rightBtn.addEventListener("click", function() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
+          });
+          
+          window.addEventListener("resize", function() {
+            showSlide(currentIndex);
+          });
+        });
+      </script>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="container section">
+      <!-- Series Groups in Alphabetical Order -->
+
+      <!-- A Series -->
+      <div class="series-group">
+        <h2 class="series-title">A Series</h2>
+        <div class="stock">
+          <!-- A30 -->
+          <div class="stock-item">
+            <img class="model-img" src="images/A30.png" alt="A30">
+            <h3>A30</h3>
+            <pre class="model-description">
+Building area: 17㎡
+Length: 5.0m | Width: 3.0m | Height: 3.0m
+Occupancy: 2 people
+Maximum Power: 7KW (with floor heating)
+Total Net Weight: 3.5 tons
+            </pre>
+            <div class="price-box">Price: US$15,900</div>
+            <a href="product.html?model=A30" class="view-more-btn futuristic">View More</a>
+          </div>
+          <!-- A50 -->
+          <div class="stock-item">
+            <img class="model-img" src="images/A50.png" alt="A50">
+            <h3>A50</h3>
+            <pre class="model-description">
+Building area: 24㎡
+Length: 7.5m | Width: 3.0m | Height: 3.0m
+Occupancy: 2 people
+Maximum Power: 9KW (with floor heating)
+Total Net Weight: 4.8 tons
+            </pre>
+            <div class="price-box">Price: US$20,700</div>
+            <a href="product.html?model=A50" class="view-more-btn futuristic">View More</a>
+          </div>
+          <!-- A70 -->
+          <div class="stock-item">
+            <img class="model-img" src="images/A70.png" alt="A70">
+            <h3>A70</h3>
+            <pre class="model-description">
+Building area: 29㎡
+Length: 8.5m | Width: 3.2m | Height: 3.2m
+Occupancy: 2 people
+Maximum Power: 10KW (with floor heating)
+Total Net Weight: 5 tons
+            </pre>
+            <div class="price-box">Price: US$24,400</div>
+            <a href="product.html?model=A70" class="view-more-btn futuristic">View More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- G Series -->
+      <div class="series-group">
+        <h2 class="series-title">G Series</h2>
+        <div class="stock">
+          <!-- G30 -->
+          <div class="stock-item">
+            <img class="model-img" src="images/G30.png" alt="G30">
+            <h3>G30</h3>
+            <pre class="model-description">
+Building area: 18㎡
+Length: 5.6m | Width: 3.6m | Height: 3.2m
+Occupancy: 2 people
+Maximum Power: 8KW (with floor heating)
+Total Net Weight: 4 tons
+            </pre>
+            <div class="price-box">Price: US$15,000</div>
+            <a href="product.html?model=G30" class="view-more-btn futuristic">View More</a>
+          </div>
+          <!-- G50 -->
+          <div class="stock-item">
+            <img class="model-img" src="images/G50.png" alt="G50">
+            <h3>G50</h3>
+            <pre class="model-description">
+Building area: 31.4㎡
+Length: 9.5m | Width: 3.3m | Height: 3.2m
+Occupancy: 2 people
+Maximum Power: 10KW (with floor heating)
+Total Net Weight: 5 tons
+            </pre>
+            <div class="price-box">Price: US$25,300</div>
+            <a href="product.html?model=G50" class="view-more-btn futuristic">View More</a>
+          </div>
+          <!-- G50F -->
+          <div class="stock-item">
+            <img class="model-img" src="images/G50F.png" alt="G50F">
+            <h3>G50F</h3>
+            <pre class="model-description">
+Building area: 31.4㎡
+Length: 9.5m | Width: 3.3m | Height: 3.2m
+Occupancy: 2–4 people
+Maximum Power: 10KW (with floor heating)
+Total Net Weight: 5 tons
+            </pre>
+            <div class="price-box">Price: US$26,000</div>
+            <a href="product.html?model=G50F" class="view-more-btn futuristic">View More</a>
+          </div>
+          <!-- G70 -->
+          <div class="stock-item">
+            <img class="model-img" src="images/G70.png" alt="G70">
+            <h3>G70</h3>
+            <pre class="model-description">
+Building area: 35㎡
+Length: 10.0m | Width: 3.5m | Height: 3.2m
+Occupancy: 2 people
+Maximum Power: 12KW (with floor heating)
+Total Net Weight: 6 tons
+            </pre>
+            <div class="price-box">Price: US$30,800</div>
+            <a href="product.html?model=G70" class="view-more-btn futuristic">View More</a>
+          </div>
+          <!-- G70F -->
+          <div class="stock-item">
+            <img class="model-img" src="images/G70F.png" alt="G70F">
+            <h3>G70F</h3>
+            <pre class="model-description">
+Building area: 35㎡
+Length: 10.0m | Width: 3.5m | Height: 3.2m
+Occupancy: 2–4 people
+Maximum Power: 12KW (with floor heating)
+Total Net Weight: 6 tons
+            </pre>
+            <div class="price-box">Price: US$31,400</div>
+            <a href="product.html?model=G70F" class="view-more-btn futuristic">View More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- L Series -->
+      <div class="series-group">
+        <h2 class="series-title">L Series</h2>
+        <div class="stock">
+          <!-- L50 -->
+          <div class="stock-item">
+            <img class="model-img" src="images/L50.png" alt="L50">
+            <h3>L50</h3>
+            <pre class="model-description">
+Building area: 28㎡
+Length: 8.0m | Width: 3.0m | Height: 3.0m
+Occupancy: 2 people
+Maximum Power: 8KW (with floor heating)
+Total Net Weight: 4.5 tons
+            </pre>
+            <div class="price-box">Price: US$25,300</div>
+            <a href="product.html?model=L50" class="view-more-btn futuristic">View More</a>
+          </div>
+          <!-- L50F -->
+          <div class="stock-item">
+            <img class="model-img" src="images/L50F.png" alt="L50F">
+            <h3>L50F</h3>
+            <pre class="model-description">
+Building area: 28㎡
+Length: 8.0m | Width: 3.0m | Height: 3.0m
+Occupancy: 2–3 people
+Maximum Power: 8KW (with floor heating)
+Total Net Weight: 4.5 tons
+            </pre>
+            <div class="price-box">Price: US$26,000</div>
+            <a href="product.html?model=L50F" class="view-more-btn futuristic">View More</a>
+          </div>
+          <!-- L70 -->
+          <div class="stock-item">
+            <img class="model-img" src="images/L70.png" alt="L70">
+            <h3>L70</h3>
+            <pre class="model-description">
+Building area: 32㎡
+Length: 9.0m | Width: 3.2m | Height: 3.2m
+Occupancy: 2 people
+Maximum Power: 10KW (with floor heating)
+Total Net Weight: 5.5 tons
+            </pre>
+            <div class="price-box">Price: US$29,000</div>
+            <a href="product.html?model=L70" class="view-more-btn futuristic">View More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- M Series -->
+      <div class="series-group">
+        <h2 class="series-title">M Series</h2>
+        <div class="stock">
+          <!-- M50 -->
+          <div class="stock-item">
+            <img class="model-img" src="images/M50.png" alt="M50">
+            <h3>M50</h3>
+            <pre class="model-description">
+Building area: 29.8㎡
+Length: 9.3m | Width: 3.2m | Height: 3.2m
+Occupancy: 2 people
+Maximum Power: 8KW (with floor heating)
+Total Net Weight: 4 tons
+            </pre>
+            <div class="price-box">Price: US$22,900</div>
+            <a href="product.html?model=M50" class="view-more-btn futuristic">View More</a>
+          </div>
+          <!-- M70 -->
+          <div class="stock-item">
+            <img class="model-img" src="images/M70.png" alt="M70">
+            <h3>M70</h3>
+            <pre class="model-description">
+Building area: 36.8㎡
+Length: 11.5m | Width: 3.2m | Height: 3.2m
+Occupancy: 2 people
+Maximum Power: 10KW (with floor heating)
+Total Net Weight: 5 tons
+            </pre>
+            <div class="price-box">Price: US$28,900</div>
+            <a href="product.html?model=M70" class="view-more-btn futuristic">View More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- U Series -->
+      <div class="series-group">
+        <h2 class="series-title">U Series</h2>
+        <div class="stock">
+          <!-- U30 -->
+          <div class="stock-item">
+            <img class="model-img" src="images/U30.png" alt="U30">
+            <h3>U30</h3>
+            <pre class="model-description">
+Building area: 29.9㎡
+Length: 8.3m | Width: 3.6m | Height: 3.2m
+Occupancy: 2 people
+Maximum Power: 8KW (with floor heating)
+Total Net Weight: 4 tons
+            </pre>
+            <div class="price-box">Price: US$18,900</div>
+            <a href="product.html?model=U30" class="view-more-btn futuristic">View More</a>
+          </div>
+          <!-- U50 -->
+          <div class="stock-item">
+            <img class="model-img" src="images/U50.png" alt="U50">
+            <h3>U50</h3>
+            <pre class="model-description">
+Building area: 33.1㎡
+Length: 9.5m | Width: 3.6m | Height: 3.2m
+Occupancy: 2 people
+Maximum Power: 10KW (with floor heating)
+Total Net Weight: 5 tons
+            </pre>
+            <div class="price-box">Price: US$22,600</div>
+            <a href="product.html?model=U50" class="view-more-btn futuristic">View More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Innovative Income Ideas Section -->
+    <section id="income-ideas" class="container section">
+      <h2>Innovative Income Ideas</h2>
+      <div class="stock">
+        <div class="stock-item">
+          <i class="fas fa-city fa-3d"></i>
+          <h3>Affordable Housing Complex</h3>
+        </div>
+        <div class="stock-item">
+          <i class="fas fa-house-laptop fa-3d"></i>
+          <h3>Airbnb Setups</h3>
+        </div>
+        <div class="stock-item">
+          <i class="fas fa-umbrella-beach fa-3d"></i>
+          <h3>Resort &amp; Hotel Accommodation</h3>
+        </div>
+        <div class="stock-item">
+          <i class="fas fa-briefcase fa-3d"></i>
+          <h3>Office or Business Use</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Quality Build & Design Section -->
+    <section id="breakdown" class="container section quality-section">
+      <h2>The Full Package</h2>
+
+      <!-- Build Card 1: Robust Framework -->
+      <div class="build-card">
+        <div class="build-image">
+          <img src="images/fullpackage1.png" alt="The Full Package: Robust Framework">
+        </div>
+        <div class="build-description">
+          <h3>Robust Framework</h3>
+          <p>
+            Our Space Capsule Houses are built to last. Through exclusive partnerships with leading brands, our in-house team crafts efficient and robust frameworks that guarantee strength and reliability. This ensures that the design is not only durable but also aesthetically pleasing. Whether it's for residential, commercial, or leisure use, our custom designs provide the perfect balance of form and function.
+          </p>
+        </div>
+      </div>
+
+      <!-- Build Card 2: Innovative Interiors (Reversed for visual variety) -->
+      <div class="build-card reverse">
+        <div class="build-image">
+          <img src="images/fullpackage2.png" alt="The Full Package: Innovative Interiors">
+        </div>
+        <div class="build-description">
+          <h3>Innovative Interiors</h3>
+          <p>
+            The interior of each Space Capsule House is designed with aesthetic appeal and functionality in mind. By working with trusted interior design brands, our team creates efficient, custom layouts that maximize space while maintaining a sleek, modern look. From comfortable living areas to stylish décor, every interior detail is crafted to enhance your experience.
+          </p>
+        </div>
+      </div>
+
+      <!-- Build Card 3: Eco-Friendly Innovation -->
+      <div class="build-card">
+        <div class="build-image">
+          <img src="images/fullpackage3.png" alt="The Full Package: Eco-Friendly Innovation">
+        </div>
+        <div class="build-description">
+          <h3>Eco-Friendly Innovation</h3>
+          <p>
+            Our designs are committed to sustainability without sacrificing luxury. We incorporate renewable materials, energy-efficient systems, and green technologies throughout our homes to create spaces that are as environmentally responsible as they are inspiring.
+          </p>
+        </div>
+      </div>
+
+      <!-- Build Card 4: Premium Finishes -->
+      <div class="build-card reverse">
+        <div class="build-image">
+          <img src="images/fullpackage4.png" alt="The Full Package: Premium Finishes">
+        </div>
+        <div class="build-description">
+          <h3>Premium Finishes</h3>
+          <p>
+            Experience unparalleled craftsmanship and luxurious details that transform every space. Our premium finishes bring a sophisticated touch that exudes quality and exclusivity.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enquiry Section -->
+    <section id="enquiry" class="container section">
+      <h2>Enquire about our Capsule Models</h2>
+      <div id="productInfo">
+        <!-- Product info injected here if a model is preselected -->
+      </div>
+      <form id="enquiryForm">
+        <!-- New Futuristic Multi-Model Selection Interface -->
+        <div id="modelSelectionContainer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin: 10px 0;">
+          <!-- Alphabetical Order of Models -->
+          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
+            <input type="checkbox" name="selectedModels[]" value="A30" style="display: none;">
+            <span>A30</span>
+          </label>
+          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
+            <input type="checkbox" name="selectedModels[]" value="A50" style="display: none;">
+            <span>A50</span>
+          </label>
+          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
+            <input type="checkbox" name="selectedModels[]" value="A70" style="display: none;">
+            <span>A70</span>
+          </label>
+          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
+            <input type="checkbox" name="selectedModels[]" value="G30" style="display: none;">
+            <span>G30</span>
+          </label>
+          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
+            <input type="checkbox" name="selectedModels[]" value="G50" style="display: none;">
+            <span>G50</span>
+          </label>
+          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
+            <input type="checkbox" name="selectedModels[]" value="G50F" style="display: none;">
+            <span>G50F</span>
+          </label>
+          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
+            <input type="checkbox" name="selectedModels[]" value="G70" style="display: none;">
+            <span>G70</span>
+          </label>
+          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
+            <input type="checkbox" name="selectedModels[]" value="L50" style="display: none;">
+            <span>L50</span>
+          </label>
+          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
+            <input type="checkbox" name="selectedModels[]" value="L50F" style="display: none;">
+            <span>L50F</span>
+          </label>
+          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
+            <input type="checkbox" name="selectedModels[]" value="L70" style="display: none;">
+            <span>L70</span>
+          </label>
+          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
+            <input type="checkbox" name="selectedModels[]" value="M50" style="display: none;">
+            <span>M50</span>
+          </label>
+          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
+            <input type="checkbox" name="selectedModels[]" value="M70" style="display: none;">
+            <span>M70</span>
+          </label>
+          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
+            <input type="checkbox" name="selectedModels[]" value="U30" style="display: none;">
+            <span>U30</span>
+          </label>
+          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
+            <input type="checkbox" name="selectedModels[]" value="U50" style="display: none;">
+            <span>U50</span>
+          </label>
+        </div>
+        <div id="selectedModelsTab" style="margin-top: 10px; padding: 10px; border: 1px dashed #000000; border-radius: 4px;">
+          <strong>Selected Models:</strong>
+          <ul id="selectedModelsList" style="list-style: none; padding: 0; margin: 0;"></ul>
+        </div>
+        <label for="budget">Optional Budget (USD):</label>
+        <input type="number" id="budget" name="budget" placeholder="Your Budget (Optional)">
+        <label for="enquirerName">Your Name:</label>
+        <input type="text" id="enquirerName" name="name" placeholder="Your Name" required>
+        <label for="enquirerEmail">Your Email:</label>
+        <input type="email" id="enquirerEmail" name="email" placeholder="Your Email" required>
+        <label for="enquirerPhone">Your Phone:</label>
+        <input type="tel" id="enquirerPhone" name="phone" placeholder="Your Phone Number" required>
+        <fieldset class="config-container">
+          <legend>Additional Configuration:</legend>
+          <label class="config-option">
+            <input type="checkbox" name="additionalConfig[]" value="Kitchen">
+            <div class="config-checkbox"></div>
+            <span>Kitchen</span>
+          </label>
+          <label class="config-option">
+            <input type="checkbox" name="additionalConfig[]" value="Lounge">
+            <div class="config-checkbox"></div>
+            <span>Lounge</span>
+          </label>
+          <label class="config-option">
+            <input type="checkbox" name="additionalConfig[]" value="Dining Room">
+            <div class="config-checkbox"></div>
+            <span>Dining Room</span>
+          </label>
+          <label class="config-option">
+            <input type="checkbox" name="additionalConfig[]" value="Projector Screen Setup">
+            <div class="config-checkbox"></div>
+            <span>Projector Screen Setup</span>
+          </label>
+        </fieldset>
+        <label for="quantity">Quantity of Units:</label>
+        <input type="number" id="quantity" name="quantity" placeholder="Number of Units" min="1" required>
+        <label for="customerCountry">Your Country:</label>
+        <select id="customerCountry" name="customerCountry" required>
+          <option value="">-- Select Country --</option>
+          <option value="USA">USA</option>
+          <option value="Canada">Canada</option>
+          <option value="UK">UK</option>
+          <option value="Australia">Australia</option>
+          <option value="Germany">European Countries</option>
+        </select>
+        <label for="enquiryMessage">Your Enquiry:</label>
+        <textarea id="enquiryMessage" name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="cta-button">Submit Enquiry</button>
+      </form>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container section">
+      <h2>About True Future Living</h2>
+      <div class="about-content">
+        <p>At True Future Living, we are your premier international agent for futuristic living concepts. We represent groundbreaking capsule home designs that redefine modern living and transcend borders.</p>
+        <p>Our mission is to connect global investors, forward-thinking families, and innovative entrepreneurs with state-of-the-art, sustainable housing solutions that combine advanced technology, minimalist aesthetics, and unparalleled luxury. Experience a new era in living as we bring futuristic concepts to life on an international scale.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 True Future Living. All rights reserved.</p>
+      <p class="socials">
+        <a href="#">Facebook</a> | 
+        <a href="#">Twitter</a> | 
+        <a href="#">LinkedIn</a>
+      </p>
+    </div>
+  </footer>
+  
+  <!-- Three.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Background 3D Grid Animation -->
+  <script src="js/bg-animation.js"></script>
+  <!-- Shared JS -->
+  <script src="js/script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Pre-populate enquiry form based on query parameters (if any)
+      const enquiryForm = document.getElementById('enquiryForm');
+      if (enquiryForm) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const modelId = urlParams.get('model');
+        const productData = containerModels[modelId];
+        const productInfoElem = document.getElementById('productInfo');
+        const enquiryModelSelect = document.getElementById('enquiryModel');
+
+        if (productData) {
+          productInfoElem.innerHTML = `
+            <h3>${productData.name}</h3>
+            <img src="${productData.image}" alt="${productData.name}" class="product-image">
+            <p>${productData.description}</p>
+          `;
+          enquiryModelSelect.value = modelId;
+        } else {
+          productInfoElem.innerHTML = "<p>Please select a model from above to start your enquiry.</p>";
+        }
+
+        enquiryForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          alert("Thank you for your enquiry about " + (productData ? productData.name : "this product") + "! We will get back to you soon.");
+          enquiryForm.reset();
+        });
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      var checkboxes = document.querySelectorAll("#modelSelectionContainer input[type=checkbox]");
+      var selectedList = document.getElementById("selectedModelsList");
+
+      function updateSelectedModels() {
+        selectedList.innerHTML = "";
+        checkboxes.forEach(function(checkbox) {
+          var label = checkbox.parentElement; // our custom card
+          if (checkbox.checked) {
+            // Set the selected card's background to the gradient and add visual effects.
+            label.style.background = "linear-gradient(45deg, #ffea00, #00bfff, #00ff7f)";
+            label.style.borderColor = "#00ffcc";
+            label.style.transform = "scale(1.05)";
+            label.style.boxShadow = "0 0 12px rgba(0,255,204,0.8)";
+            var li = document.createElement("li");
+            li.textContent = checkbox.value;
+            selectedList.appendChild(li);
+          } else {
+            // Return unselected card to white background.
+            label.style.background = "#fff";
+            label.style.borderColor = "transparent";
+            label.style.transform = "scale(1)";
+            label.style.boxShadow = "none";
+          }
+        });
+      }
+
+      checkboxes.forEach(function(checkbox) {
+        checkbox.addEventListener("change", updateSelectedModels);
+      });
+    });
+  </script>
+</body>
+</html>
