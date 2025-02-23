@@ -703,3 +703,116 @@ img[src*="3d_breakdown.png"] {
 .series-group {
   min-height: 600px; /* Adjust this value to match the size of the M series section */
 }
+
+/* Income Ideas Mobile Adjustments */
+#income-ideas .stock {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#income-ideas .stock-item {
+  width: 100%;
+  max-width: 350px;
+  background: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 10px auto;
+}
+
+/* Product Page Mobile Responsiveness */
+@media (max-width: 768px) {
+  .product-container {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .product-image {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .product-details {
+    width: 100%;
+    padding: 20px;
+    margin: 15px 0;
+  }
+
+  .product-title {
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .product-description {
+    font-size: 0.9em;
+    padding: 10px;
+  }
+
+  .product-gallery {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .gallery-item {
+    width: 100px;
+    height: auto;
+  }
+
+  .product-video-container {
+    margin: 20px 0;
+  }
+
+  .product-video-container video {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Carousel buttons adjustment for mobile */
+  .carousel-btn {
+    padding: 8px;
+    font-size: 1em;
+  }
+
+  .left-btn {
+    left: 5px;
+  }
+
+  .right-btn {
+    right: 5px;
+  }
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 480px) {
+  #income-ideas .stock-item {
+    margin: 10px 5px;
+    padding: 15px;
+  }
+
+  #income-ideas .stock-item h3 {
+    font-size: 1.5em;
+  }
+
+  .product-title {
+    font-size: 1.8em;
+  }
+
+  .gallery-item {
+    width: 80px;
+  }
+}
