@@ -744,12 +744,17 @@ Total Net Weight: 5 tons
 
     <!-- Enquiry Section -->
     <section id="enquiry" class="container section">
-      <h2>Enquire about our Capsule Models</h2>
+      <h2>Make an Enquiry</h2>
       <div id="productInfo">
         <!-- Product info injected here if a model is preselected -->
       </div>
-      <form id="enquiryForm">
-        <!-- New Futuristic Multi-Model Selection Interface -->
+      <form id="enquiryForm" action="https://formsubmit.co/sales@truefutureliving.com" method="POST">
+        <!-- FormSubmit Configuration -->
+        <input type="hidden" name="_subject" value="New True Future Living Enquiry">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_autoresponse" value="Thank you for your enquiry. We will get back to you shortly.">
+        <input type="hidden" name="_next" value="https://truefutureliving.com/thank-you.html">
+        
         <div id="modelSelectionContainer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin: 10px 0;">
           <!-- Alphabetical Order of Models -->
           <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
@@ -812,17 +817,32 @@ Total Net Weight: 5 tons
         <div id="selectedModelsTab" style="margin-top: 10px; padding: 10px; border: 1px dashed #000000; border-radius: 4px;">
           <strong>Selected Models:</strong>
           <ul id="selectedModelsList" style="list-style: none; padding: 0; margin: 0;"></ul>
+          <input type="hidden" name="selected_models" id="selectedModelsInput">
         </div>
         <label for="budget">Optional Budget (USD):</label>
-        <input type="number" id="budget" name="budget" placeholder="Your Budget (Optional)">
+        <input type="number" id="budget" name="budget" placeholder="Your Budget (Optional)" oninput="formatBudget(this.value)">
+        <input type="hidden" name="formatted_budget" id="formattedBudget">
         <label for="enquirerName">Your Name:</label>
         <input type="text" id="enquirerName" name="name" placeholder="Your Name" required>
         <label for="enquirerEmail">Your Email:</label>
         <input type="email" id="enquirerEmail" name="email" placeholder="Your Email" required>
         <label for="enquirerPhone">Your Phone:</label>
         <input type="tel" id="enquirerPhone" name="phone" placeholder="Your Phone Number" required>
+        <label for="customerCountry">Your Country:</label>
+        <select id="customerCountry" name="country" required>
+          <option value="">-- Select Country --</option>
+          <option value="USA">USA</option>
+          <option value="Canada">Canada</option>
+          <option value="UK">UK</option>
+          <option value="Australia">Australia</option>
+          <option value="Germany">European Countries</option>
+          <option value="Other">Other</option>
+        </select>
+        <label for="quantity">Quantity of Units:</label>
+        <input type="number" id="quantity" name="quantity" placeholder="Number of Units" min="1" required>
         <fieldset class="config-container">
           <legend>Additional Configuration:</legend>
+          <input type="hidden" name="configurations" id="configurationsInput">
           <label class="config-option">
             <input type="checkbox" name="additionalConfig[]" value="Kitchen">
             <div class="config-checkbox"></div>
@@ -844,17 +864,6 @@ Total Net Weight: 5 tons
             <span>Projector Screen Setup</span>
           </label>
         </fieldset>
-        <label for="quantity">Quantity of Units:</label>
-        <input type="number" id="quantity" name="quantity" placeholder="Number of Units" min="1" required>
-        <label for="customerCountry">Your Country:</label>
-        <select id="customerCountry" name="customerCountry" required>
-          <option value="">-- Select Country --</option>
-          <option value="USA">USA</option>
-          <option value="Canada">Canada</option>
-          <option value="UK">UK</option>
-          <option value="Australia">Australia</option>
-          <option value="Germany">European Countries</option>
-        </select>
         <label for="enquiryMessage">Your Enquiry:</label>
         <textarea id="enquiryMessage" name="message" placeholder="Your Message" required></textarea>
         <button type="submit" class="cta-button">Submit Enquiry</button>

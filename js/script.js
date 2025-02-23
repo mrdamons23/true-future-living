@@ -553,3 +553,39 @@ if (bgCanvas) {
     bgRenderer.setSize(window.innerWidth, window.innerHeight);
   });
 }
+
+// Form handling
+document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+  // Update hidden fields before submission
+  const selectedModels = Array.from(document.querySelectorAll('#modelSelectionContainer input:checked'))
+    .map(input => input.value)
+    .join(', ');
+  document.getElementById('selectedModelsInput').value = selectedModels;
+
+  const configurations = Array.from(document.querySelectorAll('.config-container input:checked'))
+    .map(input => input.value)
+    .join(', ');
+  document.getElementById('configurationsInput').value = configurations;
+
+  // Format budget
+  const budget = document.getElementById('budget').value;
+  if (budget) {
+    document.getElementById('formattedBudget').value = `$${Number(budget).toLocaleString()}`;
+  }
+});
+
+function formatBudget(value) {
+  if (value) {
+    document.getElementById('formattedBudget').value = `$${Number(value).toLocaleString()}`;
+  }
+}
+
+// Update selected models display
+document.querySelectorAll('#modelSelectionContainer input[type="checkbox"]').forEach(checkbox => {
+  checkbox.addEventListener('change', function() {
+    const selectedModels = Array.from(document.querySelectorAll('#modelSelectionContainer input:checked'))
+      .map(input => input.value)
+      .join(', ');
+    document.getElementById('selectedModelsInput').value = selectedModels;
+  });
+});
