@@ -795,7 +795,7 @@ img[src*="3d_breakdown.png"] {
   min-height: 600px; /* Adjust this value to match the size of the M series section */
 }
 
-/* Income Ideas Mobile Adjustments */
+/* Income Ideas Section Specific Styling */
 #income-ideas .stock {
   display: flex;
   flex-wrap: wrap;
@@ -805,18 +805,49 @@ img[src*="3d_breakdown.png"] {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  align-items: stretch;
 }
 
 #income-ideas .stock-item {
   width: 100%;
-  max-width: 350px;
+  max-width: 300px;
   background: #ffffff;
   border: none;
   border-radius: 12px;
   padding: 25px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin: 10px auto;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Mobile Adjustments for Income Ideas */
+@media (max-width: 768px) {
+  #income-ideas .stock {
+    padding: 10px;
+    gap: 20px;
+  }
+
+  #income-ideas .stock-item {
+    width: calc(100% - 20px);
+    margin: 10px;
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  #income-ideas .stock {
+    padding: 5px;
+    gap: 15px;
+  }
+
+  #income-ideas .stock-item {
+    width: calc(100% - 10px);
+    margin: 5px;
+    padding: 15px;
+  }
 }
 
 /* Product Page Mobile Responsiveness */
