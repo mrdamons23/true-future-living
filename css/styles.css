@@ -1047,7 +1047,10 @@ img[src*="3d_breakdown.png"] {
 
 /* Selected Configuration Style */
 .config-box.selected {
-  /* Remove this block */
+  background: linear-gradient(45deg, #ffea00, #00bfff, #00ff7f);
+  border-color: #00ffcc;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0,255,204,0.8);
 }
 
 #selectedConfigsTab {
