@@ -589,3 +589,38 @@ document.querySelectorAll('#modelSelectionContainer input[type="checkbox"]').for
     document.getElementById('selectedModelsInput').value = selectedModels;
   });
 });
+
+// Add gradient effect to configuration options when selected
+document.querySelectorAll('.config-container .model-option input[type="checkbox"]').forEach(checkbox => {
+  checkbox.addEventListener('change', function() {
+    const label = this.closest('.model-option');
+    const selectedConfigsList = document.getElementById('selectedConfigsList');
+    if (this.checked) {
+      label.style.background = 'linear-gradient(45deg, #ffea00, #00bfff, #00ff7f)';
+      label.style.borderColor = '#00ffcc';
+      label.style.transform = 'scale(1.05)';
+      label.style.boxShadow = '0 0 12px rgba(0,255,204,0.8)';
+      // Add to selected configs list
+      const li = document.createElement('li');
+      li.textContent = this.value;
+      selectedConfigsList.appendChild(li);
+    } else {
+      label.style.background = '#fff';
+      label.style.borderColor = 'transparent';
+      label.style.transform = 'scale(1)';
+      label.style.boxShadow = 'none';
+      // Remove from selected configs list
+      Array.from(selectedConfigsList.children).forEach(li => {
+        if (li.textContent === this.value) {
+          li.remove();
+        }
+      });
+    }
+
+    // Update hidden input with selected configurations
+    const selectedConfigs = Array.from(document.querySelectorAll('.config-container .model-option input:checked'))
+      .map(input => input.value)
+      .join(', ');
+    document.getElementById('configurationsInput').value = selectedConfigs;
+  });
+});

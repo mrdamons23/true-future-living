@@ -975,3 +975,112 @@ img[src*="3d_breakdown.png"] {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
+
+/* Configuration Selection Styling */
+#configSelectionContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.config-container {
+  margin: 5px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  max-width: 100%;
+  width: 100%;
+}
+
+.config-container legend {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  padding: 0 10px;
+  color: #000;
+}
+
+.config-box {
+  background: #ffffff00;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.config-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.config-box input[type="checkbox"] {
+  display: none;
+}
+
+.config-box input[type="checkbox"]:checked + .config-content {
+  background: linear-gradient(45deg, #ffea00, #00bfff, #00ff7f);
+  border-color: #00ffcc;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0,255,204,0.8);
+}
+
+.config-content {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.config-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1em;
+  color: #333;
+}
+
+/* Selected Configuration Style */
+.config-box.selected {
+  /* Remove this block */
+}
+
+#selectedConfigsTab {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px dashed #000000;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#selectedConfigsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#selectedConfigsList li {
+  padding: 5px 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  #configSelectionContainer {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 8px;
+  }
+  
+  .config-box {
+    padding: 10px;
+  }
+  
+  .config-title {
+    font-size: 0.9em;
+  }
+}

@@ -715,15 +715,15 @@ Total Net Weight: 5 tons
         </div>
       </div>
 
-      <!-- Build Card 3: Eco-Friendly Innovation -->
+      <!-- Build Card 3: Long Term Client Support Service -->
       <div class="build-card">
         <div class="build-image">
-          <img src="images/fullpackage3.png" alt="The Full Package: Eco-Friendly Innovation">
+          <img src="images/fullpackage3.png" alt="The Full Package: Long Term Client Support">
         </div>
         <div class="build-description">
-          <h3>Eco-Friendly Innovation</h3>
+          <h3>Long Term Client Support Service</h3>
           <p>
-            Our designs are committed to sustainability without sacrificing luxury. We incorporate renewable materials, energy-efficient systems, and green technologies throughout our homes to create spaces that are as environmentally responsible as they are inspiring.
+            We pride ourselves on providing comprehensive, ongoing support throughout your entire journey. From initial custom design consultations through to installation and beyond, our dedicated team is here to assist you. We offer continuous technical support, maintenance guidance, and future upgrade consultations to ensure your capsule home remains perfect for years to come. Our commitment to your satisfaction doesn't end with delivery - we're your long-term partner in futuristic living.
           </p>
         </div>
       </div>
@@ -793,28 +793,28 @@ Total Net Weight: 5 tons
             <input type="checkbox" name="selectedModels[]" value="L50F" style="display: none;">
             <span>L50F</span>
           </label>
-          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
+          <label class="model-option" style="background: #fff; padding: 5px; border-radius: 4px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
             <input type="checkbox" name="selectedModels[]" value="L70" style="display: none;">
             <span>L70</span>
           </label>
-          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
+          <label class="model-option" style="background: #fff; padding: 5px; border-radius: 4px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
             <input type="checkbox" name="selectedModels[]" value="M50" style="display: none;">
             <span>M50</span>
           </label>
-          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
+          <label class="model-option" style="background: #fff; padding: 5px; border-radius: 4px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
             <input type="checkbox" name="selectedModels[]" value="M70" style="display: none;">
             <span>M70</span>
           </label>
-          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
+          <label class="model-option" style="background: #fff; padding: 5px; border-radius: 4px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
             <input type="checkbox" name="selectedModels[]" value="U30" style="display: none;">
             <span>U30</span>
           </label>
-          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
+          <label class="model-option" style="background: #fff; padding: 5px; border-radius: 4px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
             <input type="checkbox" name="selectedModels[]" value="U50" style="display: none;">
             <span>U50</span>
           </label>
         </div>
-        <div id="selectedModelsTab" style="margin-top: 10px; padding: 10px; border: 1px dashed #000000; border-radius: 4px;">
+        <div id="selectedModelsTab" style="margin-top: 5px; padding: 5px; border: 1px dashed #000000; border-radius: 4px;">
           <strong>Selected Models:</strong>
           <ul id="selectedModelsList" style="list-style: none; padding: 0; margin: 0;"></ul>
           <input type="hidden" name="selected_models" id="selectedModelsInput">
@@ -843,27 +843,41 @@ Total Net Weight: 5 tons
         <fieldset class="config-container">
           <legend>Additional Configuration:</legend>
           <input type="hidden" name="configurations" id="configurationsInput">
-          <label class="config-option">
-            <input type="checkbox" name="additionalConfig[]" value="Kitchen">
-            <div class="config-checkbox"></div>
-            <span>Kitchen</span>
-          </label>
-          <label class="config-option">
-            <input type="checkbox" name="additionalConfig[]" value="Lounge">
-            <div class="config-checkbox"></div>
-            <span>Lounge</span>
-          </label>
-          <label class="config-option">
-            <input type="checkbox" name="additionalConfig[]" value="Dining Room">
-            <div class="config-checkbox"></div>
-            <span>Dining Room</span>
-          </label>
-          <label class="config-option">
-            <input type="checkbox" name="additionalConfig[]" value="Projector Screen Setup">
-            <div class="config-checkbox"></div>
-            <span>Projector Screen Setup</span>
-          </label>
+          <div id="configSelectionContainer">
+            <!-- Kitchen Options -->
+            <label class="config-box">
+              <input type="checkbox" name="additionalConfig[]" value="Kitchen">
+              <div class="config-content">
+                <span class="config-title">Kitchen</span>
+              </div>
+            </label>
+            <!-- Lounge Options -->
+            <label class="config-box">
+              <input type="checkbox" name="additionalConfig[]" value="Lounge">
+              <div class="config-content">
+                <span class="config-title">Lounge</span>
+              </div>
+            </label>
+            <!-- Dining Room Options -->
+            <label class="config-box">
+              <input type="checkbox" name="additionalConfig[]" value="Dining Room">
+              <div class="config-content">
+                <span class="config-title">Dining Room</span>
+              </div>
+            </label>
+            <!-- Projector Screen Options -->
+            <label class="config-box">
+              <input type="checkbox" name="additionalConfig[]" value="Projector Screen">
+              <div class="config-content">
+                <span class="config-title">Projector Screen</span>
+              </div>
+            </label>
+          </div>
         </fieldset>
+        <div id="selectedConfigsTab">
+          <strong>Selected Configurations:</strong>
+          <ul id="selectedConfigsList"></ul>
+        </div>
         <label for="enquiryMessage">Your Enquiry:</label>
         <textarea id="enquiryMessage" name="message" placeholder="Your Message" required></textarea>
         <button type="submit" class="cta-button">Submit Enquiry</button>
@@ -957,6 +971,35 @@ Total Net Weight: 5 tons
 
       checkboxes.forEach(function(checkbox) {
         checkbox.addEventListener("change", updateSelectedModels);
+      });
+    });
+  </script>
+  <script>
+    // Update selected configurations display
+    document.querySelectorAll('#configSelectionContainer input[type="checkbox"]').forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        const selectedConfigsList = document.getElementById('selectedConfigsList');
+        const configTitle = this.value;
+        
+        if (this.checked) {
+          // Add to selected configs list
+          const li = document.createElement('li');
+          li.textContent = configTitle;
+          selectedConfigsList.appendChild(li);
+        } else {
+          // Remove from selected configs list
+          Array.from(selectedConfigsList.children).forEach(li => {
+            if (li.textContent === configTitle) {
+              li.remove();
+            }
+          });
+        }
+
+        // Update hidden input with selected configurations
+        const selectedConfigs = Array.from(document.querySelectorAll('#configSelectionContainer input:checked'))
+          .map(input => input.value)
+          .join(', ');
+        document.getElementById('configurationsInput').value = selectedConfigs;
       });
     });
   </script>
