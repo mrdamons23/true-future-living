@@ -291,13 +291,21 @@ Price: US$46,000`
   }
 };
 
-// Apply uniform image naming logic for all models
+// Update image naming logic to handle U model
 Object.keys(containerModels).forEach(modelKey => {
-  containerModels[modelKey].image = "images/" + modelKey + ".png";
-  containerModels[modelKey].showcase = [
-    { src: "images/" + modelKey + "_showcase1.png", type: "image" },
-    { src: "images/" + modelKey + "_showcase2.png", type: "image" }
-  ];
+  if (modelKey === "U") {
+    containerModels[modelKey].image = "images/U.png";
+    containerModels[modelKey].showcase = [
+      { src: "images/U_showcase1.png", type: "image" },
+      { src: "images/U_showcase2.png", type: "image" }
+    ];
+  } else {
+    containerModels[modelKey].image = "images/" + modelKey + ".png";
+    containerModels[modelKey].showcase = [
+      { src: "images/" + modelKey + "_showcase1.png", type: "image" },
+      { src: "images/" + modelKey + "_showcase2.png", type: "image" }
+    ];
+  }
 });
 
 // =========================
