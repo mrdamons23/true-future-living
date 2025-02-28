@@ -805,11 +805,6 @@ img[src*="3d_breakdown.png"] {
   /* text-shadow: 0 0 10px rgba(0, 255, 0, 0.3); */
 }
 
-/* Lunar Series (formerly L Series) specific styling if needed */
-.lunar-series .stock-item {
-  /* Any Lunar series specific styling */
-}
-
 /* Income Ideas Section Specific Styling */
 #income-ideas .stock {
   display: flex;
@@ -1069,120 +1064,79 @@ img[src*="3d_breakdown.png"] {
   }
 }
 
-/* Model Selection Styling */
-.model-option {
-  background: #fff;
-  padding: 15px;
-  border-radius: 8px;
-  text-align: center;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 80px;
-  height: 50px;
-}
-
-.model-option input[type="checkbox"] {
-  display: none;
-}
-
-.model-option span {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.1em;
-}
-
-.model-option:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Selected Model Style */
-.model-option input[type="checkbox"]:checked + span {
-  color: #000;
-}
-
-.model-option input[type="checkbox"]:checked {
-  background: linear-gradient(45deg, #ffea00, #00bfff, #00ff7f);
-  border-color: #00ffcc;
-  transform: scale(1.05);
-  box-shadow: 0 0 12px rgba(0,255,204,0.8);
-}
-
-#modelSelectionContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  gap: 10px;
-  margin: 10px 0;
-}
-
-/* Configuration Selection Container - Exact match with model selection */
-#configSelectionContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  gap: 10px;
-  margin: 10px 0;
-}
-
-/* Configuration Selection Styling - Exact match with model selection */
+/* Shared button styles for both model and configuration selections */
+.model-option,
 .config-container .model-option {
-  background: #fff;
-  padding: 15px;
-  border-radius: 8px;
-  text-align: center;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  min-width: 80px;
-  height: 50px;
-  position: relative;
+  background: #fff !important;
+  padding: 15px !important;
+  border-radius: 8px !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  border: 2px solid transparent !important;
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  min-width: 120px !important;
+  height: 50px !important;
+  position: relative !important;
 }
 
-/* Make configuration checkboxes match model selection ones */
+/* Shared checkbox styling */
+.model-option input[type="checkbox"],
 .config-container .model-option input[type="checkbox"] {
-  margin: 0;
-  position: absolute;
-  opacity: 0;
+  margin: 0 !important;
+  position: absolute !important;
+  opacity: 0 !important;
 }
 
+.model-option span,
 .config-container .model-option span {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.1em;
-  pointer-events: none;
+  font-family: 'Orbitron', sans-serif !important;
+  font-size: 1.1em !important;
+  pointer-events: none !important;
 }
 
-/* Hover state - Exact match */
+/* Shared hover state */
+.model-option:hover,
 .config-container .model-option:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Selected state - Exact match */
+/* Shared selected state */
+.model-option:has(input[type="checkbox"]:checked),
 .config-container .model-option:has(input[type="checkbox"]:checked) {
-  background: linear-gradient(45deg, #ffea00, #00bfff, #00ff7f);
-  border-color: #00ffcc;
-  transform: scale(1.05);
-  box-shadow: 0 0 12px rgba(0,255,204,0.8);
+  background: linear-gradient(45deg, #ffea00, #00bfff, #00ff7f) !important;
+  border-color: #00ffcc !important;
+  transform: scale(1.05) !important;
+  box-shadow: 0 0 12px rgba(0,255,204,0.8) !important;
 }
 
-/* Mobile Responsiveness - Match model selection */
+/* Grid layout for both selection types */
+#modelSelectionContainer,
+#configSelectionContainer {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
+  gap: 10px !important;
+  margin: 10px 0 !important;
+}
+
+/* Mobile Responsiveness for both */
 @media (max-width: 768px) {
+  #modelSelectionContainer,
   #configSelectionContainer {
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
+    gap: 10px !important;
   }
   
+  .model-option,
   .config-container .model-option {
-    padding: 15px;
-    min-width: 80px;
-    height: 50px;
+    padding: 15px !important;
+    min-width: 120px !important;
+    height: 50px !important;
   }
 }
 
