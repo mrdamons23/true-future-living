@@ -1268,10 +1268,10 @@ img[src*="3d_breakdown.png"] {
   margin-top: 10px;
 }
 
-/* Universe Series container styling to match others - Further increased height */
+/* Universe Series container styling to match others - Fixed height issue */
 .universe-series .stock-item {
   width: 300px;
-  min-height: 520px; /* Increased from 480px to 520px for more space */
+  min-height: 480px; /* Increased from 450px to accommodate the View More button */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1297,7 +1297,7 @@ img[src*="3d_breakdown.png"] {
 }
 
 .universe-series .stock-item .view-more-btn {
-  margin-top: 20px; /* Increased margin from 15px to 20px */
-  position: relative;
-  bottom: 0;
+  margin-top: 15px; /* Added margin to ensure button has space */
+  position: relative; /* Ensure proper positioning */
+  bottom: 0; /* Align to bottom of container */
 }
