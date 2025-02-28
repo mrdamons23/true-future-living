@@ -892,34 +892,22 @@ Total Net Weight: 5 tons
         <fieldset class="config-container">
           <legend>Additional Configuration:</legend>
           <input type="hidden" name="configurations" id="configurationsInput">
-          <div id="configSelectionContainer">
-            <!-- Kitchen Options -->
-            <label class="config-box">
+          <div id="configSelectionContainer" style="display: flex; flex-wrap: nowrap; gap: 10px; width: 100%; justify-content: center;">
+            <label class="model-option" style="flex: 0 0 120px;">
               <input type="checkbox" name="additionalConfig[]" value="Kitchen">
-              <div class="config-content">
-                <span class="config-title">Kitchen</span>
-              </div>
+              <span>Kitchen</span>
             </label>
-            <!-- Lounge Options -->
-            <label class="config-box">
+            <label class="model-option" style="flex: 0 0 120px;">
               <input type="checkbox" name="additionalConfig[]" value="Lounge">
-              <div class="config-content">
-                <span class="config-title">Lounge</span>
-              </div>
+              <span>Lounge</span>
             </label>
-            <!-- Dining Room Options -->
-            <label class="config-box">
+            <label class="model-option" style="flex: 0 0 120px;">
               <input type="checkbox" name="additionalConfig[]" value="Dining Room">
-              <div class="config-content">
-                <span class="config-title">Dining Room</span>
-              </div>
+              <span>Dining Room</span>
             </label>
-            <!-- Projector Screen Options -->
-            <label class="config-box">
-              <input type="checkbox" name="additionalConfig[]" value="Projector Screen">
-              <div class="config-content">
-                <span class="config-title">Projector Screen</span>
-              </div>
+            <label class="model-option" style="flex: 0 0 120px;">
+              <input type="checkbox" name="additionalConfig[]" value="Projector Cinema">
+              <span>Projector Cinema</span>
             </label>
           </div>
         </fieldset>
