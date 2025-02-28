@@ -1261,3 +1261,45 @@ img[src*="3d_breakdown.png"] {
 .universe-series .stock-item {
   min-height: 500px;
 }
+
+/* Product Details Styling */
+.product-container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.product-details {
+  flex: 1 1 400px;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(30,30,30,0.85));
+  padding: 30px;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 4px 20px rgba(0,255,255,0.3);
+  border-radius: 12px;
+}
+
+.product-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.8em;
+  margin-bottom: 15px;
+  text-shadow: 0 0 15px #00e6ff;
+  letter-spacing: 1px;
+}
+
+.product-description {
+  white-space: pre-line;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  height: auto;
+  overflow: visible;
+}

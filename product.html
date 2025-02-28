@@ -260,13 +260,6 @@
     </div>
     <a href="portfolio.html" class="back-btn">Back to Portfolio</a>
   </div>
-  <div class="container product-video-container">
-    <h2 class="video-title">Product Video Showcase</h2>
-    <video id="productVideo" controls>
-      <source id="productVideoSource" src="" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
   <section id="enquiry" class="container section">
     <h2>Make an Enquiry</h2>
     <div id="productInfo">
@@ -350,6 +343,28 @@
       
       <label for="enquiryMessage">Your Enquiry:</label>
       <textarea id="enquiryMessage" name="message" placeholder="Your Message" required></textarea>
+      
+      <label for="enquiryModel">Select Model:</label>
+      <select id="enquiryModel" name="model" required>
+        <option value="">-- Select Model --</option>
+        <option value="A30">A30</option>
+        <option value="A50">A50</option>
+        <option value="A70">A70</option>
+        <option value="G30">G30</option>
+        <option value="G50">G50</option>
+        <option value="G50F">G50F</option>
+        <option value="G70">G70</option>
+        <option value="G70F">G70F</option>
+        <option value="L50">L50</option>
+        <option value="L50F">L50F</option>
+        <option value="L70">L70</option>
+        <option value="M50">M50</option>
+        <option value="M70">M70</option>
+        <option value="U">U</option>
+        <option value="X60">X60</option>
+        <option value="X96">X96</option>
+        <option value="X116">X116</option>
+      </select>
       
       <button type="submit" class="cta-button">Submit Enquiry</button>
     </form>
@@ -603,6 +618,21 @@ Total Net Weight: 7 tons`,
           "images/U50_showcase1.png",
           "images/U50_showcase2.png"
         ]
+      },
+      "U": {
+        name: "U",
+        price: "US$24,500",
+        description: `Building area: 33.0㎡
+Diameter: 6.5m
+Height: 3.2m
+Occupancy: 2-4 people
+Maximum Power: 10KW (with floor heating)
+Total Net Weight: 5 tons`,
+        image: "images/U.png",
+        showcase: [
+          "images/U_2.png",
+          "images/U_3.png"
+        ]
       }
     };
 
@@ -621,65 +651,31 @@ Total Net Weight: 7 tons`,
         document.getElementById('productContent').innerHTML = '<p>Model not found.</p>';
         return;
       }
-      // Main product image
+
+      // Update the product display
       document.getElementById('mainProductImage').src = data.image;
       document.getElementById('mainProductImage').alt = data.name;
-      // Set product title and specs
       document.getElementById('productTitle').innerText = data.name;
       document.getElementById('productSpecs').innerText = data.description;
-      // Price detail (already styled with .price-box)
-      document.getElementById('priceDetail').innerText = 'Price: ' + data.price;
-      // Build carousel image list:
-      const images = [];
-      images.push(data.image); // main image
-      for (let i = 2; i <= 3; i++) {
-         images.push("images/" + modelKey + "_" + i + ".png");
-      }
+      document.getElementById('priceDetail').innerText = `Price: ${data.price}`;
 
+      // Set up image carousel
+      const images = [data.image, ...data.showcase];
       let currentIndex = 0;
-      let initialDimensionsSet = false;
-      let containerWidth, containerHeight;
 
-      // Function to update the main product image from the carousel
       function updateMainImage() {
-         document.getElementById('mainProductImage').src = images[currentIndex];
+        document.getElementById('mainProductImage').src = images[currentIndex];
       }
 
-      updateMainImage();
-
-      const mainImg = document.getElementById('mainProductImage');
-      mainImg.onload = () => {
-         if (!initialDimensionsSet) {
-            containerWidth = mainImg.offsetWidth;
-            containerHeight = mainImg.offsetHeight;
-            // Fix the main image container dimensions
-            mainImg.style.width = containerWidth + "px";
-            mainImg.style.height = containerHeight + "px";
-            initialDimensionsSet = true;
-         }
-      };
-
-      // Setup left/right arrow button functionality:
+      // Initialize carousel controls
       document.querySelector('.left-btn').onclick = () => {
-         currentIndex = (currentIndex - 1 + images.length) % images.length;
-         updateMainImage();
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateMainImage();
       };
 
       document.querySelector('.right-btn').onclick = () => {
-         currentIndex = (currentIndex + 1) % images.length;
-         updateMainImage();
-      };
-
-      // Set the video source based on model key and load the video.
-      // This logic applies for all models.
-      // For example, if modelKey is "L70", the video will be loaded from "videos/L70.mp4".
-      document.getElementById("productVideoSource").src = "videos/" + modelKey + ".mp4";
-      document.getElementById("productVideo").load();
-      
-      // If the video file is not found, hide the video showcase container.
-      const productVideo = document.getElementById("productVideo");
-      productVideo.onerror = () => {
-         document.querySelector(".product-video-container").style.display = "none";
+        currentIndex = (currentIndex + 1) % images.length;
+        updateMainImage();
       };
     }
     
