@@ -1268,10 +1268,10 @@ img[src*="3d_breakdown.png"] {
   margin-top: 10px;
 }
 
-/* Universe Series container styling - Height adjusted to 500px */
+/* Universe Series container styling to match others - Further increased height */
 .universe-series .stock-item {
   width: 300px;
-  min-height: 500px; /* Changed from 520px to 500px as requested */
+  min-height: 520px; /* Increased from 480px to 520px for more space */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
