@@ -1260,6 +1260,4 @@ img[src*="3d_breakdown.png"] {
 /* Universe Series specific container height */
 .universe-series .stock-item {
   min-height: 500px;
-.universe-series .stock-item {
-  min-height: 500px;
 }
