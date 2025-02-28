@@ -1303,3 +1303,69 @@ img[src*="3d_breakdown.png"] {
   height: auto;
   overflow: visible;
 }
+
+/* Configuration container reset */
+.config-container {
+  margin: 5px 0 !important;
+  padding: 10px !important;
+  border: none !important;
+  border-radius: 12px !important;
+  background: transparent !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Make configuration buttons match model buttons exactly */
+#configSelectionContainer {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
+  gap: 10px !important;
+  margin: 10px 0 !important;
+}
+
+/* Style configuration boxes to match model buttons */
+.config-box {
+  background: #fff !important;
+  padding: 15px !important;
+  border-radius: 8px !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  border: 2px solid transparent !important;
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  min-width: 120px !important;
+  height: 50px !important;
+  position: relative !important;
+}
+
+/* Style configuration titles to match model text */
+.config-title {
+  font-family: 'Orbitron', sans-serif !important;
+  font-size: 1.1em !important;
+  pointer-events: none !important;
+}
+
+/* Hover state for config boxes */
+.config-box:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Selected state for config boxes */
+.config-box:has(input[type="checkbox"]:checked) {
+  background: linear-gradient(45deg, #ffea00, #00bfff, #00ff7f) !important;
+  border-color: #00ffcc !important;
+  transform: scale(1.05) !important;
+  box-shadow: 0 0 12px rgba(0,255,204,0.8) !important;
+}
+
+/* Hide checkbox but keep functionality */
+.config-box input[type="checkbox"] {
+  margin: 0 !important;
+  position: absolute !important;
+  opacity: 0 !important;
+}
