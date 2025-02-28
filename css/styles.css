@@ -1273,15 +1273,66 @@ img[src*="3d_breakdown.png"] {
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease;
+  transition: all 0.5s ease-in-out;
   font-family: 'Roboto', sans-serif;
   font-size: 1em;
   color: #000 !important;
 }
 
 .faq-item.active .faq-answer {
-  max-height: 200px; /* adjust as needed */
+  max-height: none;
   margin-top: 10px;
+  opacity: 1;
+}
+
+/* Specification Table Styling */
+.spec-table {
+  margin: 20px 0;
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  overflow: visible;
+  opacity: 1;
+}
+
+.spec-table h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1em;
+  margin: 20px 0 10px 0;
+  color: #000;
+}
+
+.spec-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+  table-layout: fixed;
+  display: table;
+}
+
+.spec-table td {
+  padding: 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 0.9em;
+  word-wrap: break-word;
+  vertical-align: top;
+  line-height: 1.4;
+}
+
+.spec-table td:first-child {
+  font-weight: 500;
+  width: 45%;
+}
+
+/* FAQ Mobile Responsiveness */
+@media (max-width: 768px) {
+  .spec-table td {
+    padding: 6px;
+    font-size: 0.85em;
+  }
+  
+  .spec-table h3 {
+    font-size: 1em;
+  }
 }
 
 /* Universe Series specific container height */
