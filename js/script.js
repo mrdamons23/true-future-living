@@ -257,12 +257,7 @@ Height: 3.2m
 Occupancy: 2-4 people
 Maximum Power: 10KW (with floor heating)
 Total Net Weight: 5 tons
-Price: US$24,500`,
-    image: "images/U.png",
-    showcase: [
-      { src: "images/U_2.png", type: "image" },
-      { src: "images/U_3.png", type: "image" }
-    ]
+Price: US$24,500`
   },
   "X60": {
     name: "X60",
@@ -624,60 +619,3 @@ document.querySelectorAll('.config-container .model-option input[type="checkbox"
     document.getElementById('configurationsInput').value = selectedConfigs;
   });
 });
-
-// Update the product display function to handle all models consistently
-function displayProduct(data) {
-  if (!data) {
-    document.getElementById('productContent').innerHTML = '<p>Model not found.</p>';
-    return;
-  }
-
-  // Main product image
-  document.getElementById('mainProductImage').src = data.image;
-  document.getElementById('mainProductImage').alt = data.name;
-  
-  // Set product title and specs
-  document.getElementById('productTitle').innerText = data.name;
-  document.getElementById('productSpecs').innerText = data.description;
-  
-  // Price detail
-  document.getElementById('priceDetail').innerText = data.price;
-
-  // Build carousel image list
-  const images = [data.image];
-  if (data.showcase) {
-    data.showcase.forEach(item => images.push(item.src));
-  }
-
-  let currentIndex = 0;
-  let initialDimensionsSet = false;
-  let containerWidth, containerHeight;
-
-  function updateMainImage() {
-    document.getElementById('mainProductImage').src = images[currentIndex];
-  }
-
-  updateMainImage();
-
-  const mainImg = document.getElementById('mainProductImage');
-  mainImg.onload = () => {
-    if (!initialDimensionsSet) {
-      containerWidth = mainImg.offsetWidth;
-      containerHeight = mainImg.offsetHeight;
-      mainImg.style.width = containerWidth + "px";
-      mainImg.style.height = containerHeight + "px";
-      initialDimensionsSet = true;
-    }
-  };
-
-  // Setup carousel buttons
-  document.querySelector('.left-btn').onclick = () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    updateMainImage();
-  };
-
-  document.querySelector('.right-btn').onclick = () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    updateMainImage();
-  };
-}
