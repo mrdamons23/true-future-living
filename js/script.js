@@ -257,7 +257,12 @@ Height: 3.2m
 Occupancy: 2-4 people
 Maximum Power: 10KW (with floor heating)
 Total Net Weight: 5 tons
-Price: US$24,500`
+Price: US$24,500`,
+    image: "images/U.png",
+    showcase: [
+      { src: "images/U_1.png", type: "image" },
+      { src: "images/U_2.png", type: "image" }
+    ]
   },
   "X60": {
     name: "X60",
@@ -619,3 +624,4 @@ document.querySelectorAll('.config-container .model-option input[type="checkbox"
     document.getElementById('configurationsInput').value = selectedConfigs;
   });
 });
+
