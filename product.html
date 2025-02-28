@@ -267,9 +267,24 @@
       Your browser does not support the video tag.
     </video>
   </div>
-  <div class="container product-enquiry-container">
-    <h2 class="enquiry-title">Enquire Now</h2>
-    <form id="enquiryForm" class="enquiry-form">
+  <section id="enquiry" class="container section">
+    <h2>Make an Enquiry</h2>
+    <div id="productInfo">
+      <!-- Product info injected here if a model is preselected -->
+    </div>
+    <form id="enquiryForm" action="https://formsubmit.co/sales@truefutureliving.com" method="POST">
+      <!-- FormSubmit Configuration -->
+      <input type="hidden" name="_subject" value="New True Future Living Enquiry">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_autoresponse" value="Thank you for your enquiry. We will get back to you shortly.">
+      <input type="hidden" name="_next" value="https://truefutureliving.com/thank-you.html">
+      
+      <div id="modelSelectionContainer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin: 10px 0;">
+        <!-- Model will be pre-selected based on the product page -->
+        <input type="hidden" name="selectedModels[]" id="selectedModel">
+      </div>
+
+      <input type="hidden" name="formatted_budget" id="formattedBudget">
       <label for="enquirerName">Your Name:</label>
       <input type="text" id="enquirerName" name="name" placeholder="Your Name" required>
       
@@ -277,14 +292,68 @@
       <input type="email" id="enquirerEmail" name="email" placeholder="Your Email" required>
       
       <label for="enquirerPhone">Your Phone:</label>
-      <input type="tel" id="enquirerPhone" name="phone" placeholder="Your Phone Number">
+      <input type="tel" id="enquirerPhone" name="phone" placeholder="Your Phone Number" required>
+      
+      <label for="customerCountry">Your Country:</label>
+      <select id="customerCountry" name="country" required>
+        <option value="">-- Select Country --</option>
+        <option value="USA">USA</option>
+        <option value="Canada">Canada</option>
+        <option value="UK">UK</option>
+        <option value="Australia">Australia</option>
+        <option value="Germany">European Countries</option>
+        <option value="Other">Other</option>
+      </select>
+      
+      <label for="quantity">Quantity of Units:</label>
+      <input type="number" id="quantity" name="quantity" placeholder="Number of Units" min="1" required>
+      
+      <fieldset class="config-container">
+        <legend>Additional Configuration:</legend>
+        <input type="hidden" name="configurations" id="configurationsInput">
+        <div id="configSelectionContainer">
+          <!-- Kitchen Options -->
+          <label class="config-box">
+            <input type="checkbox" name="additionalConfig[]" value="Kitchen">
+            <div class="config-content">
+              <span class="config-title">Kitchen</span>
+            </div>
+          </label>
+          <!-- Lounge Options -->
+          <label class="config-box">
+            <input type="checkbox" name="additionalConfig[]" value="Lounge">
+            <div class="config-content">
+              <span class="config-title">Lounge</span>
+            </div>
+          </label>
+          <!-- Dining Room Options -->
+          <label class="config-box">
+            <input type="checkbox" name="additionalConfig[]" value="Dining Room">
+            <div class="config-content">
+              <span class="config-title">Dining Room</span>
+            </div>
+          </label>
+          <!-- Projector Screen Options -->
+          <label class="config-box">
+            <input type="checkbox" name="additionalConfig[]" value="Projector Screen">
+            <div class="config-content">
+              <span class="config-title">Projector Screen</span>
+            </div>
+          </label>
+        </div>
+      </fieldset>
+      
+      <div id="selectedConfigsTab">
+        <strong>Selected Configurations:</strong>
+        <ul id="selectedConfigsList"></ul>
+      </div>
       
       <label for="enquiryMessage">Your Enquiry:</label>
       <textarea id="enquiryMessage" name="message" placeholder="Your Message" required></textarea>
       
       <button type="submit" class="cta-button">Submit Enquiry</button>
     </form>
-  </div>
+  </section>
 
   <!-- Footer -->
   <footer style="text-align: center; padding: 20px; color: #fff; background: rgba(0,0,0,0.8);">

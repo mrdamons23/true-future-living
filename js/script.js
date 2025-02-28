@@ -248,29 +248,16 @@ Maximum Power: 11.5KW / 17KW (with floor heating)
 Total Net Weight: 9 tons
 Price: US$28,825`
   },
-  "U30": {
-    name: "U30",
-    price: 18874,
-    description: `Building area: 29.9㎡
-Length: 8.3m
-Width: 3.6m
+  "RoundUniverse": {
+    name: "Round Universe",
+    price: 24500,
+    description: `Building area: 33.0㎡
+Diameter: 6.5m
 Height: 3.2m
-Occupancy: 2 people
-Maximum Power: 6.7KW / 11.2KW (with floor heating)
-Total Net Weight: 6 tons
-Price: US$18,874`
-  },
-  "U50": {
-    name: "U50",
-    price: 22538,
-    description: `Building area: 33.1㎡
-Length: 9.5m
-Width: 3.6m
-Height: 3.2m
-Occupancy: 2 people
-Maximum Power: 7.5KW / 12KW (with floor heating)
-Total Net Weight: 7 tons
-Price: US$22,538`
+Occupancy: 2-4 people
+Maximum Power: 10KW (with floor heating)
+Total Net Weight: 5 tons
+Price: US$24,500`
   },
   "X60": {
     name: "X60",

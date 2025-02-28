@@ -328,6 +328,69 @@
       margin-bottom: 20px;
       text-align: center;
     }
+
+    /* FAQ Section Styling */
+    #faq {
+      background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+      color: #fff;
+      border-radius: 12px;
+      padding: 40px 20px;
+      margin: 20px 0;
+    }
+    #faq .section-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.2em;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #fff;
+    }
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      padding-bottom: 10px;
+    }
+    .faq-question {
+      width: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      text-align: left;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.2em;
+      color: #fff;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      position: relative;
+      padding-right: 30px; /* Provide space for icon */
+    }
+    .faq-question:after {
+      content: '\002B'; /* plus sign */
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 1.2em;
+      line-height: 1.2em;
+      transition: transform 0.3s ease;
+    }
+    .faq-item.active .faq-question:after {
+      content: '\2212'; /* minus sign */
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1em;
+      color: #f0f0f0;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 200px; /* adjust as needed or use auto with JS */
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -416,9 +479,9 @@
     <section id="portfolio" class="container section">
       <!-- Series Groups in Alphabetical Order -->
 
-      <!-- A Series -->
-      <div class="series-group">
-        <h2 class="series-title">A Series</h2>
+      <!-- Astral Series (formerly A Series) -->
+      <div class="series-group astral-series">
+        <h2 class="series-title">Astral Series</h2>
         <div class="stock">
           <!-- A30 -->
           <div class="stock-item">
@@ -465,9 +528,9 @@ Total Net Weight: 5 tons
         </div>
       </div>
 
-      <!-- G Series -->
-      <div class="series-group">
-        <h2 class="series-title">G Series</h2>
+      <!-- Galaxy Series (formerly G Series) -->
+      <div class="series-group galaxy-series">
+        <h2 class="series-title">Galaxy Series</h2>
         <div class="stock">
           <!-- G30 -->
           <div class="stock-item">
@@ -542,9 +605,9 @@ Total Net Weight: 6 tons
         </div>
       </div>
 
-      <!-- L Series -->
-      <div class="series-group">
-        <h2 class="series-title">L Series</h2>
+      <!-- Lunar Series (formerly L Series) -->
+      <div class="series-group lunar-series">
+        <h2 class="series-title">Lunar Series</h2>
         <div class="stock">
           <!-- L50 -->
           <div class="stock-item">
@@ -591,9 +654,9 @@ Total Net Weight: 5.5 tons
         </div>
       </div>
 
-      <!-- M Series -->
-      <div class="series-group">
-        <h2 class="series-title">M Series</h2>
+      <!-- Meteor Series (formerly M Series) -->
+      <div class="series-group meteor-series">
+        <h2 class="series-title">Meteor Series</h2>
         <div class="stock">
           <!-- M50 -->
           <div class="stock-item">
@@ -626,37 +689,23 @@ Total Net Weight: 5 tons
         </div>
       </div>
 
-      <!-- U Series -->
-      <div class="series-group">
-        <h2 class="series-title">U Series</h2>
+      <!-- Universe Series (formerly U Series) - Now with single Round Universe model -->
+      <div class="series-group universe-series">
+        <h2 class="series-title">Universe Series</h2>
         <div class="stock">
-          <!-- U30 -->
+          <!-- Round Universe (replacing U30 and U50) -->
           <div class="stock-item">
-            <img class="model-img" src="images/U30.png" alt="U30">
-            <h3>U30</h3>
+            <img class="model-img" src="images/RoundUniverse.png" alt="Round Universe">
+            <h3>Round Universe</h3>
             <pre class="model-description">
-Building area: 29.9㎡
-Length: 8.3m | Width: 3.6m | Height: 3.2m
-Occupancy: 2 people
-Maximum Power: 8KW (with floor heating)
-Total Net Weight: 4 tons
-            </pre>
-            <div class="price-box">Price: US$18,900</div>
-            <a href="product.html?model=U30" class="view-more-btn futuristic">View More</a>
-          </div>
-          <!-- U50 -->
-          <div class="stock-item">
-            <img class="model-img" src="images/U50.png" alt="U50">
-            <h3>U50</h3>
-            <pre class="model-description">
-Building area: 33.1㎡
-Length: 9.5m | Width: 3.6m | Height: 3.2m
-Occupancy: 2 people
+Building area: 33.0㎡
+Diameter: 6.5m | Height: 3.2m
+Occupancy: 2-4 people
 Maximum Power: 10KW (with floor heating)
 Total Net Weight: 5 tons
             </pre>
-            <div class="price-box">Price: US$22,600</div>
-            <a href="product.html?model=U50" class="view-more-btn futuristic">View More</a>
+            <div class="price-box">Price: US$24,500</div>
+            <a href="product.html?model=RoundUniverse" class="view-more-btn futuristic">View More</a>
           </div>
         </div>
       </div>
@@ -757,61 +806,61 @@ Total Net Weight: 5 tons
         
         <div id="modelSelectionContainer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin: 10px 0;">
           <!-- Alphabetical Order of Models -->
-          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
-            <input type="checkbox" name="selectedModels[]" value="A30" style="display: none;">
+          <label class="model-option">
+            <input type="checkbox" name="selectedModels[]" value="A30">
             <span>A30</span>
           </label>
-          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
-            <input type="checkbox" name="selectedModels[]" value="A50" style="display: none;">
+          <label class="model-option">
+            <input type="checkbox" name="selectedModels[]" value="A50">
             <span>A50</span>
           </label>
-          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
-            <input type="checkbox" name="selectedModels[]" value="A70" style="display: none;">
+          <label class="model-option">
+            <input type="checkbox" name="selectedModels[]" value="A70">
             <span>A70</span>
           </label>
-          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
-            <input type="checkbox" name="selectedModels[]" value="G30" style="display: none;">
+          <label class="model-option">
+            <input type="checkbox" name="selectedModels[]" value="G30">
             <span>G30</span>
           </label>
-          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
-            <input type="checkbox" name="selectedModels[]" value="G50" style="display: none;">
+          <label class="model-option">
+            <input type="checkbox" name="selectedModels[]" value="G50">
             <span>G50</span>
           </label>
-          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
-            <input type="checkbox" name="selectedModels[]" value="G50F" style="display: none;">
+          <label class="model-option">
+            <input type="checkbox" name="selectedModels[]" value="G50F">
             <span>G50F</span>
           </label>
-          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
-            <input type="checkbox" name="selectedModels[]" value="G70" style="display: none;">
+          <label class="model-option">
+            <input type="checkbox" name="selectedModels[]" value="G70">
             <span>G70</span>
           </label>
-          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
-            <input type="checkbox" name="selectedModels[]" value="L50" style="display: none;">
+          <label class="model-option">
+            <input type="checkbox" name="selectedModels[]" value="G70F">
+            <span>G70F</span>
+          </label>
+          <label class="model-option">
+            <input type="checkbox" name="selectedModels[]" value="L50">
             <span>L50</span>
           </label>
-          <label class="model-option" style="background: #fff; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
-            <input type="checkbox" name="selectedModels[]" value="L50F" style="display: none;">
+          <label class="model-option">
+            <input type="checkbox" name="selectedModels[]" value="L50F">
             <span>L50F</span>
           </label>
-          <label class="model-option" style="background: #fff; padding: 5px; border-radius: 4px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
-            <input type="checkbox" name="selectedModels[]" value="L70" style="display: none;">
+          <label class="model-option">
+            <input type="checkbox" name="selectedModels[]" value="L70">
             <span>L70</span>
           </label>
-          <label class="model-option" style="background: #fff; padding: 5px; border-radius: 4px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
-            <input type="checkbox" name="selectedModels[]" value="M50" style="display: none;">
+          <label class="model-option">
+            <input type="checkbox" name="selectedModels[]" value="M50">
             <span>M50</span>
           </label>
-          <label class="model-option" style="background: #fff; padding: 5px; border-radius: 4px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
-            <input type="checkbox" name="selectedModels[]" value="M70" style="display: none;">
+          <label class="model-option">
+            <input type="checkbox" name="selectedModels[]" value="M70">
             <span>M70</span>
           </label>
-          <label class="model-option" style="background: #fff; padding: 5px; border-radius: 4px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
-            <input type="checkbox" name="selectedModels[]" value="U30" style="display: none;">
-            <span>U30</span>
-          </label>
-          <label class="model-option" style="background: #fff; padding: 5px; border-radius: 4px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease;">
-            <input type="checkbox" name="selectedModels[]" value="U50" style="display: none;">
-            <span>U50</span>
+          <label class="model-option">
+            <input type="checkbox" name="selectedModels[]" value="RoundUniverse">
+            <span>Round Universe</span>
           </label>
         </div>
         <div id="selectedModelsTab" style="margin-top: 5px; padding: 5px; border: 1px dashed #000000; border-radius: 4px;">
@@ -882,6 +931,45 @@ Total Net Weight: 5 tons
         <textarea id="enquiryMessage" name="message" placeholder="Your Message" required></textarea>
         <button type="submit" class="cta-button">Submit Enquiry</button>
       </form>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="container section">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question">What is True Future Living?</button>
+          <div class="faq-answer">
+            <p>
+              True Future Living is a revolutionary new way of designing and delivering futuristic, sustainable capsule homes. Our advanced technology and innovative design create spaces that are both cutting-edge and environmentally friendly.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">How energy efficient are the capsule homes?</button>
+          <div class="faq-answer">
+            <p>
+              Our capsule homes use state-of-the-art energy-saving technology, ensuring minimal energy consumption while delivering maximum comfort and futuristic aesthetics.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Can I customize my capsule home?</button>
+          <div class="faq-answer">
+            <p>
+              Yes! Customization is a core part of our service. Choose your fixtures, colors, layouts, and advanced tech upgrades to create a space that's uniquely yours.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Do you offer international shipping?</button>
+          <div class="faq-answer">
+            <p>
+              Absolutely. We partner with reputable global logistics providers to ensure your capsule home reaches you securely, no matter where you are.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- About Section -->
@@ -1000,6 +1088,14 @@ Total Net Weight: 5 tons
           .map(input => input.value)
           .join(', ');
         document.getElementById('configurationsInput').value = selectedConfigs;
+      });
+    });
+  </script>
+  <!-- FAQ Toggle Script -->
+  <script>
+    document.querySelectorAll('#faq .faq-question').forEach(function(button) {
+      button.addEventListener('click', function() {
+        this.parentElement.classList.toggle('active');
       });
     });
   </script>

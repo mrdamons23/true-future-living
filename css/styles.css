@@ -790,9 +790,24 @@ img[src*="3d_breakdown.png"] {
   display: none;
 }
 
-/* Uniform Series Group Sizing: ensure all series groups are the same size as the M series section */
+/* Series Group Styling - Updated with new series names */
 .series-group {
-  min-height: 600px; /* Adjust this value to match the size of the M series section */
+  margin-bottom: 40px;
+}
+
+.series-group .series-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2em;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+  /* Removing the green glow shadow effect */
+  /* text-shadow: 0 0 10px rgba(0, 255, 0, 0.3); */
+}
+
+/* Lunar Series (formerly L Series) specific styling if needed */
+.lunar-series .stock-item {
+  /* Any Lunar series specific styling */
 }
 
 /* Income Ideas Section Specific Styling */
@@ -976,14 +991,51 @@ img[src*="3d_breakdown.png"] {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Configuration Selection Styling */
-#configSelectionContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 10px;
-  margin: 10px 0;
+/* Configuration Selection Styling - Same as model selection buttons */
+.config-box {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 80px;
+  height: 50px;
+  position: relative;
 }
 
+.config-box input[type="checkbox"] {
+  display: none;
+}
+
+.config-content {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.config-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Selected Configuration Style - Match model selection exactly */
+.config-box input[type="checkbox"]:checked + .config-content {
+  color: #000;
+}
+
+.config-box:has(input[type="checkbox"]:checked) {
+  background: linear-gradient(45deg, #ffea00, #00bfff, #00ff7f);
+  border-color: #00ffcc;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0,255,204,0.8);
+}
+
+/* Remove unnecessary styles */
 .config-container {
   margin: 5px 0;
   padding: 10px;
@@ -1001,8 +1053,25 @@ img[src*="3d_breakdown.png"] {
   color: #000;
 }
 
-.config-box {
-  background: #ffffff00;
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  #configSelectionContainer {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 10px;
+  }
+  
+  .config-box {
+    padding: 15px;
+  }
+  
+  .config-content {
+    font-size: 1.1em;
+  }
+}
+
+/* Model Selection Styling */
+.model-option {
+  background: #fff;
   padding: 15px;
   border-radius: 8px;
   text-align: center;
@@ -1010,55 +1079,100 @@ img[src*="3d_breakdown.png"] {
   border: 2px solid transparent;
   transition: all 0.3s ease;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-width: 80px;
+  height: 50px;
 }
 
-.config-box:hover {
+.model-option input[type="checkbox"] {
+  display: none;
+}
+
+.model-option span {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1em;
+}
+
+.model-option:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.config-box input[type="checkbox"] {
-  display: none;
+/* Selected Model Style */
+.model-option input[type="checkbox"]:checked + span {
+  color: #000;
 }
 
-.config-box input[type="checkbox"]:checked + .config-content {
+.model-option input[type="checkbox"]:checked {
   background: linear-gradient(45deg, #ffea00, #00bfff, #00ff7f);
   border-color: #00ffcc;
   transform: scale(1.05);
   box-shadow: 0 0 12px rgba(0,255,204,0.8);
 }
 
-.config-content {
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+#modelSelectionContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 10px;
+  margin: 10px 0;
 }
 
-.config-title {
+/* Configuration Selection Container - Same as model selection */
+#configSelectionContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 10px;
+  margin: 10px 0;
+}
+
+/* Configuration Selection Styling - Same as model selection buttons */
+.config-box {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 80px;
+  height: 50px;
+  position: relative;
+}
+
+/* Mobile Responsiveness for Configuration Buttons */
+@media (max-width: 768px) {
+  #configSelectionContainer {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 10px;
+  }
+  .config-box {
+    padding: 15px;
+  }
+  .config-content {
+    font-size: 1.1em;
+  }
+}
+
+/* Selected Configurations Tab - Match the models list style */
+#selectedConfigsTab {
+  margin-top: 5px;
+  padding: 10px;
+  border: 1px dashed #000000;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#selectedConfigsTab strong {
   font-family: 'Orbitron', sans-serif;
   font-size: 1.1em;
   color: #333;
-}
-
-/* Selected Configuration Style */
-.config-box.selected {
-  background: linear-gradient(45deg, #ffea00, #00bfff, #00ff7f);
-  border-color: #00ffcc;
-  transform: scale(1.05);
-  box-shadow: 0 0 12px rgba(0,255,204,0.8);
-}
-
-#selectedConfigsTab {
-  margin-top: 10px;
-  padding: 10px;
-  border: 1px dashed #000000;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.1);
+  display: block;
+  margin-bottom: 5px;
 }
 
 #selectedConfigsList {
@@ -1068,22 +1182,122 @@ img[src*="3d_breakdown.png"] {
 }
 
 #selectedConfigsList li {
-  padding: 5px 0;
-  font-family: 'Roboto', sans-serif;
+  padding: 8px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1em;
+  color: #444;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  #configSelectionContainer {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 8px;
-  }
-  
-  .config-box {
-    padding: 10px;
-  }
-  
-  .config-title {
-    font-size: 0.9em;
-  }
+#selectedConfigsList li:last-child {
+  border-bottom: none;
+}
+
+#selectedConfigsList li:hover {
+  background: rgba(0, 255, 204, 0.05);
+  padding-left: 12px;
+}
+
+/* FAQ Section Styling - Updated text color to black */
+#faq {
+  background: linear-gradient(45deg, #ffea00, #00bfff, #00ff7f);
+  color: #000; /* Changed from #fff to #000 for black text */
+  border-radius: 12px;
+  padding: 40px 20px;
+  margin: 40px auto;
+  max-width: 900px;
+}
+
+#faq .section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2em;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #000; /* Changed from #fff to #000 for black text */
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 10px;
+}
+
+.faq-question {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  text-align: left;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2em;
+  color: #000; /* Changed from #fff to #000 for black text */
+  cursor: pointer;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.faq-question:after {
+  content: '\002B'; /* plus sign */
+  position: absolute;
+  right: 0;
+  font-size: 1.2em;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question:after {
+  content: '\2212'; /* minus sign */
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  color: #000; /* Changed from #f0f0f0 to #000 for black text */
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px; /* adjust as needed */
+  margin-top: 10px;
+}
+
+/* Universe Series container styling - Height adjusted to 500px */
+.universe-series .stock-item {
+  width: 300px;
+  min-height: 500px; /* Changed from 520px to 500px as requested */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 15px;
+}
+
+.universe-series .stock-item img.model-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.universe-series .stock-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.universe-series .stock-item .view-more-btn {
+  margin-top: 20px; /* Increased margin from 15px to 20px */
+  position: relative;
+  bottom: 0;
 }
