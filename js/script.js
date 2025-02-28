@@ -248,8 +248,8 @@ Maximum Power: 11.5KW / 17KW (with floor heating)
 Total Net Weight: 9 tons
 Price: US$28,825`
   },
-  "RoundUniverse": {
-    name: "Round Universe",
+  "U": {
+    name: "U",
     price: 24500,
     description: `Building area: 33.0㎡
 Diameter: 6.5m

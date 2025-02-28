@@ -1118,7 +1118,7 @@ img[src*="3d_breakdown.png"] {
   margin: 10px 0;
 }
 
-/* Configuration Selection Container - Same as model selection */
+/* Configuration Selection Container - Exact match with model selection */
 #configSelectionContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
@@ -1126,8 +1126,8 @@ img[src*="3d_breakdown.png"] {
   margin: 10px 0;
 }
 
-/* Configuration Selection Styling - Same as model selection buttons */
-.config-box {
+/* Configuration Selection Styling - Exact match with model selection */
+.config-container .model-option {
   background: #fff;
   padding: 15px;
   border-radius: 8px;
@@ -1136,24 +1136,53 @@ img[src*="3d_breakdown.png"] {
   border: 2px solid transparent;
   transition: all 0.3s ease;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   min-width: 80px;
   height: 50px;
   position: relative;
 }
 
-/* Mobile Responsiveness for Configuration Buttons */
+/* Make configuration checkboxes match model selection ones */
+.config-container .model-option input[type="checkbox"] {
+  margin: 0;
+  position: absolute;
+  opacity: 0;
+}
+
+.config-container .model-option span {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1em;
+  pointer-events: none;
+}
+
+/* Hover state - Exact match */
+.config-container .model-option:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Selected state - Exact match */
+.config-container .model-option:has(input[type="checkbox"]:checked) {
+  background: linear-gradient(45deg, #ffea00, #00bfff, #00ff7f);
+  border-color: #00ffcc;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0,255,204,0.8);
+}
+
+/* Mobile Responsiveness - Match model selection */
 @media (max-width: 768px) {
   #configSelectionContainer {
     grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     gap: 10px;
   }
-  .config-box {
+  
+  .config-container .model-option {
     padding: 15px;
-  }
-  .config-content {
-    font-size: 1.1em;
+    min-width: 80px;
+    height: 50px;
   }
 }
 
@@ -1199,14 +1228,20 @@ img[src*="3d_breakdown.png"] {
   padding-left: 12px;
 }
 
-/* FAQ Section Styling - Updated text color to black */
+/* FAQ Section Styling - Locked grey gradient and perfectly centered */
 #faq {
-  background: linear-gradient(45deg, #ffea00, #00bfff, #00ff7f);
-  color: #000; /* Changed from #fff to #000 for black text */
+  background: linear-gradient(45deg, #f5f5f5, #ffffff) !important;
+  color: #000 !important;
   border-radius: 12px;
   padding: 40px 20px;
-  margin: 40px auto;
+  margin: 40px auto; /* Using auto margins for centering */
   max-width: 900px;
+  /* Remove the problematic positioning */
+  /* position: relative; */
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Match container width from other sections */
 }
 
 #faq .section-title {
@@ -1214,17 +1249,18 @@ img[src*="3d_breakdown.png"] {
   font-size: 2.2em;
   text-align: center;
   margin-bottom: 30px;
-  color: #000; /* Changed from #fff to #000 for black text */
+  color: #000 !important;
 }
 
 .faq-container {
   max-width: 800px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .faq-item {
   margin-bottom: 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
   padding-bottom: 10px;
 }
 
@@ -1236,7 +1272,7 @@ img[src*="3d_breakdown.png"] {
   text-align: left;
   font-family: 'Orbitron', sans-serif;
   font-size: 1.2em;
-  color: #000; /* Changed from #fff to #000 for black text */
+  color: #000 !important;
   cursor: pointer;
   transition: color 0.3s ease;
   position: relative;
@@ -1260,7 +1296,7 @@ img[src*="3d_breakdown.png"] {
   transition: max-height 0.5s ease;
   font-family: 'Roboto', sans-serif;
   font-size: 1em;
-  color: #000; /* Changed from #f0f0f0 to #000 for black text */
+  color: #000 !important;
 }
 
 .faq-item.active .faq-answer {
@@ -1268,35 +1304,7 @@ img[src*="3d_breakdown.png"] {
   margin-top: 10px;
 }
 
-/* Universe Series container styling to match others - Fixed height issue */
+/* Universe Series specific container height */
 .universe-series .stock-item {
-  width: 300px;
-  min-height: 480px; /* Increased from 450px to accommodate the button */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 25px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin: 15px;
-}
-
-.universe-series .stock-item img.model-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-.universe-series .stock-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.universe-series .stock-item .view-more-btn {
-  margin-top: 15px; /* Added margin to ensure button is not cut off */
-  display: inline-block;
+  min-height: 500px;
 }
