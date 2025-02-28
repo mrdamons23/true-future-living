@@ -1285,13 +1285,17 @@ img[src*="3d_breakdown.png"] {
   opacity: 1;
 }
 
+.faq-item:not(.active) .faq-answer {
+  opacity: 0;
+}
+
 /* Specification Table Styling */
 .spec-table {
   margin: 20px 0;
   font-family: 'Roboto', sans-serif;
   width: 100%;
   overflow: visible;
-  opacity: 1;
+  opacity: inherit;
 }
 
 .spec-table h3 {
@@ -1306,7 +1310,6 @@ img[src*="3d_breakdown.png"] {
   border-collapse: collapse;
   margin-bottom: 15px;
   table-layout: fixed;
-  display: table;
 }
 
 .spec-table td {
@@ -1315,24 +1318,11 @@ img[src*="3d_breakdown.png"] {
   font-size: 0.9em;
   word-wrap: break-word;
   vertical-align: top;
-  line-height: 1.4;
 }
 
 .spec-table td:first-child {
   font-weight: 500;
   width: 45%;
-}
-
-/* FAQ Mobile Responsiveness */
-@media (max-width: 768px) {
-  .spec-table td {
-    padding: 6px;
-    font-size: 0.85em;
-  }
-  
-  .spec-table h3 {
-    font-size: 1em;
-  }
 }
 
 /* Universe Series specific container height */
