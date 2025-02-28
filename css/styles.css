@@ -1236,12 +1236,14 @@ img[src*="3d_breakdown.png"] {
   width: 100%;
   padding: 0 15px;
   box-sizing: border-box;
+  overflow: visible;
 }
 
 .faq-item {
   margin-bottom: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
   padding-bottom: 10px;
+  overflow: visible;
 }
 
 .faq-question {
@@ -1281,12 +1283,8 @@ img[src*="3d_breakdown.png"] {
 
 .faq-item.active .faq-answer {
   max-height: none;
+  height: auto;
   margin-top: 10px;
-  opacity: 1;
-}
-
-.faq-item:not(.active) .faq-answer {
-  opacity: 0;
 }
 
 /* Specification Table Styling */
@@ -1295,7 +1293,7 @@ img[src*="3d_breakdown.png"] {
   font-family: 'Roboto', sans-serif;
   width: 100%;
   overflow: visible;
-  opacity: inherit;
+  display: block;
 }
 
 .spec-table h3 {
@@ -1310,6 +1308,8 @@ img[src*="3d_breakdown.png"] {
   border-collapse: collapse;
   margin-bottom: 15px;
   table-layout: fixed;
+  display: table;
+  overflow: visible;
 }
 
 .spec-table td {
