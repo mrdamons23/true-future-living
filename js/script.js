@@ -547,7 +547,6 @@ if (bgCanvas) {
 // Form handling
 document.querySelectorAll('#enquiryForm').forEach(form => {
   form.addEventListener('submit', function(e) {
-    // Prevent default form submission
     e.preventDefault();
     
     // Show loading state
@@ -555,67 +554,48 @@ document.querySelectorAll('#enquiryForm').forEach(form => {
     const originalButtonText = submitButton.innerHTML;
     submitButton.innerHTML = 'Sending...';
     submitButton.disabled = true;
-    
-    // Update hidden fields before submission
-    const selectedModels = Array.from(this.querySelectorAll('#modelSelectionContainer input:checked'))
-      .map(input => input.value)
-      .join(', ');
-    this.querySelector('#selectedModelsInput').value = selectedModels;
 
-    const configurations = Array.from(this.querySelectorAll('.config-container input:checked'))
-      .map(input => input.value)
-      .join(', ');
-    this.querySelector('#configurationsInput').value = configurations;
-
-    // Format budget
-    const budget = this.querySelector('#budget').value;
-    if (budget) {
-      this.querySelector('#formattedBudget').value = `$${Number(budget).toLocaleString()}`;
-    }
-
-    // If on product page, get the model from URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const modelKey = urlParams.get('model');
-    if (modelKey && this.querySelector('#productModel')) {
-      this.querySelector('#productModel').value = modelKey;
-    }
-
-    // Concatenate all enquiry details into one hidden field
-    const fullInfo = `
-Name: ${this.querySelector('#enquirerName').value}
-Email: ${this.querySelector('#enquirerEmail').value}
-Phone: ${this.querySelector('#enquirerPhone').value}
-Country: ${this.querySelector('#customerCountry').value}
-Quantity: ${this.querySelector('#quantity').value}
-Budget: ${this.querySelector('#formattedBudget').value}
-Selected Models: ${selectedModels}
-Configurations: ${configurations}
-${modelKey ? `Product Model: ${modelKey}\n` : ''}
-Message: ${this.querySelector('#enquiryMessage').value}
-    `.trim();
-
-    this.querySelector('#fullEnquiryDetails').value = fullInfo;
-
-    // Submit form using fetch
+    // Get form data
     const formData = new FormData(this);
+    
+    // Add the sender's name to the hidden input
+    this.querySelector('#from_name').value = this.querySelector('#enquirerName').value;
+    
+    // Prepare the full enquiry details
+    const fullInfo = {
+      name: this.querySelector('#enquirerName').value,
+      email: this.querySelector('#enquirerEmail').value,
+      phone: this.querySelector('#enquirerPhone').value,
+      country: this.querySelector('#customerCountry').value,
+      quantity: this.querySelector('#quantity').value,
+      budget: this.querySelector('#budget').value,
+      selected_models: Array.from(this.querySelectorAll('#modelSelectionContainer input:checked'))
+        .map(input => input.value)
+        .join(', '),
+      configurations: Array.from(this.querySelectorAll('.config-container input:checked'))
+        .map(input => input.value)
+        .join(', '),
+      message: this.querySelector('#enquiryMessage').value
+    };
+    
+    // Add full details to the form data
+    formData.append('full_enquiry_details', JSON.stringify(fullInfo, null, 2));
     
     fetch(this.action, {
       method: 'POST',
-      body: formData,
-      headers: {
-        'Accept': 'application/json'
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        window.location.href = 'thank-you.html';
+      } else {
+        throw new Error('Form submission failed');
       }
     })
-    .then(response => {
-      // Redirect to thank you page regardless of response
-      window.location.href = 'thank-you.html';
-    })
     .catch(error => {
-      // Still redirect even if there's an error since FormSubmit might have processed it
-      window.location.href = 'thank-you.html';
-    })
-    .finally(() => {
-      // Reset button state
+      console.error('Failed to send enquiry:', error);
+      alert('Sorry, there was a problem sending your enquiry. Please try again or contact us directly.');
       submitButton.innerHTML = originalButtonText;
       submitButton.disabled = false;
     });
