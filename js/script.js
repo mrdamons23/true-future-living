@@ -550,6 +550,12 @@ document.querySelectorAll('#enquiryForm').forEach(form => {
     // Prevent default form submission
     e.preventDefault();
     
+    // Show loading state
+    const submitButton = this.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.innerHTML;
+    submitButton.innerHTML = 'Sending...';
+    submitButton.disabled = true;
+    
     // Update hidden fields before submission
     const selectedModels = Array.from(this.querySelectorAll('#modelSelectionContainer input:checked'))
       .map(input => input.value)
@@ -590,8 +596,29 @@ Message: ${this.querySelector('#enquiryMessage').value}
 
     this.querySelector('#fullEnquiryDetails').value = fullInfo;
 
-    // Submit the form
-    this.submit();
+    // Submit form using fetch
+    const formData = new FormData(this);
+    
+    fetch(this.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      // Redirect to thank you page regardless of response
+      window.location.href = 'thank-you.html';
+    })
+    .catch(error => {
+      // Still redirect even if there's an error since FormSubmit might have processed it
+      window.location.href = 'thank-you.html';
+    })
+    .finally(() => {
+      // Reset button state
+      submitButton.innerHTML = originalButtonText;
+      submitButton.disabled = false;
+    });
   });
 });
 
