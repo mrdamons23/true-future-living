@@ -599,24 +599,55 @@ footer p.footer-email a {
 }
 
 /* Gallery Section Styles */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.gallery-container {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
   gap: 20px;
   padding: 20px;
-  margin-top: 20px;
-}
-.gallery-grid img {
+  perspective: 1000px;
   width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 1400px;
+  margin: 0 auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 195, 255, 0.5) transparent;
+  min-height: 400px; /* Fixed height container */
 }
-.gallery-grid img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+/* Customize scrollbar */
+.gallery-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.gallery-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.gallery-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 195, 255, 0.5);
+  border-radius: 20px;
+}
+
+.gallery-container img {
+  min-width: 350px; /* Fixed width for each image */
+  height: 350px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 195, 255, 0.2),
+              0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  scroll-snap-align: start;
+}
+
+.gallery-container img:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 195, 255, 0.3),
+              0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* Force transparent background on images with the "transparent-img" class */
@@ -1061,7 +1092,7 @@ img[src*="3d_breakdown.png"] {
 
 .config-content .config-title {
   font-family: 'Orbitron', sans-serif !important;
-  font-size: 0.85em !important; /* Made slightly smaller */
+  font-size: 0.85em !important;
   pointer-events: none !important;
   white-space: nowrap !important;
 }
