@@ -545,37 +545,58 @@ if (bgCanvas) {
 }
 
 // Form handling
-document.getElementById('enquiryForm').addEventListener('submit', function(e) {
-  // Update hidden fields before submission
-  const selectedModels = Array.from(document.querySelectorAll('#modelSelectionContainer input:checked'))
-    .map(input => input.value)
-    .join(', ');
-  document.getElementById('selectedModelsInput').value = selectedModels;
+document.querySelectorAll('#enquiryForm').forEach(form => {
+  form.addEventListener('submit', function(e) {
+    // Prevent default form submission
+    e.preventDefault();
+    
+    // Update hidden fields before submission
+    const selectedModels = Array.from(this.querySelectorAll('#modelSelectionContainer input:checked'))
+      .map(input => input.value)
+      .join(', ');
+    this.querySelector('#selectedModelsInput').value = selectedModels;
 
-  const configurations = Array.from(document.querySelectorAll('.config-container input:checked'))
-    .map(input => input.value)
-    .join(', ');
-  document.getElementById('configurationsInput').value = configurations;
+    const configurations = Array.from(this.querySelectorAll('.config-container input:checked'))
+      .map(input => input.value)
+      .join(', ');
+    this.querySelector('#configurationsInput').value = configurations;
 
-  // Format budget
-  const budget = document.getElementById('budget').value;
-  if (budget) {
-    document.getElementById('formattedBudget').value = `$${Number(budget).toLocaleString()}`;
-  }
+    // Format budget
+    const budget = this.querySelector('#budget').value;
+    if (budget) {
+      this.querySelector('#formattedBudget').value = `$${Number(budget).toLocaleString()}`;
+    }
 
-  // Concatenate all enquiry details into one hidden field
-  const fullInfo = "Name: " + document.getElementById('enquirerName').value + "\n" +
-    "Email: " + document.getElementById('enquirerEmail').value + "\n" +
-    "Phone: " + document.getElementById('enquirerPhone').value + "\n" +
-    "Country: " + document.getElementById('customerCountry').value + "\n" +
-    "Quantity: " + document.getElementById('quantity').value + "\n" +
-    "Budget: " + document.getElementById('formattedBudget').value + "\n" +
-    "Selected Models: " + document.getElementById('selectedModelsInput').value + "\n" +
-    "Configurations: " + document.getElementById('configurationsInput').value + "\n" +
-    "Message: " + document.getElementById('enquiryMessage').value;
-  document.getElementById('fullEnquiryDetails').value = fullInfo;
+    // If on product page, get the model from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const modelKey = urlParams.get('model');
+    if (modelKey && this.querySelector('#productModel')) {
+      this.querySelector('#productModel').value = modelKey;
+    }
+
+    // Concatenate all enquiry details into one hidden field
+    const fullInfo = `
+Name: ${this.querySelector('#enquirerName').value}
+Email: ${this.querySelector('#enquirerEmail').value}
+Phone: ${this.querySelector('#enquirerPhone').value}
+Country: ${this.querySelector('#customerCountry').value}
+Quantity: ${this.querySelector('#quantity').value}
+Budget: ${this.querySelector('#formattedBudget').value}
+Selected Models: ${selectedModels}
+Configurations: ${configurations}
+${modelKey ? `Product Model: ${modelKey}\n` : ''}
+Message: ${this.querySelector('#enquiryMessage').value}
+    `.trim();
+
+    this.querySelector('#fullEnquiryDetails').value = fullInfo;
+
+    // Submit the form
+    this.submit();
+  });
 });
 
 function formatBudget(value) {
   if (value) {
-    document.getElementById('formattedBudget').value = `
+    document.getElementById('formattedBudget').value = `$${Number(value).toLocaleString()}`;
+  }
+}
