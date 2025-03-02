@@ -109,6 +109,19 @@ nav {
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
+@media (max-width: 768px) {
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  /* Add margin to ensure the fixed nav does not hide content */
+  #mainContent {
+    margin-top: 70px; /* Adjust this value as needed to match nav height */
+  }
+}
+
 /* Sections */
 .section {
   padding: 80px 0;
@@ -243,6 +256,13 @@ footer {
   color: #333;
   font-size: 0.9em;
   box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+}
+
+/* Footer Email Link Styles - Make email link black and bigger */
+footer p.footer-email a {
+  color: #000;       /* Black text */
+  font-size: 1.2em;   /* Increase font size (adjust as needed) */
+  text-decoration: none;
 }
 
 /* Responsive Styles */

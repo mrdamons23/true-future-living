@@ -291,21 +291,15 @@ Price: US$46,000`
   }
 };
 
-// Update image naming logic to handle U model
+// Update image naming logic for all models
+// Expected filenames: images/modelname.png, images/modelname_2.png, and images/modelname_3.png
 Object.keys(containerModels).forEach(modelKey => {
-  if (modelKey === "U") {
-    containerModels[modelKey].image = "images/U.png";
-    containerModels[modelKey].showcase = [
-      { src: "images/U_2.png", type: "image" },
-      { src: "images/U_3.png", type: "image" }
-    ];
-  } else {
-    containerModels[modelKey].image = "images/" + modelKey + ".png";
-    containerModels[modelKey].showcase = [
-      { src: "images/" + modelKey + "_showcase1.png", type: "image" },
-      { src: "images/" + modelKey + "_showcase2.png", type: "image" }
-    ];
-  }
+  const lowerCaseKey = modelKey.toLowerCase();
+  containerModels[modelKey].image = "images/" + lowerCaseKey + ".png";
+  containerModels[modelKey].showcase = [
+    { src: "images/" + lowerCaseKey + "_2.png", type: "image" },
+    { src: "images/" + lowerCaseKey + "_3.png", type: "image" }
+  ];
 });
 
 // =========================
@@ -567,55 +561,20 @@ document.getElementById('enquiryForm').addEventListener('submit', function(e) {
   if (budget) {
     document.getElementById('formattedBudget').value = `$${Number(budget).toLocaleString()}`;
   }
+
+  // Concatenate all enquiry details into one hidden field
+  const fullInfo = "Name: " + document.getElementById('enquirerName').value + "\n" +
+    "Email: " + document.getElementById('enquirerEmail').value + "\n" +
+    "Phone: " + document.getElementById('enquirerPhone').value + "\n" +
+    "Country: " + document.getElementById('customerCountry').value + "\n" +
+    "Quantity: " + document.getElementById('quantity').value + "\n" +
+    "Budget: " + document.getElementById('formattedBudget').value + "\n" +
+    "Selected Models: " + document.getElementById('selectedModelsInput').value + "\n" +
+    "Configurations: " + document.getElementById('configurationsInput').value + "\n" +
+    "Message: " + document.getElementById('enquiryMessage').value;
+  document.getElementById('fullEnquiryDetails').value = fullInfo;
 });
 
 function formatBudget(value) {
   if (value) {
-    document.getElementById('formattedBudget').value = `$${Number(value).toLocaleString()}`;
-  }
-}
-
-// Update selected models display
-document.querySelectorAll('#modelSelectionContainer input[type="checkbox"]').forEach(checkbox => {
-  checkbox.addEventListener('change', function() {
-    const selectedModels = Array.from(document.querySelectorAll('#modelSelectionContainer input:checked'))
-      .map(input => input.value)
-      .join(', ');
-    document.getElementById('selectedModelsInput').value = selectedModels;
-  });
-});
-
-// Add gradient effect to configuration options when selected
-document.querySelectorAll('.config-container .model-option input[type="checkbox"]').forEach(checkbox => {
-  checkbox.addEventListener('change', function() {
-    const label = this.closest('.model-option');
-    const selectedConfigsList = document.getElementById('selectedConfigsList');
-    if (this.checked) {
-      label.style.background = 'linear-gradient(45deg, #ffea00, #00bfff, #00ff7f)';
-      label.style.borderColor = '#00ffcc';
-      label.style.transform = 'scale(1.05)';
-      label.style.boxShadow = '0 0 12px rgba(0,255,204,0.8)';
-      // Add to selected configs list
-      const li = document.createElement('li');
-      li.textContent = this.value;
-      selectedConfigsList.appendChild(li);
-    } else {
-      label.style.background = '#fff';
-      label.style.borderColor = 'transparent';
-      label.style.transform = 'scale(1)';
-      label.style.boxShadow = 'none';
-      // Remove from selected configs list
-      Array.from(selectedConfigsList.children).forEach(li => {
-        if (li.textContent === this.value) {
-          li.remove();
-        }
-      });
-    }
-
-    // Update hidden input with selected configurations
-    const selectedConfigs = Array.from(document.querySelectorAll('.config-container .model-option input:checked'))
-      .map(input => input.value)
-      .join(', ');
-    document.getElementById('configurationsInput').value = selectedConfigs;
-  });
-});
+    document.getElementById('formattedBudget').value = `
