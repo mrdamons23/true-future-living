@@ -256,8 +256,11 @@ Diameter: 6.5m
 Height: 3.2m
 Occupancy: 2-4 people
 Maximum Power: 10KW (with floor heating)
-Total Net Weight: 5 tons
-Price: US$24,500`
+Total Net Weight: 5 tons`,
+    image: "images/U.png",
+    showcase: [
+      { src: "images/U_2.png", type: "image" }
+    ]
   },
   "X60": {
     name: "X60",
@@ -607,3 +610,24 @@ function formatBudget(value) {
     document.getElementById('formattedBudget').value = `$${Number(value).toLocaleString()}`;
   }
 }
+
+// Gallery scroll buttons
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.querySelector('.gallery-container');
+  const scrollLeftBtn = document.querySelector('.gallery-scroll-left');
+  const scrollRightBtn = document.querySelector('.gallery-scroll-right');
+
+  scrollLeftBtn.addEventListener('click', () => {
+    container.scrollBy({
+      left: -400,
+      behavior: 'smooth'
+    });
+  });
+
+  scrollRightBtn.addEventListener('click', () => {
+    container.scrollBy({
+      left: 400,
+      behavior: 'smooth'
+    });
+  });
+});

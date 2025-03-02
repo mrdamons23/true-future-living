@@ -600,54 +600,100 @@ footer p.footer-email a {
 
 /* Gallery Section Styles */
 .gallery-container {
+  position: relative;
   display: flex;
   flex-direction: row;
   overflow-x: auto;
   overflow-y: hidden;
   gap: 20px;
-  padding: 20px;
+  padding: 40px 20px;
   perspective: 1000px;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
-  scrollbar-color: rgba(0, 195, 255, 0.5) transparent;
-  min-height: 400px; /* Fixed height container */
+  scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
+  min-height: 450px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
 }
 
 /* Customize scrollbar */
 .gallery-container::-webkit-scrollbar {
-  height: 8px;
+  height: 15px;
 }
 
 .gallery-container::-webkit-scrollbar-track {
-  background: transparent;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin: 0 20px;
 }
 
 .gallery-container::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 195, 255, 0.5);
+  background: #333;
   border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+.gallery-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Add scroll buttons */
+.gallery-scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.gallery-scroll-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.gallery-scroll-left {
+  left: 10px;
+}
+
+.gallery-scroll-right {
+  right: 10px;
 }
 
 .gallery-container img {
-  min-width: 350px; /* Fixed width for each image */
-  height: 350px;
+  min-width: 400px;
+  height: 400px;
   object-fit: cover;
   border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 195, 255, 0.2),
-              0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 30px rgba(128, 128, 128, 0.3),
+              0 10px 20px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   transform: translateZ(0);
   backface-visibility: hidden;
   scroll-snap-align: start;
+  border: 2px solid rgba(128, 128, 128, 0.2);
 }
 
 .gallery-container img:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 15px 30px rgba(0, 195, 255, 0.3),
-              0 10px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(128, 128, 128, 0.4),
+              0 15px 30px rgba(0, 0, 0, 0.2);
+  border-color: rgba(128, 128, 128, 0.4);
 }
 
 /* Force transparent background on images with the "transparent-img" class */
