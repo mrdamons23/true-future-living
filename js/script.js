@@ -610,24 +610,3 @@ function formatBudget(value) {
     document.getElementById('formattedBudget').value = `$${Number(value).toLocaleString()}`;
   }
 }
-
-// Gallery scroll buttons
-document.addEventListener('DOMContentLoaded', function() {
-  const container = document.querySelector('.gallery-container');
-  const scrollLeftBtn = document.querySelector('.gallery-scroll-left');
-  const scrollRightBtn = document.querySelector('.gallery-scroll-right');
-
-  scrollLeftBtn.addEventListener('click', () => {
-    container.scrollBy({
-      left: -400,
-      behavior: 'smooth'
-    });
-  });
-
-  scrollRightBtn.addEventListener('click', () => {
-    container.scrollBy({
-      left: 400,
-      behavior: 'smooth'
-    });
-  });
-});

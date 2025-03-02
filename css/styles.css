@@ -609,7 +609,7 @@ footer p.footer-email a {
   padding: 40px 20px;
   perspective: 1000px;
   width: 100%;
-  max-width: 1400px;
+  max-width: 100%;
   margin: 0 auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
@@ -640,60 +640,6 @@ footer p.footer-email a {
 
 .gallery-container::-webkit-scrollbar-thumb:hover {
   background: #555;
-}
-
-/* Add scroll buttons */
-.gallery-scroll-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  background: rgba(0, 0, 0, 0.7);
-  border: none;
-  border-radius: 50%;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-
-.gallery-scroll-btn:hover {
-  background: rgba(0, 0, 0, 0.9);
-  transform: translateY(-50%) scale(1.1);
-}
-
-.gallery-scroll-left {
-  left: 10px;
-}
-
-.gallery-scroll-right {
-  right: 10px;
-}
-
-.gallery-container img {
-  min-width: 400px;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 15px 30px rgba(128, 128, 128, 0.3),
-              0 10px 20px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  scroll-snap-align: start;
-  border: 2px solid rgba(128, 128, 128, 0.2);
-}
-
-.gallery-container img:hover {
-  transform: translateY(-15px) scale(1.03);
-  box-shadow: 0 20px 40px rgba(128, 128, 128, 0.4),
-              0 15px 30px rgba(0, 0, 0, 0.2);
-  border-color: rgba(128, 128, 128, 0.4);
 }
 
 /* Force transparent background on images with the "transparent-img" class */
@@ -1476,4 +1422,26 @@ img[src*="3d_breakdown.png"] {
   font-family: 'Roboto', sans-serif;
   font-size: 1em;
   color: #333; /* Changed to dark gray/black */
+}
+
+.gallery-container img {
+  min-width: 600px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(128, 128, 128, 0.3),
+              0 10px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  scroll-snap-align: start;
+  border: 2px solid rgba(128, 128, 128, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gallery-container img {
+    min-width: 300px;
+    height: 300px;
+  }
 }
