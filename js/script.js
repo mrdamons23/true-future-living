@@ -291,14 +291,15 @@ Price: US$46,000`
   }
 };
 
-// Update image naming logic for all models
-// Expected filenames: images/modelname.png, images/modelname_2.png, and images/modelname_3.png
+// Update image naming logic to handle all models consistently
 Object.keys(containerModels).forEach(modelKey => {
-  const lowerCaseKey = modelKey.toLowerCase();
-  containerModels[modelKey].image = "images/" + lowerCaseKey + ".png";
+  // Main image
+  containerModels[modelKey].image = `images/${modelKey}.png`;
+  
+  // Gallery images using consistent _2 and _3 naming
   containerModels[modelKey].showcase = [
-    { src: "images/" + lowerCaseKey + "_2.png", type: "image" },
-    { src: "images/" + lowerCaseKey + "_3.png", type: "image" }
+    { src: `images/${modelKey}_2.png`, type: "image" },
+    { src: `images/${modelKey}_3.png`, type: "image" }
   ];
 });
 

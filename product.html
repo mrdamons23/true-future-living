@@ -30,16 +30,25 @@
     .product-image {
       flex: 1 1 400px;
       text-align: center;
+      position: relative;
+      min-height: 400px; /* Set minimum height to prevent container collapse */
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .product-image img {
-      /* The width & height will be set dynamically via JS on first load */
+      max-width: 100%;
+      height: 400px; /* Fixed height */
       object-fit: contain;
       border-radius: 8px;
       box-shadow: 0 0 25px rgba(0,255,255,0.8);
-      transition: transform 0.5s ease;
+      transition: transform 0.5s ease, opacity 0.2s ease-in-out;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
     }
     .product-image img:hover {
-      transform: scale(1.05);
+      transform: translateX(-50%) scale(1.05);
     }
     .product-details {
       flex: 1 1 400px;
@@ -139,7 +148,7 @@
        font-size: 1.2em;
        padding: 10px;
        cursor: pointer;
-       z-index: 1;
+       z-index: 2;
        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -626,11 +635,23 @@ Maximum Power: 10KW (with floor heating)
 Total Net Weight: 5 tons`,
         image: "images/U.png",
         showcase: [
-          "images/U_2.png",
-          "images/U_3.png"
+          { src: "images/U_2.png", type: "image" },
+          { src: "images/U_3.png", type: "image" }
         ]
       }
     };
+
+    // Update all other models to use the same format
+    Object.keys(containerModels).forEach(modelKey => {
+      // Main image stays the same
+      containerModels[modelKey].image = `images/${modelKey}.png`;
+      
+      // Update showcase array format
+      containerModels[modelKey].showcase = [
+        { src: `images/${modelKey}_2.png`, type: "image" },
+        { src: `images/${modelKey}_3.png`, type: "image" }
+      ];
+    });
 
     // Utility: Get query parameter by name
     function getQueryParam(param) {
@@ -655,12 +676,21 @@ Total Net Weight: 5 tons`,
       document.getElementById('productSpecs').innerText = data.description;
       document.getElementById('priceDetail').innerText = `Price: ${data.price}`;
 
-      // Set up image carousel
-      const images = [data.image, ...data.showcase];
+      // Set up image carousel with main image and showcase images
+      const images = [
+        data.image,
+        ...data.showcase.map(item => item.src)
+      ];
       let currentIndex = 0;
 
       function updateMainImage() {
-        document.getElementById('mainProductImage').src = images[currentIndex];
+        // Add fade effect
+        const mainImage = document.getElementById('mainProductImage');
+        mainImage.style.opacity = '0';
+        setTimeout(() => {
+          document.getElementById('mainProductImage').src = images[currentIndex];
+          mainImage.style.opacity = '1';
+        }, 200);
       }
 
       // Initialize carousel controls
@@ -673,6 +703,9 @@ Total Net Weight: 5 tons`,
         currentIndex = (currentIndex + 1) % images.length;
         updateMainImage();
       };
+
+      // Add transition style to main image
+      document.getElementById('mainProductImage').style.transition = 'opacity 0.2s ease-in-out';
     }
     
     // Initialize the product page
