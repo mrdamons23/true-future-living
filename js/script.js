@@ -616,13 +616,22 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log('Menu elements found:', !!menuToggle, !!mainNav); // Debugging
   
   if (menuToggle && mainNav) {
+    // Force initial state to be clean
+    mainNav.classList.remove('active');
+    menuToggle.classList.remove('active');
+    document.body.classList.remove('menu-open');
+    
     // Toggle menu when hamburger is clicked
     menuToggle.addEventListener('click', function(e) {
       e.stopPropagation(); // Prevent click from immediately closing the menu
+      e.preventDefault(); // Prevent any default behavior
       menuToggle.classList.toggle('active');
       mainNav.classList.toggle('active');
       document.body.classList.toggle('menu-open');
       console.log('Menu toggled', mainNav.classList.contains('active')); // Debugging
+      
+      // Force repaint to ensure CSS transitions apply
+      mainNav.offsetHeight;
     });
     
     // Close menu when clicking on a nav link

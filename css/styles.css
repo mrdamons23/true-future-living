@@ -37,7 +37,7 @@ body {
 /* Header Styling */
 #header {
   background: transparent;
-  padding: 30px 0 20px;
+  padding: 20px 0;
   text-align: center;
   border-bottom: 1px solid rgba(0,0,0,0.05);
 }
@@ -46,10 +46,12 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 0;
+  position: relative;
 }
 .logo-container img {
-  height: 88px;
+  max-height: 100px;
   width: auto;
+  object-fit: contain;
 }
 .business-name {
   color: #333;
@@ -107,9 +109,10 @@ body {
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 10px;
+  padding: 15px;
   z-index: 1000;
   position: relative;
+  outline: none;
 }
 
 .mobile-menu-toggle .bar {
@@ -123,8 +126,16 @@ body {
 
 /* Responsive Menu for Mobile */
 @media screen and (max-width: 768px) {
+  .logo-container {
+    max-width: 70%;
+  }
+  
   .mobile-menu-toggle {
     display: block;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
   }
   
   .main-nav {
@@ -147,9 +158,10 @@ body {
   }
   
   .main-nav.active {
-    right: 0;
+    right: 0 !important;
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
   }
   
   .main-nav ul {
@@ -180,16 +192,21 @@ body {
   }
   
   /* Hamburger Animation */
-  .mobile-menu-toggle.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+  .mobile-menu-toggle .bar {
+    width: 30px;
+    background: #333;
+    border-radius: 2px;
+    transition: all 0.4s ease;
+    height: 4px;
+    margin: 6px auto;
   }
   
-  .mobile-menu-toggle.active .bar:nth-child(2) {
-    opacity: 0;
+  .mobile-menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
   }
   
   .mobile-menu-toggle.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg);
   }
   
   /* Style the menu toggle button */
