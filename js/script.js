@@ -613,12 +613,16 @@ document.addEventListener('DOMContentLoaded', function() {
   const menuToggle = document.getElementById('mobileMenuToggle');
   const mainNav = document.getElementById('mainNav');
   
+  console.log('Menu elements found:', !!menuToggle, !!mainNav); // Debugging
+  
   if (menuToggle && mainNav) {
     // Toggle menu when hamburger is clicked
-    menuToggle.addEventListener('click', function() {
+    menuToggle.addEventListener('click', function(e) {
+      e.stopPropagation(); // Prevent click from immediately closing the menu
       menuToggle.classList.toggle('active');
       mainNav.classList.toggle('active');
       document.body.classList.toggle('menu-open');
+      console.log('Menu toggled', mainNav.classList.contains('active')); // Debugging
     });
     
     // Close menu when clicking on a nav link
