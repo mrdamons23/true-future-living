@@ -608,34 +608,37 @@ function formatBudget(value) {
   }
 }
 
-// Mobile menu functionality
+// Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const primaryNav = document.getElementById('primary-nav');
+  const menuToggle = document.getElementById('mobileMenuToggle');
+  const mainNav = document.getElementById('mainNav');
   
-  if (mobileMenuBtn && primaryNav) {
-    // Toggle menu when hamburger button is clicked
-    mobileMenuBtn.addEventListener('click', function() {
-      mobileMenuBtn.classList.toggle('active');
-      primaryNav.classList.toggle('active');
-      // Prevent scrolling when menu is open
+  if (menuToggle && mainNav) {
+    // Toggle menu when hamburger is clicked
+    menuToggle.addEventListener('click', function() {
+      menuToggle.classList.toggle('active');
+      mainNav.classList.toggle('active');
       document.body.classList.toggle('menu-open');
     });
     
-    // Close menu when clicking on a menu item
-    primaryNav.querySelectorAll('a').forEach(link => {
+    // Close menu when clicking on a nav link
+    const navLinks = mainNav.querySelectorAll('a');
+    navLinks.forEach(link => {
       link.addEventListener('click', function() {
-        mobileMenuBtn.classList.remove('active');
-        primaryNav.classList.remove('active');
+        menuToggle.classList.remove('active');
+        mainNav.classList.remove('active');
         document.body.classList.remove('menu-open');
       });
     });
     
     // Close menu when clicking outside
     document.addEventListener('click', function(event) {
-      if (!primaryNav.contains(event.target) && !mobileMenuBtn.contains(event.target) && primaryNav.classList.contains('active')) {
-        mobileMenuBtn.classList.remove('active');
-        primaryNav.classList.remove('active');
+      const isClickInsideMenu = mainNav.contains(event.target);
+      const isClickOnToggle = menuToggle.contains(event.target);
+      
+      if (!isClickInsideMenu && !isClickOnToggle && mainNav.classList.contains('active')) {
+        menuToggle.classList.remove('active');
+        mainNav.classList.remove('active');
         document.body.classList.remove('menu-open');
       }
     });
