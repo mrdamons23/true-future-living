@@ -56,6 +56,7 @@ body {
   font-family: 'Orbitron', sans-serif;
   font-size: 2.8em;
   text-align: center;
+  text-shadow: none;
 }
 
 /* Navigation */
@@ -599,47 +600,24 @@ footer p.footer-email a {
 }
 
 /* Gallery Section Styles */
-.gallery-container {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  overflow-x: auto;
-  overflow-y: hidden;
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  padding: 40px 20px;
-  perspective: 1000px;
+  padding: 20px;
+  margin-top: 20px;
+}
+.gallery-grid img {
   width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
-  min-height: 450px;
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 20px;
-}
-
-/* Customize scrollbar */
-.gallery-container::-webkit-scrollbar {
-  height: 15px;
-}
-
-.gallery-container::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.2);
+  height: auto;
+  object-fit: cover;
   border-radius: 10px;
-  margin: 0 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.gallery-container::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 20px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  cursor: pointer;
-}
-
-.gallery-container::-webkit-scrollbar-thumb:hover {
-  background: #555;
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Force transparent background on images with the "transparent-img" class */
@@ -1084,7 +1062,7 @@ img[src*="3d_breakdown.png"] {
 
 .config-content .config-title {
   font-family: 'Orbitron', sans-serif !important;
-  font-size: 0.85em !important;
+  font-size: 0.85em !important; /* Made slightly smaller */
   pointer-events: none !important;
   white-space: nowrap !important;
 }
@@ -1386,7 +1364,7 @@ img[src*="3d_breakdown.png"] {
   font-family: 'Orbitron', sans-serif;
   font-size: 2.8em;
   margin-bottom: 15px;
-  text-shadow: 0 0 15px #00e6ff;
+  text-shadow: none;
   letter-spacing: 1px;
 }
 
@@ -1424,24 +1402,149 @@ img[src*="3d_breakdown.png"] {
   color: #333; /* Changed to dark gray/black */
 }
 
-.gallery-container img {
-  min-width: 600px;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 15px 30px rgba(128, 128, 128, 0.3),
-              0 10px 20px rgba(0, 0, 0, 0.15);
+/* Gallery Image Styles */
+.gallery-image {
+  width: 100%;
+  height: 500px; /* Further increased height */
+  object-fit: contain; /* Changed to contain to show full image */
+  border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  scroll-snap-align: start;
-  border: 2px solid rgba(128, 128, 128, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
+  display: block;
+  margin: 0 auto;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .gallery-container img {
-    min-width: 300px;
-    height: 300px;
-  }
+.gallery-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Gallery Container adjustments */
+.gallery-container {
+  display: block;
+  position: relative;
+  max-width: 900px; /* Increased max width */
+  height: 520px; /* Increased fixed height container */
+  margin: 10px auto 0; /* Reduced top margin, zero bottom margin */
+  overflow: hidden;
+  background: transparent;
+  padding: 0;
+}
+
+/* Adjust spacing between gallery and portfolio section */
+#gallery {
+  margin-bottom: 5px; /* Further reduced bottom margin of gallery section */
+}
+
+#portfolio {
+  margin-top: 0; /* Eliminated top margin of portfolio section */
+}
+
+/* Models Introduction Header */
+.models-introduction {
+  text-align: center;
+  margin: 0 0 17px; /* Further reduced bottom margin to 17px */
+}
+
+.models-introduction h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.8em;
+  color: #000;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 15px;
+}
+
+.models-introduction h1:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  background-image: linear-gradient(135deg, #00c3ff, #ffff1c);
+  border-radius: 2px;
+}
+
+/* Gallery navigation buttons - match product page style */
+.gallery-prev,
+.gallery-next {
+  position: absolute;
+  transform: translateY(-50%);
+  background-image: linear-gradient(135deg, #00c3ff, #ffff1c);
+  color: black;
+  border: none;
+  border-radius: 4px;
+  width: 40px;
+  height: 400px; /* Tall rectangular buttons */
+  top: 50%;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0,195,255,0.4);
+  overflow: hidden; /* Hide any overflowing content */
+  font-size: 0; /* Hide any text content */
+  line-height: 0; /* Hide any text content */
+  color: transparent; /* Hide any text content */
+}
+
+.gallery-prev:hover,
+.gallery-next:hover {
+  transform: translateY(-50%) scale(1.03);
+  box-shadow: 0 0 20px rgba(0,195,255,0.7);
+  filter: brightness(1.1);
+}
+
+/* Override for gallery-grid if it exists */
+.gallery-grid {
+  display: none;
+}
+
+/* Gallery counter styling */
+.gallery-counter {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: linear-gradient(135deg, #00c3ff, #ffff1c);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 15px;
+  font-size: 14px;
+  z-index: 10;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 0 10px rgba(0,195,255,0.5);
+}
+
+/* Make sure gallery buttons are visible */
+.gallery-prev {
+  left: 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.gallery-next {
+  right: 0;
+  border-radius: 4px 0 0 4px;
+}
+
+/* Custom arrow symbols */
+.gallery-prev::after,
+.gallery-next::after {
+  font-size: 24px;
+  font-weight: bold;
+  color: black; /* Restore color for the arrow symbols */
+  line-height: normal; /* Restore line height for the arrow symbols */
+}
+
+.gallery-prev::after {
+  content: "❮";
+}
+
+.gallery-next::after {
+  content: "❯";
 }

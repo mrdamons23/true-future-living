@@ -399,7 +399,8 @@
   <header id="header">
     <div class="container header-container">
       <div class="logo-container">
-        <img src="images/logo.png" alt="True Future Living Logo">
+        <a href="index.html"><img src="images/logo.png" alt="True Future Living Logo"></a>
+      </div>
     </div>
   </header>
 
@@ -426,27 +427,31 @@
           Step into the future—your perfect space awaits..</p>
       </div>
 
-      <!-- Gallery Section -->
-      <section class="gallery-section">
+      <!-- Gallery Section (MOVED HERE) -->
+      <section id="gallery" class="container section">
         <div class="gallery-container">
-          <img src="images/gallery1.png" alt="Gallery Image 1">
-          <img src="images/gallery2.png" alt="Gallery Image 2">
-          <img src="images/gallery3.png" alt="Gallery Image 3">
-          <img src="images/gallery4.png" alt="Gallery Image 4">
-          <img src="images/gallery5.png" alt="Gallery Image 5">
-          <img src="images/gallery6.png" alt="Gallery Image 6">
-          <img src="images/gallery7.png" alt="Gallery Image 7">
-          <img src="images/gallery8.png" alt="Gallery Image 8">
-          <img src="images/gallery9.png" alt="Gallery Image 9">
-          <img src="images/gallery10.png" alt="Gallery Image 10">
+          <img src="images/gallery1.png" alt="Gallery Image 1" class="gallery-image">
+          <img src="images/gallery2.png" alt="Gallery Image 2" class="gallery-image">
+          <img src="images/gallery3.png" alt="Gallery Image 3" class="gallery-image">
+          <img src="images/gallery4.png" alt="Gallery Image 4" class="gallery-image">
+          <img src="images/gallery5.png" alt="Gallery Image 5" class="gallery-image">
+          <img src="images/gallery6.png" alt="Gallery Image 6" class="gallery-image">
+          <img src="images/gallery7.png" alt="Gallery Image 7" class="gallery-image">
+          <img src="images/gallery8.png" alt="Gallery Image 8" class="gallery-image">
+          <img src="images/gallery9.png" alt="Gallery Image 9" class="gallery-image">
+          <img src="images/gallery10.png" alt="Gallery Image 10" class="gallery-image">
         </div>
       </section>
     </section>
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="container section">
+      <!-- Main Models Introduction Header -->
+      <div class="models-introduction">
+        <h1>Introducing our Models</h1>
+      </div>
+      
       <!-- Series Groups in Alphabetical Order -->
-
       <!-- Astral Series (formerly A Series) -->
       <div class="series-group astral-series">
         <h2 class="series-title">Astral Series</h2>
@@ -1042,6 +1047,7 @@ Total Net Weight: 5 tons
   <script src="js/bg-animation.js"></script>
   <!-- Shared JS -->
   <script src="js/script.js"></script>
+  <script src="js/gallery.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
     (function() {

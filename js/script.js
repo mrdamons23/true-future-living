@@ -256,11 +256,8 @@ Diameter: 6.5m
 Height: 3.2m
 Occupancy: 2-4 people
 Maximum Power: 10KW (with floor heating)
-Total Net Weight: 5 tons`,
-    image: "images/U.png",
-    showcase: [
-      { src: "images/U_2.png", type: "image" }
-    ]
+Total Net Weight: 5 tons
+Price: US$24,500`
   },
   "X60": {
     name: "X60",
