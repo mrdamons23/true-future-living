@@ -1556,3 +1556,36 @@ img[src*="3d_breakdown.png"] {
 .gallery-next::after {
   content: "❯";
 }
+
+/* Responsive styles for horizontal navigation */
+@media screen and (max-width: 768px) {
+  .horizontal-nav {
+    padding: 5px 0;
+  }
+  
+  .horizontal-nav ul {
+    flex-direction: column;
+  }
+  
+  .horizontal-nav li {
+    margin: 8px 0;
+  }
+  
+  .horizontal-nav a {
+    font-size: 0.9em;
+  }
+  
+  .logo-container img {
+    max-height: 80px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .horizontal-nav a {
+    font-size: 0.8em;
+  }
+  
+  .logo-container img {
+    max-height: 70px;
+  }
+}
