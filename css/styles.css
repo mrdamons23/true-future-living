@@ -1548,3 +1548,125 @@ img[src*="3d_breakdown.png"] {
 .gallery-next::after {
   content: "❯";
 }
+
+/* Mobile menu styles */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 1000;
+  position: absolute;
+  right: 20px;
+  top: 25px;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  border-radius: 10px;
+  background: #000;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    padding: 80px 30px 30px;
+    transition: right 0.4s ease;
+    z-index: 999;
+    overflow-y: auto;
+  }
+  
+  .main-nav.active {
+    right: 0;
+  }
+  
+  .main-nav ul {
+    flex-direction: column;
+  }
+  
+  .main-nav ul li {
+    margin: 15px 0;
+  }
+}
+
+/* Prevent scrolling when menu is open */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Mobile-specific gallery adjustments */
+@media (max-width: 768px) {
+  /* Gallery navigation adjustments for mobile */
+  .gallery-prev,
+  .gallery-next {
+    width: 30px; /* Slightly narrower */
+    height: 100%; /* Full height */
+    top: 0;
+    transform: none; /* Remove the vertical transform */
+    border-radius: 0; /* Remove border radius for edge positioning */
+    opacity: 0.8; /* Make slightly transparent */
+  }
+  
+  .gallery-prev {
+    left: 0; 
+    border-radius: 0; /* Remove border radius */
+  }
+  
+  .gallery-next {
+    right: 0;
+    border-radius: 0; /* Remove border radius */
+  }
+  
+  .gallery-prev:hover,
+  .gallery-next:hover {
+    transform: none; /* Remove scale effect on mobile */
+    opacity: 1;
+  }
+  
+  /* Adjust gallery container for mobile */
+  .gallery-container {
+    max-width: 100%; /* Full width on mobile */
+    margin: 0; /* Remove margins */
+    height: 500px; /* Slightly reduced height for mobile */
+  }
+  
+  /* Adjust gallery image for mobile */
+  .gallery-image {
+    height: 480px; /* Slightly reduced height */
+    padding: 0 30px; /* Add padding to avoid overlap with arrows */
+  }
+  
+  /* Move gallery counter to bottom center for visibility */
+  .gallery-counter {
+    bottom: 10px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
