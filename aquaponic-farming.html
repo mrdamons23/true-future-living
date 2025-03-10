@@ -110,6 +110,257 @@
         padding: 20px;
       }
     }
+
+    /* Aquaponics Gallery Styles */
+    .aquaponics-gallery {
+      padding: 20px;
+      margin: 40px auto;
+      max-width: 1400px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 8px;
+      padding: 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      background: #fff;
+    }
+
+    /* Masonry-style layout */
+    .gallery-item:nth-child(1) {
+      grid-column: span 7;
+      grid-row: span 2;
+    }
+
+    .gallery-item:nth-child(2) {
+      grid-column: span 5;
+      grid-row: span 2;
+    }
+
+    .gallery-item:nth-child(3) {
+      grid-column: span 4;
+      grid-row: span 2;
+    }
+
+    .gallery-item:nth-child(4) {
+      grid-column: span 4;
+      grid-row: span 2;
+    }
+
+    .gallery-item:nth-child(5) {
+      grid-column: span 4;
+      grid-row: span 2;
+    }
+
+    .gallery-item:nth-child(6) {
+      grid-column: 2 / span 5;  /* Moved right from 1 to 2 */
+      grid-row: span 2;
+    }
+
+    .gallery-item:nth-child(7) {
+      grid-column: 7 / span 5;  /* Moved left from 8 to 7 */
+      grid-row: span 2;
+    }
+
+    .gallery-item:nth-child(8) {
+      grid-column: span 4;
+      grid-row: span 2;
+    }
+
+    .gallery-item:nth-child(9) {
+      grid-column: span 4;
+      grid-row: span 2;
+    }
+
+    .gallery-item:nth-child(10) {
+      grid-column: span 4;
+      grid-row: span 2;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      z-index: 2;
+    }
+
+    /* Enhanced hover effect */
+    .gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0, 195, 255, 0.2), rgba(255, 255, 28, 0.2));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-item:hover::after {
+      opacity: 1;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+      .gallery-grid {
+        grid-template-columns: repeat(8, 1fr);
+        gap: 12px;
+      }
+
+      .gallery-item:nth-child(n) {
+        grid-column: span 4;
+        grid-row: span 1;
+      }
+
+      .gallery-item:nth-child(1) {
+        grid-column: span 8;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+
+      .gallery-item:nth-child(n) {
+        grid-column: span 2;
+      }
+
+      .gallery-item:nth-child(1) {
+        grid-column: span 4;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+
+      .gallery-item:nth-child(n) {
+        grid-column: span 2;
+      }
+    }
+
+    /* Production Section Styles */
+    .production-section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .production-section h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5em;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #000;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .production-section h2:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 10%;
+      right: 10%;
+      height: 3px;
+      background-image: linear-gradient(135deg, #00c3ff, #ffff1c);
+      border-radius: 2px;
+    }
+
+    .produce-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      padding: 20px;
+    }
+
+    .produce-item {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .produce-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 195, 255, 0.2);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .produce-item i {
+      font-size: 2em;
+      margin-bottom: 15px;
+      background: linear-gradient(135deg, #00c3ff, #ffff1c);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: block;
+    }
+
+    .produce-item span {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1em;
+      color: #333;
+      display: block;
+    }
+
+    .glow-line {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #00c3ff, #ffff1c, transparent);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .produce-item:hover .glow-line {
+      transform: scaleX(1);
+    }
+
+    @media (max-width: 768px) {
+      .production-section h2 {
+        font-size: 2em;
+      }
+      
+      .produce-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+      }
+      
+      .produce-item {
+        padding: 20px;
+      }
+    }
+
+    .produce-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 15px;
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -141,6 +392,42 @@
       <h1>Aquaponic Container Farming</h1>
       <p>Welcome to the future of sustainable agriculture. Our container-based aquaponic systems represent the perfect fusion of modern technology and natural farming methods. By combining aquaculture (raising fish) with hydroponics (growing plants in water), we've created a self-sustaining ecosystem that maximizes food production while minimizing resource consumption.</p>
       <p>Each of our container systems is designed to be a complete, turnkey solution that can be integrated with any of our living spaces or operated as a standalone unit. Whether you're looking to ensure your own food security, start a commercial operation, or contribute to community sustainability, our aquaponic systems provide an efficient, space-saving solution.</p>
+    </section>
+
+    <!-- New Image Collage Section -->
+    <section class="aquaponics-gallery">
+      <div class="gallery-grid">
+        <div class="gallery-item large">
+          <img src="images/aquaponics1.png" alt="Aquaponic System Overview">
+        </div>
+        <div class="gallery-item">
+          <img src="images/aquaponics2.png" alt="Aquaponic Plants">
+        </div>
+        <div class="gallery-item">
+          <img src="images/aquaponics3.png" alt="Fish Tank System">
+        </div>
+        <div class="gallery-item">
+          <img src="images/aquaponics4.png" alt="Vertical Growing">
+        </div>
+        <div class="gallery-item">
+          <img src="images/aquaponics5.png" alt="Automated Controls">
+        </div>
+        <div class="gallery-item large">
+          <img src="images/aquaponics6.png" alt="Container Setup">
+        </div>
+        <div class="gallery-item">
+          <img src="images/aquaponics7.png" alt="Harvest Results">
+        </div>
+        <div class="gallery-item">
+          <img src="images/aquaponics8.png" alt="System Maintenance">
+        </div>
+        <div class="gallery-item">
+          <img src="images/aquaponics9.png" alt="Growth Progress">
+        </div>
+        <div class="gallery-item">
+          <img src="images/aquaponics10.png" alt="Complete System">
+        </div>
+      </div>
     </section>
 
     <section class="advantages-grid">
@@ -178,6 +465,441 @@
         <i class="fas fa-sync"></i>
         <h3>Sustainable Ecosystem</h3>
         <p>Fish waste provides natural fertilizer for plants, while plants filter water for fish, creating a perfect symbiotic relationship that benefits both systems.</p>
+      </div>
+    </section>
+
+    <!-- Production Section -->
+    <section class="production-section">
+      <h2>What Can You Produce In Container Farms?</h2>
+      <div class="produce-grid">
+        <!-- Spinach - Realistic -->
+        <div class="produce-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="produce-icon">
+            <!-- Main stem -->
+            <path d="M32 54V36" stroke="#27ae60" stroke-width="2" stroke-linecap="round"/>
+            <!-- Lower leaves -->
+            <path d="M32 54c-6 0-12-2-16-6-4-4-6-10-4-16 2-6 8-10 14-8 3 1 5 3 6 6" fill="#2ecc71"/>
+            <path d="M32 54c6 0 12-2 16-6 4-4 6-10 4-16-2-6-8-10-14-8-3 1-5 3-6 6" fill="#2ecc71"/>
+            <!-- Middle leaves -->
+            <path d="M32 42c-5 0-10-1-14-4-4-3-6-7-4-12 2-5 7-8 12-6 2 1 4 3 5 5" fill="#25ae60"/>
+            <path d="M32 42c5 0 10-1 14-4 4-3 6-7 4-12-2-5-7-8-12-6-2 1-4 3-5 5" fill="#25ae60"/>
+            <!-- Top leaves -->
+            <path d="M32 36c-4-1-8-3-10-6-2-3-2-7 0-10s6-4 9-2c1 1 2 2 3 4" fill="#1d8348"/>
+            <path d="M32 36c4-1 8-3 10-6 2-3 2-7 0-10s-6-4-9-2c-1 1-2 2-3 4" fill="#1d8348"/>
+            <!-- Leaf veins -->
+            <path d="M16 36c4 4 10 6 16 6M48 36c-4 4-10 6-16 6M20 30c3 3 7 5 12 5M44 30c-3 3-7 5-12 5M24 22c2 3 5 4 8 5M40 22c-2 3-5 4-8 5" fill="none" stroke="#219653" stroke-width="0.75"/>
+            <!-- Detailed veins -->
+            <path d="M18 44l6-6M46 44l-6-6M22 38l4-4M42 38l-4-4M26 32l2-2M38 32l-2-2" fill="none" stroke="#219653" stroke-width="0.5"/>
+            <!-- Root system -->
+            <path d="M30 54l-2 6M32 54v6M34 54l2 6" stroke="#27ae60" stroke-width="1" stroke-linecap="round"/>
+            <!-- Leaf texture details -->
+            <path d="M20 40c2 0 3-1 4-2M44 40c-2 0-3-1-4-2M24 34c1 0 2-1 3-2M40 34c-1 0-2-1-3-2M28 28c1 0 2-1 2-2M36 28c-1 0-2-1-2-2" fill="none" stroke="#27ae60" stroke-width="0.4"/>
+            <!-- Stem details -->
+            <path d="M31 44h2M31 48h2" stroke="#219653" stroke-width="0.75"/>
+          </svg>
+          <span>Spinach</span>
+          <div class="glow-line"></div>
+        </div>
+        
+        <!-- Strawberries - Realistic -->
+        <div class="produce-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="produce-icon">
+            <!-- Main strawberry body -->
+            <path d="M32 14c-8 0-16 6-16 16 0 8 6 14 10 18 4 4 6 6 6 6s2-2 6-6c4-4 10-10 10-18 0-10-8-16-16-16z" fill="#e74c3c"/>
+            <!-- Strawberry shading -->
+            <path d="M32 14c-8 0-16 6-16 16 0 8 6 14 10 18 4 4 6 6 6 6s2-2 6-6c4-4 10-10 10-18 0-10-8-16-16-16z" fill="none" stroke="#c0392b" stroke-width="1"/>
+            <!-- Highlight -->
+            <path d="M36 22c2 2 4 6 4 10 0 6-6 12-8 14" fill="none" stroke="#ec7063" stroke-width="1"/>
+            <!-- Calyx (green top) -->
+            <path d="M32 14c-1.5 0-3-1-3-2s1.5-2 3-2 3 1 3 2-1.5 2-3 2z" fill="#27ae60"/>
+            <path d="M26 12c1-1 3-1 6-1s5 0 6 1c1 1 2 2 1 3s-3 2-7 2-6-1-7-2 0-2 1-3z" fill="#2ecc71"/>
+            <!-- Stem -->
+            <path d="M32 10V6" stroke="#27ae60" stroke-width="2" stroke-linecap="round"/>
+            <!-- Surface seeds/achenes -->
+            <circle cx="26" cy="22" r="1" fill="#f1c40f"/>
+            <circle cx="38" cy="22" r="1" fill="#f1c40f"/>
+            <circle cx="32" cy="22" r="1" fill="#f1c40f"/>
+            <circle cx="24" cy="28" r="1" fill="#f1c40f"/>
+            <circle cx="30" cy="28" r="1" fill="#f1c40f"/>
+            <circle cx="36" cy="28" r="1" fill="#f1c40f"/>
+            <circle cx="42" cy="28" r="1" fill="#f1c40f"/>
+            <circle cx="22" cy="34" r="1" fill="#f1c40f"/>
+            <circle cx="28" cy="34" r="1" fill="#f1c40f"/>
+            <circle cx="34" cy="34" r="1" fill="#f1c40f"/>
+            <circle cx="40" cy="34" r="1" fill="#f1c40f"/>
+            <circle cx="24" cy="40" r="1" fill="#f1c40f"/>
+            <circle cx="30" cy="40" r="1" fill="#f1c40f"/>
+            <circle cx="36" cy="40" r="1" fill="#f1c40f"/>
+            <circle cx="28" cy="46" r="1" fill="#f1c40f"/>
+            <circle cx="34" cy="46" r="1" fill="#f1c40f"/>
+            <circle cx="32" cy="52" r="1" fill="#f1c40f"/>
+            <!-- Leaf details -->
+            <path d="M28 10c0-2 2-4 4-4s4 2 4 4" fill="none" stroke="#27ae60" stroke-width="1"/>
+            <path d="M26 8c0 2 2 3 6 3s6-1 6-3" fill="none" stroke="#27ae60" stroke-width="0.75"/>
+            <!-- Texture lines -->
+            <path d="M28 16c-1 2-2 6-2 10 0 8 6 15 6 15M36 16c1 2 2 6 2 10 0 8-6 15-6 15" fill="none" stroke="#c0392b" stroke-width="0.5"/>
+          </svg>
+          <span>Strawberries</span>
+          <div class="glow-line"></div>
+        </div>
+        
+        <!-- Tomatoes - Realistic -->
+        <div class="produce-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="produce-icon">
+            <!-- Main tomato body -->
+            <circle cx="32" cy="36" r="22" fill="#e74c3c"/>
+            <!-- Tomato shading -->
+            <path d="M32 14c-12.15 0-22 9.85-22 22s9.85 22 22 22 22-9.85 22-22" fill="none" stroke="#c0392b" stroke-width="1"/>
+            <!-- Surface texture -->
+            <path d="M18 30c4 6 8 10 14 12M46 30c-4 6-8 10-14 12" fill="none" stroke="#c0392b" stroke-width="0.75"/>
+            <!-- Top indentation -->
+            <path d="M28 18c0-2 2-4 4-4s4 2 4 4-2 4-4 4-4-2-4-4z" fill="#c0392b"/>
+            <!-- Stem -->
+            <path d="M32 14V8" stroke="#27ae60" stroke-width="3" stroke-linecap="round"/>
+            <!-- Stem base -->
+            <path d="M28 14h8" fill="#c0392b" stroke="#c0392b" stroke-width="1"/>
+            <!-- Calyx (green star-like top) -->
+            <path d="M25 16c1-1 2-1 3-1h8c1 0 2 0 3 1 1 1 1 2 1 3-1-1-3-2-5-2h-6c-2 0-4 1-5 2 0-1 0-2 1-3z" fill="#27ae60"/>
+            <!-- Leaves -->
+            <path d="M30 10c-2-1-4 0-5 1s-1 3 0 4c-2-2-1-4 0-5s3-1 5 0zM34 10c2-1 4 0 5 1s1 3 0 4c2-2 1-4 0-5s-3-1-5 0z" fill="#27ae60"/>
+            <!-- Highlight -->
+            <circle cx="26" cy="30" r="4" fill="#ec7063" opacity="0.5"/>
+            <!-- Surface ridges -->
+            <path d="M32 18v36M20 36h24" fill="none" stroke="#c0392b" stroke-width="0.5"/>
+            <!-- Shine effect -->
+            <circle cx="28" cy="26" r="1" fill="#ffffff" opacity="0.8"/>
+            <circle cx="24" cy="32" r="0.8" fill="#ffffff" opacity="0.6"/>
+          </svg>
+          <span>Tomatoes</span>
+          <div class="glow-line"></div>
+        </div>
+        
+        <!-- Potatoes - Realistic -->
+        <div class="produce-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="produce-icon">
+            <!-- Main potato body -->
+            <path d="M18 32c0-8 6-16 14-16s14 8 14 16-6 16-14 16-14-8-14-16z" fill="#b67f4e"/>
+            <!-- Secondary potato body for bumpy shape -->
+            <path d="M22 26c-2 2-4 6-4 10s2 8 4 10c4 4 8 6 14 4 6-2 10-6 10-12 0-4-2-8-6-10-2-1-4-2-6-2" fill="#c68f5e"/>
+            <!-- Shading and texture -->
+            <path d="M22 26c-2 2-4 6-4 10s2 8 4 10c4 4 8 6 14 4 6-2 10-6 10-12" fill="none" stroke="#a5744e" stroke-width="1"/>
+            <!-- Bumps and surface variations -->
+            <path d="M24 22c0 2 2 2 4 0s0-4-2-4-4 2-2 4zM44 30c0 2-2 4-4 4s-4-2-4-4 2-4 4-4 4 2 4 4zM38 44c0 2-2 4-4 4s-4-2-4-4 2-4 4-4 4 2 4 4zM20 38c0 2 2 4 4 4s4-2 4-4-2-4-4-4-4 2-4 4z" fill="#9e6b42"/>
+            <!-- Potato eyes with subtle indentations -->
+            <circle cx="26" cy="24" r="2" fill="#8a5a35"/>
+            <circle cx="40" cy="32" r="2" fill="#8a5a35"/>
+            <circle cx="34" cy="42" r="2" fill="#8a5a35"/>
+            <circle cx="24" cy="36" r="2" fill="#8a5a35"/>
+            <!-- Eye details -->
+            <path d="M25 24c0 .5.5 1 1 1s1-.5 1-1M39 32c0 .5.5 1 1 1s1-.5 1-1M33 42c0 .5.5 1 1 1s1-.5 1-1M23 36c0 .5.5 1 1 1s1-.5 1-1" fill="none" stroke="#7d5230" stroke-width="0.75"/>
+            <!-- Texture details -->
+            <path d="M28 20c2 0 4 1 6 3M36 26c2 2 4 4 4 7M34 40c-2 2-4 3-6 3M24 34c-2-2-3-4-3-6" fill="none" stroke="#9e6b42" stroke-width="0.75"/>
+            <!-- Dirt specks -->
+            <path d="M30 22l1 1M38 30l1 1M32 44l-1-1M22 34l1-1M28 38l-1 1M42 36l-1-1M34 26l1-1" fill="none" stroke="#7d5230" stroke-width="0.5"/>
+          </svg>
+          <span>Potatoes</span>
+          <div class="glow-line"></div>
+        </div>
+        
+        <!-- Lettuce - Realistic -->
+        <div class="produce-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="produce-icon">
+            <!-- Center core -->
+            <circle cx="32" cy="32" r="6" fill="#c5e1a5"/>
+            <!-- Inner leaves layer -->
+            <path d="M26 25c-1 2-1 6 0 8 1 2 3 4 6 5 2 1 9-1 11-5 2-4 1-8-2-11-3-3-7-4-11-3-4 1-6 3-8 7" fill="#9ccc65"/>
+            <path d="M42 20c2 3 2 8 0 12-2 4-5 6-10 7-5 1-9-1-11-5" fill="none" stroke="#8bc34a" stroke-width="0.75"/>
+            <!-- Outer leaves layer -->
+            <path d="M18 16c-3 4-3 12 0 18 3 6 8 9 14 10 6 1 12-2 15-8 3-6 2-12-3-16-5-4-11-5-16-3-5 2-8 5-10 11" fill="#8bc34a"/>
+            <path d="M46 16c3 4 3 12 0 18-3 6-8 9-14 10-6 1-12-2-15-8" fill="none" stroke="#7cb342" stroke-width="0.75"/>
+            <!-- Leaf details - curly edges -->
+            <path d="M18 20c-1 1-1 2 0 3M18 28c-1 1-1 2 0 3M18 36c-1 1-1 2 0 3M46 20c1 1 1 2 0 3M46 28c1 1 1 2 0 3M46 36c1 1 1 2 0 3" stroke="#7cb342" stroke-width="0.75" fill="none"/>
+            <!-- Leaf veins -->
+            <path d="M32 26v14M26 32h12M24 28l16 8M24 36l16-8" stroke="#7cb342" stroke-width="0.5" fill="none"/>
+            <!-- Extra leaf texture -->
+            <path d="M22 24c2 2 4 3 8 3M42 24c-2 2-4 3-8 3M22 40c2-2 4-3 8-3M42 40c-2-2-4-3-8-3" stroke="#7cb342" stroke-width="0.5" fill="none"/>
+            <!-- Base -->
+            <path d="M28 52c0-1 2-2 4-2s4 1 4 2-2 2-4 2-4-1-4-2z" fill="#a5d6a7"/>
+            <!-- Leaf highlights -->
+            <path d="M26 28c1 1 2 1 4 0M38 28c-1 1-2 1-4 0M26 36c1-1 2-1 4 0M38 36c-1-1-2-1-4 0" stroke="#a5d6a7" stroke-width="0.5" fill="none"/>
+            <!-- Root sprouts -->
+            <path d="M30 52l-2 4M34 52l2 4" stroke="#a5d6a7" stroke-width="0.75" fill="none"/>
+          </svg>
+          <span>Lettuce</span>
+          <div class="glow-line"></div>
+        </div>
+        
+        <!-- Garlic - Realistic -->
+        <div class="produce-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="produce-icon">
+            <!-- Main garlic bulb -->
+            <path d="M32 18c-10 0-18 8-18 18 0 6 8 16 18 16s18-10 18-16c0-10-8-18-18-18z" fill="#f5f5f5"/>
+            <!-- Bulb outer skin texture -->
+            <path d="M32 18c-10 0-18 8-18 18 0 6 8 16 18 16s18-10 18-16c0-10-8-18-18-18z" fill="none" stroke="#e6e6e6" stroke-width="1"/>
+            <!-- Clove outlines -->
+            <path d="M26 24c-2 2-4 6-4 12 0 4 4 8 10 8s10-4 10-8c0-6-2-10-4-12" fill="none" stroke="#e6e6e6" stroke-width="1.5"/>
+            <path d="M28 24c-1 2-2 6-2 10 0 2 2 6 6 6s6-4 6-6c0-4-1-8-2-10" fill="none" stroke="#e6e6e6" stroke-width="1"/>
+            <!-- Individual cloves -->
+            <path d="M24 26c-2 4-2 8 0 12s6 6 8 4c2-2 2-6 0-10s-6-8-8-6z" fill="#f0f0f0"/>
+            <path d="M40 26c2 4 2 8 0 12s-6 6-8 4c-2-2-2-6 0-10s6-8 8-6z" fill="#f0f0f0"/>
+            <path d="M28 24c0 4 0 8 2 12s4 6 6 4 2-6 0-10-6-8-8-6z" fill="#f0f0f0"/>
+            <!-- Stem base -->
+            <path d="M28 18h8" stroke="#e6e6e6" stroke-width="2" stroke-linecap="round"/>
+            <!-- Stem -->
+            <path d="M32 18V6" stroke="#27ae60" stroke-width="2" stroke-linecap="round"/>
+            <!-- Root details -->
+            <path d="M28 50c0 2 2 4 4 4s4-2 4-4" fill="#f0f0f0"/>
+            <path d="M30 50l-4 4M34 50l4 4" stroke="#e6e6e6" stroke-width="0.75" fill="none"/>
+            <!-- Papery skin texture -->
+            <path d="M18 32c2-6 8-10 14-10M46 32c-2-6-8-10-14-10" stroke="#ececec" stroke-width="0.5" stroke-dasharray="1,1" fill="none"/>
+            <path d="M20 40c2 4 6 8 12 8M44 40c-2 4-6 8-12 8" stroke="#ececec" stroke-width="0.5" stroke-dasharray="1,1" fill="none"/>
+            <!-- Skin details -->
+            <path d="M24 30c0 2 1 4 3 4 4M40 30c0 2-1 4-3 4-4" stroke="#e0e0e0" stroke-width="0.5" fill="none"/>
+            <path d="M22 36c0 2 2 4 5 6 6M42 36c0 2-2 4-5 6-6" stroke="#e0e0e0" stroke-width="0.5" fill="none"/>
+            <!-- Stem details -->
+            <path d="M30 8c0 2 1 4 2 4s2-2 2-4" fill="none" stroke="#219653" stroke-width="0.75"/>
+            <path d="M30 12c0-2 1-3 2-3s2 1 2 3" fill="none" stroke="#219653" stroke-width="0.75"/>
+            <path d="M32 6c-2-2-4-2-4 0s2 2 4 2 4 0 4-2-2-2-4 0z" fill="#27ae60"/>
+          </svg>
+          <span>Garlic</span>
+          <div class="glow-line"></div>
+        </div>
+        
+        <!-- Mushroom - Realistic -->
+        <div class="produce-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="produce-icon">
+            <!-- Cap -->
+            <path d="M32 12c-12 0-22 6-22 14 0 2 0 4 2 6 2 2 6 4 10 4h20c4 0 8-2 10-4 2-2 2-4 2-6 0-8-10-14-22-14z" fill="#b78d60"/>
+            <!-- Cap gradient -->
+            <path d="M32 12c-12 0-22 6-22 14 0 2 0 4 2 6 2 2 6 4 10 4h20c4 0 8-2 10-4 2-2 2-4 2-6 0-8-10-14-22-14z" fill="none" stroke="#9e7545" stroke-width="1"/>
+            <!-- Cap center highlight -->
+            <ellipse cx="32" cy="20" rx="6" ry="4" fill="#c9a27a"/>
+            <!-- Stem -->
+            <path d="M24 36h16v16c0 4-4 8-8 8s-8-4-8-8V36z" fill="#e6dccb"/>
+            <path d="M24 36h16v16c0 4-4 8-8 8s-8-4-8-8V36z" fill="none" stroke="#d9c8af" stroke-width="1"/>
+            <!-- Stem details -->
+            <path d="M24 40h16M24 44h16M24 48h16" stroke="#d9c8af" stroke-width="0.75"/>
+            <!-- Underside gills -->
+            <path d="M25 36c0-2 3-4 7-4s7 2 7 4" fill="#a68153"/>
+            <path d="M27 36c0-1 2-2 5-2s5 1 5 2" fill="#8b6b44"/>
+            <!-- Gill details -->
+            <path d="M24 36c2-2 4-2 8-2s6 0 8 2" fill="none" stroke="#8b6b44" stroke-width="0.5"/>
+            <!-- Cap texture spots -->
+            <circle cx="28" cy="18" r="1.5" fill="#a68153"/>
+            <circle cx="38" cy="20" r="1" fill="#a68153"/>
+            <circle cx="32" cy="16" r="1" fill="#a68153"/>
+            <circle cx="24" cy="22" r="1" fill="#a68153"/>
+            <circle cx="42" cy="24" r="1.5" fill="#a68153"/>
+            <circle cx="36" cy="28" r="1" fill="#a68153"/>
+            <!-- Stem base -->
+            <path d="M26 56c0 2 3 4 6 4s6-2 6-4" fill="#e6dccb"/>
+          </svg>
+          <span>Mushroom</span>
+          <div class="glow-line"></div>
+        </div>
+        
+        <!-- Peppers - Enhanced -->
+        <div class="produce-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="produce-icon">
+            <!-- Stem -->
+            <path d="M32 8c-2 0-4 0-4 4s2 4 4 4 4 0 4-4-2-4-4-4z" fill="#27ae60"/>
+            <path d="M32 4v4" stroke="#27ae60" stroke-width="2" stroke-linecap="round"/>
+            <!-- Body -->
+            <path d="M36 16c8 2 8 8 8 14 0 10-3 20-6 24-3 4-6 6-6 6s-3-2-6-6c-3-4-6-14-6-24 0-6 0-12 8-14" fill="#e74c3c"/>
+            <!-- Highlight -->
+            <path d="M32 60c-3-3-6-12-6-22s2-16 6-18" fill="none" stroke="#c0392b" stroke-width="1"/>
+            <!-- Shading -->
+            <path d="M24 30c0 10 3 24 8 30 5-6 8-20 8-30 0-5 0-10-2-12" fill="none" stroke="#c0392b" stroke-width="1"/>
+            <!-- Detail lines -->
+            <path d="M28 18c-2 8-2 16 0 24M36 18c2 8 2 16 0 24" fill="none" stroke="#c0392b" stroke-width="0.75"/>
+            <!-- Stem details -->
+            <path d="M30 8c0 1 1 2 2 2s2-1 2-2" fill="none" stroke="#229954" stroke-width="1"/>
+            <path d="M30 12c0-1 1-2 2-2s2 1 2 2" fill="none" stroke="#229954" stroke-width="1"/>
+            <!-- Cap highlights -->
+            <ellipse cx="32" cy="16" rx="8" ry="2" fill="#c0392b"/>
+            <!-- Top connection -->
+            <path d="M28 12v4M36 12v4" stroke="#27ae60" stroke-width="1.5"/>
+          </svg>
+          <span>Peppers</span>
+          <div class="glow-line"></div>
+        </div>
+        
+        <!-- Onions - Realistic -->
+        <div class="produce-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="produce-icon">
+            <!-- Main onion body -->
+            <path d="M32 16c-12 0-20 10-20 20s8 20 20 20 20-10 20-20-8-20-20-20z" fill="#e8d8c0"/>
+            <!-- Outer layer with subtle texture -->
+            <path d="M32 16c-12 0-20 10-20 20s8 20 20 20 20-10 20-20-8-20-20-20z" fill="none" stroke="#d4c4a8" stroke-width="1.5"/>
+            <!-- Paper-like skin texture -->
+            <path d="M32 18c-10 0-18 8-18 18s8 18 18 18 18-8 18-18-8-18-18-18z" fill="none" stroke="#c9b28c" stroke-width="0.75" stroke-dasharray="2,1"/>
+            <!-- Inner layers -->
+            <path d="M32 22c-8 0-14 6-14 14s6 14 14 14 14-6 14-14-6-14-14-14z" fill="#f0e4d0"/>
+            <path d="M32 26c-6 0-10 4-10 10s4 10 10 10 10-4 10-10-4-10-10-10z" fill="#f7efe2"/>
+            <path d="M32 30c-4 0-6 2-6 6s2 6 6 6 6-2 6-6-2-6-6-6z" fill="#fdf7eb"/>
+            <!-- Root base -->
+            <path d="M28 56c0-1 2-2 4-2s4 1 4 2-2 2-4 2-4-1-4-2z" fill="#e0d0b8"/>
+            <path d="M30 54c-1 0-2 1-2 2s1 2 2 2M34 54c1 0 2 1 2 2s-1 2-2 2" fill="none" stroke="#d4c4a8" stroke-width="0.5"/>
+            <!-- Stem -->
+            <path d="M32 16v-12" stroke="#27ae60" stroke-width="2" stroke-linecap="round"/>
+            <!-- Stem details -->
+            <path d="M30 12c0 1 1 2 2 2s2-1 2-2" fill="none" stroke="#229954" stroke-width="0.75"/>
+            <path d="M28 8h8" stroke="#27ae60" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M28 4h8" stroke="#27ae60" stroke-width="1" stroke-linecap="round"/>
+            <!-- Layer detail lines -->
+            <path d="M20 32c0 3 5 6 12 6s12-3 12-6" fill="none" stroke="#e0d0b8" stroke-width="0.75"/>
+            <path d="M22 38c0 3 4 5 10 5s10-2 10-5" fill="none" stroke="#e0d0b8" stroke-width="0.75"/>
+            <path d="M24 44c0 2 3 4 8 4s8-2 8-4" fill="none" stroke="#e0d0b8" stroke-width="0.75"/>
+            <!-- Texture highlights -->
+            <path d="M24 24c1 2 3 3 5 3M40 24c-1 2-3 3-5 3" fill="none" stroke="#d4c4a8" stroke-width="0.5"/>
+            <!-- Skin flake details -->
+            <path d="M18 32l2-2M46 32l-2-2M20 42l2 2M44 42l-2 2" fill="none" stroke="#c9b28c" stroke-width="0.5"/>
+          </svg>
+          <span>Onions</span>
+          <div class="glow-line"></div>
+        </div>
+        
+        <!-- Cucumbers - Realistic -->
+        <div class="produce-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="produce-icon">
+            <!-- Main cucumber body -->
+            <path d="M8 32c0-5 5-10 10-10h28c5 0 10 5 10 10s-5 10-10 10H18c-5 0-10-5-10-10z" fill="#2ecc71"/>
+            <!-- Cucumber highlights -->
+            <path d="M8 32c0-5 5-10 10-10h28c5 0 10 5 10 10s-5 10-10 10H18c-5 0-10-5-10-10z" fill="none" stroke="#27ae60" stroke-width="1"/>
+            <!-- Texture lines -->
+            <path d="M10 32h44M14 28h36M14 36h36" stroke="#27ae60" stroke-width="0.75"/>
+            <!-- Bumps texture -->
+            <path d="M18 26c0-1 1-2 2-2s2 1 2 2-1 2-2 2-2-1-2-2zM26 26c0-1 1-2 2-2s2 1 2 2-1 2-2 2-2-1-2-2zM34 26c0-1 1-2 2-2s2 1 2 2-1 2-2 2-2-1-2-2zM42 26c0-1 1-2 2-2s2 1 2 2-1 2-2 2-2-1-2-2z" fill="#27ae60"/>
+            <path d="M22 38c0-1 1-2 2-2s2 1 2 2-1 2-2 2-2-1-2-2zM30 38c0-1 1-2 2-2s2 1 2 2-1 2-2 2-2-1-2-2zM38 38c0-1 1-2 2-2s2 1 2 2-1 2-2 2-2-1-2-2z" fill="#27ae60"/>
+            <!-- End caps -->
+            <path d="M12 32c0-2 2-4 4-4M52 32c0 2-2 4-4 4" stroke="#27ae60" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- Small stems -->
+            <path d="M8 30c-2 0-4 1-4 2s2 2 4 2M56 34c2 0 4-1 4-2s-2-2-4-2" fill="#219653"/>
+            <path d="M8 30c-2 0-4 1-4 2s2 2 4 2M56 34c2 0 4-1 4-2s-2-2-4-2" stroke="#27ae60" stroke-width="0.75"/>
+            <!-- Gradient highlights -->
+            <path d="M12 28c0-2 2-3 4-3h32c2 0 4 1 4 3" fill="none" stroke="#1d8348" stroke-width="0.5"/>
+            <path d="M12 36c0 2 2 3 4 3h32c2 0 4-1 4-3" fill="none" stroke="#1d8348" stroke-width="0.5"/>
+          </svg>
+          <span>Cucumbers</span>
+          <div class="glow-line"></div>
+        </div>
+        
+        <!-- Squash - Realistic -->
+        <div class="produce-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="produce-icon">
+            <!-- Stem -->
+            <path d="M32 16c-3 0-5 1-5 4 0 2 1 3 2 4" fill="#2d8c41" stroke="#27ae60" stroke-width="1"/>
+            <path d="M32 16c3 0 5 1 5 4 0 2-1 3-2 4" fill="#2d8c41" stroke="#27ae60" stroke-width="1"/>
+            <!-- Stem cap -->
+            <path d="M27 20c0-1 2-2 5-2s5 1 5 2-2 2-5 2-5-1-5-2z" fill="#27ae60"/>
+            <!-- Main squash body -->
+            <path d="M32 24c-10 0-16 6-16 14s4 18 16 18 16-10 16-18-6-14-16-14z" fill="#f1c40f"/>
+            <!-- Squash shading -->
+            <path d="M32 24c-10 0-16 6-16 14s4 18 16 18s16-10 16-18-6-14-16-14z" fill="none" stroke="#e67e22" stroke-width="1"/>
+            <!-- Stem details -->
+            <path d="M30 16c0 1 1 2 2 2s2-1 2-2" fill="none" stroke="#219653" stroke-width="0.75"/>
+            <path d="M28 18c0-1 2-2 4-2s4 1 4 2" fill="none" stroke="#219653" stroke-width="0.75"/>
+            <path d="M32 14v-6" stroke="#2d8c41" stroke-width="2" stroke-linecap="round"/>
+            <!-- Ridges/texture -->
+            <path d="M32 24v32M24 28c4 0 8-2 16-2M18 34c6 2 9 2 28 0M16 42c8 2 12 4 32 0M20 50c5 2 9 4 24 0" fill="none" stroke="#e67e22" stroke-width="0.75"/>
+            <!-- Bulb details -->
+            <path d="M26 26c-2 4-2 8 0 12M38 26c2 4 2 8 0 12" fill="none" stroke="#d35400" stroke-width="0.5"/>
+            <!-- Bottom details -->
+            <path d="M24 46c2 4 6 8 8 8M40 46c-2 4-6 8-8 8" fill="none" stroke="#d35400" stroke-width="0.5"/>
+            <!-- Texture spots -->
+            <path d="M28 30c0 1 1 2 2 2s2-1 2-2-1-2-2-2-2 1-2 2zM34 36c0 1 1 2 2 2s2-1 2-2-1-2-2-2-2 1-2 2zM24 38c0 1 1 2 2 2s2-1 2-2-1-2-2-2-2 1-2 2zM34 44c0 1 1 2 2 2s2-1 2-2-1-2-2-2-2 1-2 2zM26 48c0 1 1 2 2 2s2-1 2-2-1-2-2-2-2 1-2 2z" fill="#f39c12"/>
+            <!-- Highlights -->
+            <path d="M24 32c2 2 5 3 8 3s6-1 8-3M22 40c3 1 6 2 10 2s7-1 10-2" fill="none" stroke="#f9ca24" stroke-width="0.75"/>
+          </svg>
+          <span>Squash</span>
+          <div class="glow-line"></div>
+        </div>
+        
+        <!-- Carrots - Realistic -->
+        <div class="produce-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="produce-icon">
+            <!-- Main carrot body -->
+            <path d="M38 14c0-4-4-6-6-6s-6 2-6 6c0 2 1 4 2 6l4 32c0 2 1 4 4 4 2 0 3-2 4-4l4-32c1-2 2-4 2-6z" fill="#e67e22"/>
+            <!-- Carrot shading -->
+            <path d="M32 8c-2 0-6 2-6 6 0 2 1 4 2 6l4 32c0 2 1 4 4 4" fill="none" stroke="#d35400" stroke-width="1"/>
+            <!-- Roots -->
+            <path d="M32 52l-2 4M32 52l2 4M32 52v4" fill="none" stroke="#d35400" stroke-width="0.75"/>
+            <!-- Texture lines -->
+            <path d="M30 16l1 24M34 16l-1 24M30 20h4M30 28h4M30 36h4M30 44h4" fill="none" stroke="#d35400" stroke-width="0.75"/>
+            <!-- Top texture -->
+            <path d="M32 10c-1 0-2 1-2 2s1 2 2 2 2-1 2-2-1-2-2-2z" fill="#d35400"/>
+            <!-- Greens base -->
+            <path d="M32 8V6" stroke="#27ae60" stroke-width="2" stroke-linecap="round"/>
+            <!-- Greens/Leaves -->
+            <path d="M32 6c0 0-6-6-6 0s6 6 6 6c0 0 6-6 6 0s-6 6-6 6" fill="#2ecc71"/>
+            <path d="M26 6c2 2 6 6 6 6" fill="none" stroke="#27ae60" stroke-width="1"/>
+            <path d="M38 6c-2 2-6 6-6 6" fill="none" stroke="#27ae60" stroke-width="1"/>
+            <!-- Leaf details -->
+            <path d="M26 3c1 1 2 2 3 3M38 3c-1 1-2 2-3 3M28 1c1 1 1 1 2 2M36 1c-1 1-1 1-2 2" fill="none" stroke="#27ae60" stroke-width="0.75"/>
+            <!-- Leaf veins -->
+            <path d="M27 4l2 2M35 4l-2 2M28 7l1 1M32 7l-1 1" fill="none" stroke="#229954" stroke-width="0.5"/>
+          </svg>
+          <span>Carrots</span>
+          <div class="glow-line"></div>
+        </div>
+        
+        <!-- Microgreens - Realistic -->
+        <div class="produce-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="produce-icon">
+            <!-- Growing surface/soil -->
+            <path d="M12 48c0 2 8 4 20 4s20-2 20-4-8-4-20-4-20 2-20 4z" fill="#d2a679"/>
+            <path d="M12 48c0 2 8 4 20 4s20-2 20-4" fill="none" stroke="#ba9066" stroke-width="0.75"/>
+            <!-- Multiple microgreen stems and leaves -->
+            <!-- Stem group 1 -->
+            <path d="M18 48v-8" stroke="#27ae60" stroke-width="1" stroke-linecap="round"/>
+            <path d="M18 40c-2-1-4 0-5 1" stroke="#2ecc71" stroke-width="0.75" stroke-linecap="round"/>
+            <path d="M18 40c2-1 4 0 5 1" stroke="#2ecc71" stroke-width="0.75" stroke-linecap="round"/>
+            <path d="M18 42c-1-1-2-1-3 0" stroke="#2ecc71" stroke-width="0.5" stroke-linecap="round"/>
+            <path d="M18 42c1-1 2-1 3 0" stroke="#2ecc71" stroke-width="0.5" stroke-linecap="round"/>
+            <!-- Stem group 2 -->
+            <path d="M24 48v-12" stroke="#27ae60" stroke-width="1" stroke-linecap="round"/>
+            <path d="M24 36c-3-1-5 1-6 2" stroke="#2ecc71" stroke-width="0.75" stroke-linecap="round"/>
+            <path d="M24 36c3-1 5 1 6 2" stroke="#2ecc71" stroke-width="0.75" stroke-linecap="round"/>
+            <path d="M24 38c-2-1-3 0-4 1" stroke="#2ecc71" stroke-width="0.5" stroke-linecap="round"/>
+            <path d="M24 38c2-1 3 0 4 1" stroke="#2ecc71" stroke-width="0.5" stroke-linecap="round"/>
+            <!-- Stem group 3 -->
+            <path d="M32 48v-16" stroke="#27ae60" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M32 32c-4-2-7 1-8 3" stroke="#2ecc71" stroke-width="0.75" stroke-linecap="round"/>
+            <path d="M32 32c4-2 7 1 8 3" stroke="#2ecc71" stroke-width="0.75" stroke-linecap="round"/>
+            <path d="M32 34c-3-1-5 0-6 1" stroke="#2ecc71" stroke-width="0.5" stroke-linecap="round"/>
+            <path d="M32 34c3-1 5 0 6 1" stroke="#2ecc71" stroke-width="0.5" stroke-linecap="round"/>
+            <path d="M32 36c-2-1-3 0-4 1" stroke="#2ecc71" stroke-width="0.5" stroke-linecap="round"/>
+            <path d="M32 36c2-1 3 0 4 1" stroke="#2ecc71" stroke-width="0.5" stroke-linecap="round"/>
+            <!-- Stem group 4 -->
+            <path d="M40 48v-14" stroke="#27ae60" stroke-width="1" stroke-linecap="round"/>
+            <path d="M40 34c-3-1-6 1-7 2" stroke="#2ecc71" stroke-width="0.75" stroke-linecap="round"/>
+            <path d="M40 34c3-1 6 1 7 2" stroke="#2ecc71" stroke-width="0.75" stroke-linecap="round"/>
+            <path d="M40 36c-2-1-4 0-5 1" stroke="#2ecc71" stroke-width="0.5" stroke-linecap="round"/>
+            <path d="M40 36c2-1 4 0 5 1" stroke="#2ecc71" stroke-width="0.5" stroke-linecap="round"/>
+            <!-- Stem group 5 -->
+            <path d="M46 48v-10" stroke="#27ae60" stroke-width="1" stroke-linecap="round"/>
+            <path d="M46 38c-2-1-4 0-5 1" stroke="#2ecc71" stroke-width="0.75" stroke-linecap="round"/>
+            <path d="M46 38c2-1 4 0 5 1" stroke="#2ecc71" stroke-width="0.75" stroke-linecap="round"/>
+            <path d="M46 40c-1-1-2-1-3 0" stroke="#2ecc71" stroke-width="0.5" stroke-linecap="round"/>
+            <path d="M46 40c1-1 2-1 3 0" stroke="#2ecc71" stroke-width="0.5" stroke-linecap="round"/>
+            <!-- Detailed leaves -->
+            <path d="M26 34c0 1 1 2 2 2s2-1 2-2-1-2-2-2-2 1-2 2z" fill="#27ae60"/>
+            <path d="M34 30c0 1 1 2 2 2s2-1 2-2-1-2-2-2-2 1-2 2z" fill="#27ae60"/>
+            <path d="M38 38c0 1 1 2 2 2s2-1 2-2-1-2-2-2-2 1-2 2z" fill="#27ae60"/>
+            <path d="M20 42c0 1 1 2 2 2s2-1 2-2-1-2-2-2-2 1-2 2z" fill="#27ae60"/>
+            <path d="M44 36c0 1 1 2 2 2s2-1 2-2-1-2-2-2-2 1-2 2z" fill="#27ae60"/>
+            <!-- Leaf veins -->
+            <path d="M27 34h2M35 30h2M39 38h2M21 42h2M45 36h2" stroke="#229954" stroke-width="0.4"/>
+            <!-- Additional small leaves -->
+            <circle cx="24" cy="40" r="1" fill="#2ecc71"/>
+            <circle cx="30" cy="32" r="1" fill="#2ecc71"/>
+            <circle cx="36" cy="38" r="1" fill="#2ecc71"/>
+            <circle cx="42" cy="36" r="1" fill="#2ecc71"/>
+            <circle cx="22" cy="40" r="1" fill="#2ecc71"/>
+          </svg>
+          <span>Microgreens</span>
+          <div class="glow-line"></div>
+        </div>
       </div>
     </section>
   </div>
