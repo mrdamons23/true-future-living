@@ -345,7 +345,7 @@
         <ul id="selectedModelsList" style="list-style: none; padding: 0; margin: 0;"></ul>
         <input type="hidden" name="selected_models" id="selectedModelsInput">
       </div>
-      
+
       <label for="budget">Optional Budget (USD):</label>
       <input type="number" id="budget" name="budget" placeholder="Your Budget (Optional)" oninput="formatBudget(this.value)">
       <input type="hidden" name="formatted_budget" id="formattedBudget">
@@ -721,7 +721,7 @@ Total Net Weight: 2.8 tons`,
         const mainImage = document.getElementById('mainProductImage');
         mainImage.style.opacity = '0';
         setTimeout(() => {
-          document.getElementById('mainProductImage').src = images[currentIndex];
+        document.getElementById('mainProductImage').src = images[currentIndex];
           mainImage.style.opacity = '1';
         }, 200);
       }

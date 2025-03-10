@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>True Future Living - Aquaponic Container Farming</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Orbitron:400,700|Roboto:400,300,500" rel="stylesheet">
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <style>
+    /* Aquaponics-specific styles */
+    .aquaponics-intro {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 15px;
+      margin: 40px auto;
+      max-width: 1000px;
+    }
+
+    .aquaponics-intro h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.8em;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #000;
+    }
+
+    .aquaponics-intro p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .advantages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .advantage-card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      padding: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .advantage-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(135deg, #00c3ff, #ffff1c);
+    }
+
+    .advantage-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .advantage-card i {
+      font-size: 3em;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #00c3ff, #ffff1c);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .advantage-card h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5em;
+      margin-bottom: 15px;
+      color: #000;
+    }
+
+    .advantage-card p {
+      color: #444;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .aquaponics-intro {
+        padding: 20px;
+        margin: 20px;
+      }
+
+      .aquaponics-intro h1 {
+        font-size: 2em;
+      }
+
+      .advantages-grid {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="bgCanvas"></canvas>
+  <!-- Header -->
+  <header id="header">
+    <div class="container header-container">
+      <div class="logo-container centered">
+        <a href="index.html"><img src="images/logo.png" alt="True Future Living Logo"></a>
+      </div>
+    </div>
+    <!-- Horizontal Navigation Menu -->
+    <nav id="mainNav" class="horizontal-nav">
+      <div class="container">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Models Portfolio</a></li>
+          <li><a href="aquaponic-farming.html">Aquaponic Container Farming</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="index.html#enquiry">Enquiry</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div id="mainContent">
+    <section class="aquaponics-intro">
+      <h1>Aquaponic Container Farming</h1>
+      <p>Welcome to the future of sustainable agriculture. Our container-based aquaponic systems represent the perfect fusion of modern technology and natural farming methods. By combining aquaculture (raising fish) with hydroponics (growing plants in water), we've created a self-sustaining ecosystem that maximizes food production while minimizing resource consumption.</p>
+      <p>Each of our container systems is designed to be a complete, turnkey solution that can be integrated with any of our living spaces or operated as a standalone unit. Whether you're looking to ensure your own food security, start a commercial operation, or contribute to community sustainability, our aquaponic systems provide an efficient, space-saving solution.</p>
+    </section>
+
+    <section class="advantages-grid">
+      <div class="advantage-card">
+        <i class="fas fa-water"></i>
+        <h3>90% Less Water Usage</h3>
+        <p>Our aquaponic systems use up to 90% less water than traditional farming methods through continuous water recycling and minimal evaporation in the controlled environment.</p>
+      </div>
+
+      <div class="advantage-card">
+        <i class="fas fa-leaf"></i>
+        <h3>Organic Production</h3>
+        <p>Produce naturally organic fruits, vegetables, and fish without the need for artificial fertilizers or pesticides. The ecosystem maintains itself naturally.</p>
+      </div>
+
+      <div class="advantage-card">
+        <i class="fas fa-calendar-alt"></i>
+        <h3>Year-Round Growing</h3>
+        <p>Climate-controlled environment allows for continuous production regardless of external weather conditions, ensuring consistent yield throughout the year.</p>
+      </div>
+
+      <div class="advantage-card">
+        <i class="fas fa-arrows-alt"></i>
+        <h3>Space Efficiency</h3>
+        <p>Vertical growing systems maximize production in a minimal footprint, producing up to 4-5 times more per square meter than traditional farming.</p>
+      </div>
+
+      <div class="advantage-card">
+        <i class="fas fa-robot"></i>
+        <h3>Smart Automation</h3>
+        <p>Advanced monitoring systems and automation ensure optimal growing conditions while minimizing daily maintenance requirements.</p>
+      </div>
+
+      <div class="advantage-card">
+        <i class="fas fa-sync"></i>
+        <h3>Sustainable Ecosystem</h3>
+        <p>Fish waste provides natural fertilizer for plants, while plants filter water for fish, creating a perfect symbiotic relationship that benefits both systems.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p class="socials">
+        <a href="https://instagram.com/yourprofile" target="_blank" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://tiktok.com/@yourprofile" target="_blank" title="TikTok">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+        <a href="https://facebook.com/yourprofile" target="_blank" title="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </p>
+      <p class="footer-email">Email: <a href="mailto:sales@truefutureliving.com">sales@truefutureliving.com</a></p>
+      <p>&copy; 2025 True Future Living. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Three.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Background 3D Grid Animation -->
+  <script src="js/bg-animation.js"></script>
+  <!-- Shared JS -->
+  <script src="js/script.js"></script>
+</body>
+</html> 
