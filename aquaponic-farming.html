@@ -14,8 +14,8 @@
   <style>
     /* Aquaponics-specific styles */
     .aquaponics-intro {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
+      background: #ffffff;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       padding: 40px;
       border-radius: 15px;
       margin: 40px auto;
@@ -28,6 +28,20 @@
       margin-bottom: 30px;
       text-align: center;
       color: #000;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .aquaponics-intro h1::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 4px;
+      background: linear-gradient(135deg, #00c3ff, #ffff1c);
+      border-radius: 2px;
     }
 
     .aquaponics-intro p {
@@ -408,6 +422,571 @@
       height: 4px;
       background: linear-gradient(135deg, #00c3ff, #ffff1c);
       border-radius: 2px;
+    }
+
+    /* Container Setups Styles */
+    #container-setups {
+      padding: 40px 20px;
+      margin: 60px auto;
+      max-width: 1200px;
+    }
+    
+    #container-setups h2 {
+      position: relative;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5em;
+      text-align: center;
+      margin-bottom: 50px;
+      padding-bottom: 15px;
+    }
+    
+    #container-setups h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(135deg, #00c3ff, #ffff1c);
+      border-radius: 2px;
+    }
+    
+    .setups-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+    
+    .setup-card {
+      background: #ffffff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .setup-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .setup-header {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .setup-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00c3ff, #ffff1c);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+    }
+    
+    .setup-icon i {
+      font-size: 24px;
+      color: white;
+    }
+    
+    .setup-header h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5em;
+      margin: 0;
+      color: #000;
+    }
+    
+    .setup-image {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+    }
+    
+    .setup-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .setup-card:hover .setup-image img {
+      transform: scale(1.05);
+    }
+    
+    .setup-details {
+      padding: 20px;
+    }
+    
+    .setup-details p {
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .feature-list li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      color: #555;
+    }
+    
+    .feature-list li i {
+      color: #00c3ff;
+      margin-right: 10px;
+    }
+    
+    @media (max-width: 768px) {
+      .setups-container {
+        grid-template-columns: 1fr;
+      }
+      
+      #container-setups h2 {
+        font-size: 2em;
+      }
+    }
+
+    /* Specifications dropdown styles */
+    .specs-toggle {
+      width: 100%;
+      padding: 12px 15px;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1em;
+      color: #333;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+    
+    .specs-toggle:hover {
+      background: #f0f0f0;
+    }
+    
+    .specs-toggle i {
+      transition: transform 0.3s ease;
+    }
+    
+    .specs-toggle.active i {
+      transform: rotate(180deg);
+    }
+    
+    .specs-table {
+      display: none;
+      background: #f9f9f9;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 15px;
+      overflow: hidden;
+    }
+    
+    .specs-table h4 {
+      font-family: 'Orbitron', sans-serif;
+      color: #000;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 1.2em;
+    }
+    
+    .spec-category {
+      margin-bottom: 20px;
+    }
+    
+    .spec-category h5 {
+      background: linear-gradient(135deg, #00c3ff, #ffff1c);
+      color: white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1em;
+    }
+    
+    .specs-table table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 15px;
+    }
+    
+    .specs-table table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid #eee;
+      font-size: 0.9em;
+    }
+    
+    .specs-table table td:first-child {
+      width: 35%;
+      font-weight: bold;
+    }
+    
+    .specs-price {
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-top: 25px;
+      color: #00c3ff;
+    }
+
+    /* Production Info Styles */
+    #production-info {
+      padding: 60px 20px;
+      margin: 60px auto;
+      max-width: 1200px;
+    }
+    
+    #production-info h2 {
+      position: relative;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5em;
+      text-align: center;
+      margin-bottom: 50px;
+      padding-bottom: 15px;
+    }
+    
+    #production-info h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(135deg, #00c3ff, #ffff1c);
+      border-radius: 2px;
+    }
+    
+    .production-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+    
+    .production-card {
+      background: #ffffff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .production-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .production-header {
+      background: #f9f9f9;
+      padding: 20px;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .production-header h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.4em;
+      margin: 0;
+      color: #000;
+      max-width: 65%;
+    }
+    
+    .system-badge {
+      background: linear-gradient(135deg, #00c3ff, #ffff1c);
+      color: #000;
+      font-size: 0.8em;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    
+    .production-metrics {
+      display: flex;
+      justify-content: space-around;
+      padding: 30px 20px;
+      background: #f5f5f5;
+      text-align: center;
+    }
+    
+    .metric {
+      position: relative;
+    }
+    
+    .metric-value {
+      font-size: 2em;
+      font-weight: bold;
+      color: #000;
+      font-family: 'Orbitron', sans-serif;
+    }
+    
+    .metric-label {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 5px;
+    }
+    
+    .metric-icon {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      width: 30px;
+      height: 30px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .metric-icon i {
+      color: #00c3ff;
+      font-size: 0.9em;
+    }
+    
+    .production-details {
+      padding: 20px;
+    }
+    
+    .detail-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .detail-item:last-child {
+      border-bottom: none;
+    }
+    
+    .detail-label {
+      color: #555;
+      display: flex;
+      align-items: center;
+    }
+    
+    .detail-label i {
+      margin-right: 10px;
+      color: #00c3ff;
+    }
+    
+    .detail-value {
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .crop-examples {
+      padding: 20px;
+      background: #f9f9f9;
+      border-top: 1px solid #eee;
+    }
+    
+    .crop-examples h4 {
+      margin: 0 0 15px 0;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1em;
+      color: #333;
+    }
+    
+    .crop-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .crop-tags span {
+      background: #f0f0f0;
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-size: 0.9em;
+      color: #333;
+    }
+    
+    /* Calculator Section */
+    .production-calculator {
+      background: linear-gradient(135deg, rgba(0, 195, 255, 0.1), rgba(255, 255, 28, 0.1));
+      border-radius: 15px;
+      padding: 40px;
+      text-align: center;
+    }
+    
+    .production-calculator h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      color: #000;
+    }
+    
+    .production-calculator p {
+      color: #555;
+      margin-bottom: 30px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .calculator-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .calculator-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 25px;
+      width: 300px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .calculator-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #00c3ff, #ffff1c);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+    }
+    
+    .calculator-icon i {
+      color: #fff;
+      font-size: 24px;
+    }
+    
+    .calculator-details h4 {
+      margin: 0 0 5px 0;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.2em;
+      color: #333;
+    }
+    
+    .calc-value {
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #00c3ff;
+      margin-bottom: 5px;
+    }
+    
+    .calculator-details p {
+      margin: 0;
+      font-size: 0.9em;
+      color: #555;
+    }
+    
+    .calculator-note {
+      font-size: 0.9em;
+      color: #666;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .calculator-note i {
+      color: #00c3ff;
+      margin-right: 5px;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .production-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .calculator-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .calculator-card {
+        width: 100%;
+        max-width: 350px;
+      }
+      
+      .production-metrics {
+        flex-direction: column;
+        gap: 30px;
+      }
+      
+      .metric {
+        margin-bottom: 15px;
+      }
+      
+      .metric:last-child {
+        margin-bottom: 0;
+      }
+      
+      .metric-icon {
+        top: -10px;
+        right: -10px;
+      }
+      
+      .production-header {
+        flex-wrap: wrap;
+      }
+      
+      .production-header h3 {
+        max-width: 100%;
+        margin-bottom: 10px;
+      }
+      
+      .system-badge {
+        margin-top: 5px;
+      }
+    }
+
+    /* Update container card styles to work without images */
+    .container-card {
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Remove these image-related styles for container cards */
+    .container-image {
+      display: none; /* Set to none instead of removing to preserve layout */
+    }
+    
+    .container-image img {
+      display: none;
+    }
+    
+    .container-card:hover .container-image img {
+      transform: none;
+    }
+
+    /* Hide container images */
+    .container-card .container-image {
+      display: none;
     }
   </style>
 </head>
@@ -953,6 +1532,713 @@
         </div>
       </div>
     </section>
+
+    <!-- Container Setups Section -->
+    <section id="container-setups">
+      <h2>Specialized Container Systems</h2>
+      <div class="setups-container">
+        <!-- Leafy Greens & Berries Setup -->
+        <div class="setup-card">
+          <div class="setup-header">
+            <div class="setup-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3>Leafy Greens & Berries</h3>
+          </div>
+          <div class="setup-details">
+            <p>Our premium 40ft container system features 5-tier vertical NFT cultivation optimized for leafy greens. With capacity for 5,880 plants and advanced environmental controls, this turnkey system delivers commercial-scale production in a minimal footprint.</p>
+            <ul class="feature-list">
+              <li><i class="fas fa-check-circle"></i> 5,880 plant capacity with 5-tier vertical system</li>
+              <li><i class="fas fa-check-circle"></i> Full spectrum LED lighting for optimal growth</li>
+              <li><i class="fas fa-check-circle"></i> Automated nutrient delivery and pH management</li>
+              <li><i class="fas fa-check-circle"></i> Smart control system with climate monitoring</li>
+              <li><i class="fas fa-check-circle"></i> Precision sensors for temperature, humidity, and CO₂</li>
+              <li><i class="fas fa-check-circle"></i> Complete environmental control system</li>
+            </ul>
+            
+            <button class="specs-toggle">View Technical Specifications <i class="fas fa-chevron-down"></i></button>
+            
+            <div class="specs-table">
+              <h4>Complete System Specifications</h4>
+              
+              <div class="spec-category">
+                <h5>Cabinet Body</h5>
+                <table>
+                  <tr>
+                    <td>Container</td>
+                    <td>Standard 40-foot cold chain container with high-density polyurethane insulation</td>
+                  </tr>
+                  <tr>
+                    <td>Internal Structure</td>
+                    <td>T-shaped aluminum bottom plate for stability and water recovery</td>
+                  </tr>
+                  <tr>
+                    <td>Flooring</td>
+                    <td>Galvanized aluminum plate with laboratory anti-slip floor mat</td>
+                  </tr>
+                  <tr>
+                    <td>Partitions</td>
+                    <td>Double-layer purification board</td>
+                  </tr>
+                </table>
+              </div>
+              
+              <div class="spec-category">
+                <h5>Planting System</h5>
+                <table>
+                  <tr>
+                    <td>Vertical Structure</td>
+                    <td>5 layers (360mm height per layer)</td>
+                  </tr>
+                  <tr>
+                    <td>Frame</td>
+                    <td>Plastic-sprayed steel frame</td>
+                  </tr>
+                  <tr>
+                    <td>Dimensions</td>
+                    <td>97000mm x 740mm x 2500mm (L x W x H) per set</td>
+                  </tr>
+                  <tr>
+                    <td>Planting Capacity</td>
+                    <td>5,880 plants total (98 plants per tray)</td>
+                  </tr>
+                  <tr>
+                    <td>Cultivation Method</td>
+                    <td>NFT (Nutrient Film Technology) shallow liquid flow</td>
+                  </tr>
+                  <tr>
+                    <td>Tray Material</td>
+                    <td>Opaque ABS, corrosion-resistant with 3+ year lifespan</td>
+                  </tr>
+                  <tr>
+                    <td>Lighting</td>
+                    <td>Full spectrum LED plant lights (1.5m/piece)</td>
+                  </tr>
+                </table>
+              </div>
+              
+              <div class="spec-category">
+                <h5>Nutrient System</h5>
+                <table>
+                  <tr>
+                    <td>Fertilization</td>
+                    <td>Camol 3-channel peristaltic pump with adjustable speed</td>
+                  </tr>
+                  <tr>
+                    <td>Storage</td>
+                    <td>Three 10L blue fertilizer buckets</td>
+                  </tr>
+                  <tr>
+                    <td>Water Management</td>
+                    <td>Dedicated water filter and circulation system</td>
+                  </tr>
+                  <tr>
+                    <td>Solution Tanks</td>
+                    <td>Two PP material tanks with inlet/outlet, sewage pipe & oxygen filling</td>
+                  </tr>
+                </table>
+              </div>
+              
+              <div class="spec-category">
+                <h5>Monitoring System</h5>
+                <table>
+                  <tr>
+                    <td>Temperature Sensor</td>
+                    <td>Range: -40°C to 80°C, Accuracy: ±0.5°C at 25°C</td>
+                  </tr>
+                  <tr>
+                    <td>Humidity Sensor</td>
+                    <td>Range: 0-100%RH, Accuracy: ±3%RH (5-95%RH, 25°C)</td>
+                  </tr>
+                  <tr>
+                    <td>CO₂ Sensor</td>
+                    <td>Accuracy: ±1.5%FS with RS485 output</td>
+                  </tr>
+                  <tr>
+                    <td>pH Sensor</td>
+                    <td>Range: 0-14pH, Resolution: 0.01pH, IP68 rated</td>
+                  </tr>
+                  <tr>
+                    <td>Conductivity Sensor</td>
+                    <td>Range: 0-20000μs/cm, Accuracy: ≤±3%</td>
+                  </tr>
+                </table>
+              </div>
+              
+              <div class="spec-category">
+                <h5>Environmental Control</h5>
+                <table>
+                  <tr>
+                    <td>Climate Control</td>
+                    <td>Central air conditioning with cooling/heating units</td>
+                  </tr>
+                  <tr>
+                    <td>Air Management</td>
+                    <td>Fresh air system with circulation fans</td>
+                  </tr>
+                  <tr>
+                    <td>Dehumidification</td>
+                    <td>Dedicated dehumidifier unit</td>
+                  </tr>
+                  <tr>
+                    <td>CO₂ System</td>
+                    <td>15L carbon dioxide cylinder with electromagnetic pressure valve</td>
+                  </tr>
+                </table>
+              </div>
+              
+              <div class="spec-category">
+                <h5>Control System</h5>
+                <table>
+                  <tr>
+                    <td>Interface</td>
+                    <td>10-inch Siemens LED screen with PLC host</td>
+                  </tr>
+                  <tr>
+                    <td>Management Platform</td>
+                    <td>Intelligent control software for sensor data and equipment management</td>
+                  </tr>
+                </table>
+              </div>
+              
+              <p class="specs-price">Total System Price: $45,000 USD</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mushroom Cultivation Setup - Updated with detailed specs -->
+        <div class="setup-card">
+          <div class="setup-header">
+            <div class="setup-icon">
+              <i class="fas fa-moon"></i>
+            </div>
+            <h3>Mushroom Cultivation</h3>
+          </div>
+          <div class="setup-details">
+            <p>Our specialized 40ft container system creates the perfect environment for gourmet and medicinal mushroom cultivation with precise humidity and temperature control. Features 4-tier vertical growing with state-of-the-art environmental management for year-round production.</p>
+            <ul class="feature-list">
+              <li><i class="fas fa-check-circle"></i> 4-tier vertical growing system</li>
+              <li><i class="fas fa-check-circle"></i> Ultrasonic humidification system</li>
+              <li><i class="fas fa-check-circle"></i> Temperature and CO₂ monitoring</li>
+              <li><i class="fas fa-check-circle"></i> Smart environmental control</li>
+              <li><i class="fas fa-check-circle"></i> Separate wet and dry zones</li>
+              <li><i class="fas fa-check-circle"></i> LED lighting optimized for fungi</li>
+            </ul>
+            
+            <button class="specs-toggle">View Technical Specifications <i class="fas fa-chevron-down"></i></button>
+            
+            <div class="specs-table">
+              <h4>Complete System Specifications</h4>
+              
+              <div class="spec-category">
+                <h5>Cabinet Body</h5>
+                <table>
+                  <tr>
+                    <td>Container</td>
+                    <td>Standard 40-foot special insulated container for cold chain with high-density polyurethane insulation</td>
+                  </tr>
+                  <tr>
+                    <td>Internal Structure</td>
+                    <td>Dry and wet separation partition with windproof curtain</td>
+                  </tr>
+                  <tr>
+                    <td>Foundation</td>
+                    <td>T-shaped aluminum bottom plate for stability and water recovery</td>
+                  </tr>
+                  <tr>
+                    <td>Flooring</td>
+                    <td>Laboratory anti-slip floor mat for safety</td>
+                  </tr>
+                </table>
+              </div>
+              
+              <div class="spec-category">
+                <h5>Planting System</h5>
+                <table>
+                  <tr>
+                    <td>Vertical Structure</td>
+                    <td>4 planting layers (550mm height per layer)</td>
+                  </tr>
+                  <tr>
+                    <td>Frame</td>
+                    <td>Plastic-sprayed square tube construction</td>
+                  </tr>
+                  <tr>
+                    <td>Growing Method</td>
+                    <td>Vertical cultivation with dedicated operation channels</td>
+                  </tr>
+                  <tr>
+                    <td>Lighting</td>
+                    <td>Special LED light strips optimized for fungal growth</td>
+                  </tr>
+                  <tr>
+                    <td>Water System</td>
+                    <td>Dedicated water purification equipment</td>
+                  </tr>
+                  <tr>
+                    <td>Humidification</td>
+                    <td>Ultrasonic humidification system for precise moisture control</td>
+                  </tr>
+                </table>
+              </div>
+              
+              <div class="spec-category">
+                <h5>Monitoring System</h5>
+                <table>
+                  <tr>
+                    <td>Temperature Sensor</td>
+                    <td>Range: -40°C to 80°C, Accuracy: ±0.5°C at 25°C</td>
+                  </tr>
+                  <tr>
+                    <td>Humidity Sensor</td>
+                    <td>Range: 0-100%RH, Accuracy: ±3%RH (5-95%RH, 25°C)</td>
+                  </tr>
+                  <tr>
+                    <td>CO₂ Sensor</td>
+                    <td>Range: 0-5000 ppm, Resolution: 1 ppm, Accuracy: ±50 ppm</td>
+                  </tr>
+                  <tr>
+                    <td>Sensor Stability</td>
+                    <td>Temperature: ≤0.1°C/year, Humidity: ≤0.1%RH/year</td>
+                  </tr>
+                </table>
+              </div>
+              
+              <div class="spec-category">
+                <h5>Control System</h5>
+                <table>
+                  <tr>
+                    <td>Interface</td>
+                    <td>7-inch Siemens LED screen with PLC host</td>
+                  </tr>
+                  <tr>
+                    <td>Management Platform</td>
+                    <td>Intelligent control software for sensor data and equipment management</td>
+                  </tr>
+                  <tr>
+                    <td>Remote Access</td>
+                    <td>Remote control module for offsite management</td>
+                  </tr>
+                </table>
+              </div>
+              
+              <div class="spec-category">
+                <h5>Environmental Control</h5>
+                <table>
+                  <tr>
+                    <td>Climate Control</td>
+                    <td>Special constant temperature unit for edible fungi</td>
+                  </tr>
+                  <tr>
+                    <td>Air Management</td>
+                    <td>Fresh air system with circulation fans</td>
+                  </tr>
+                  <tr>
+                    <td>Air Circulation</td>
+                    <td>Dedicated circulation fans to promote uniform temperature and humidity</td>
+                  </tr>
+                  <tr>
+                    <td>Communication</td>
+                    <td>485 communication module for smart platform unified control</td>
+                  </tr>
+                </table>
+              </div>
+              
+              <p class="specs-price">Total System Price: $30,000 USD</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Microgreens Setup -->
+        <div class="setup-card">
+          <div class="setup-header">
+            <div class="setup-icon">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <h3>Microgreens & Fodder</h3>
+          </div>
+          <div class="setup-details">
+            <p>Our high-density 40ft container features an impressive 9-tier vertical growing system specially designed for microgreens and fodder production. With 360 growing trays and high-pressure atomization irrigation, this system delivers maximum yield in a minimal footprint.</p>
+            <ul class="feature-list">
+              <li><i class="fas fa-check-circle"></i> 9-tier vertical system with 360 growing trays</li>
+              <li><i class="fas fa-check-circle"></i> High-pressure atomization irrigation</li>
+              <li><i class="fas fa-check-circle"></i> Optimized LED lighting for rapid growth</li>
+              <li><i class="fas fa-check-circle"></i> Stainless steel construction for durability</li>
+              <li><i class="fas fa-check-circle"></i> Complete climate monitoring system</li>
+              <li><i class="fas fa-check-circle"></i> Built-in sterilization system</li>
+            </ul>
+            
+            <button class="specs-toggle">View Technical Specifications <i class="fas fa-chevron-down"></i></button>
+            
+            <div class="specs-table">
+              <h4>Complete System Specifications</h4>
+              
+              <div class="spec-category">
+                <h5>Cabinet Body</h5>
+                <table>
+                  <tr>
+                    <td>Container</td>
+                    <td>Standard 40-foot cold chain container with high-density polyurethane insulation</td>
+                  </tr>
+                  <tr>
+                    <td>Internal Structure</td>
+                    <td>Laboratory special anti-slip floor mats with windproof door curtain</td>
+                  </tr>
+                  <tr>
+                    <td>Interior</td>
+                    <td>Custom interior decoration optimized for microgreen production</td>
+                  </tr>
+                </table>
+              </div>
+              
+              <div class="spec-category">
+                <h5>Planting System</h5>
+                <table>
+                  <tr>
+                    <td>Vertical Structure</td>
+                    <td>9 planting layers (240mm height per layer)</td>
+                  </tr>
+                  <tr>
+                    <td>Frame</td>
+                    <td>Stainless steel construction for durability and cleanliness</td>
+                  </tr>
+                  <tr>
+                    <td>Growing Method</td>
+                    <td>Vertical cultivation with dedicated operation channels</td>
+                  </tr>
+                  <tr>
+                    <td>Growing Trays</td>
+                    <td>360 special growth trays for pasture/microgreens (750mm x 500mm)</td>
+                  </tr>
+                  <tr>
+                    <td>Lighting</td>
+                    <td>Special LED fill light strips optimized for microgreen development</td>
+                  </tr>
+                  <tr>
+                    <td>Irrigation</td>
+                    <td>High pressure atomization system for fine mist delivery</td>
+                  </tr>
+                </table>
+              </div>
+              
+              <div class="spec-category">
+                <h5>Monitoring System</h5>
+                <table>
+                  <tr>
+                    <td>Temperature Sensor</td>
+                    <td>Range: -40°C to 80°C, Accuracy: ±0.5°C (0-60°C)</td>
+                  </tr>
+                  <tr>
+                    <td>Humidity Sensor</td>
+                    <td>Range: 0-100%RH, Accuracy: ±3%RH (20-80%RH)</td>
+                  </tr>
+                  <tr>
+                    <td>CO₂ Sensor</td>
+                    <td>Range: 0-5000 ppm, Resolution: 1 ppm, Accuracy: ±50 ppm</td>
+                  </tr>
+                  <tr>
+                    <td>Sensor Stability</td>
+                    <td>Temperature: ≤0.1°C/year, Humidity: ≤0.1%RH/year</td>
+                  </tr>
+                  <tr>
+                    <td>Power</td>
+                    <td>12-24V DC with low power consumption (48-180mW)</td>
+                  </tr>
+                </table>
+              </div>
+              
+              <div class="spec-category">
+                <h5>Control System</h5>
+                <table>
+                  <tr>
+                    <td>Interface</td>
+                    <td>7-inch Siemens LED screen with PLC host</td>
+                  </tr>
+                  <tr>
+                    <td>Management Platform</td>
+                    <td>Intelligent control software for sensor data and equipment management</td>
+                  </tr>
+                  <tr>
+                    <td>Automation</td>
+                    <td>Fully integrated control of lights, humidification, temperature, and air systems</td>
+                  </tr>
+                </table>
+              </div>
+              
+              <div class="spec-category">
+                <h5>Environmental Control</h5>
+                <table>
+                  <tr>
+                    <td>Climate Control</td>
+                    <td>Central air conditioning with heating and cooling capabilities</td>
+                  </tr>
+                  <tr>
+                    <td>Air Management</td>
+                    <td>Fresh air system with circulation fans</td>
+                  </tr>
+                  <tr>
+                    <td>Air Circulation</td>
+                    <td>Dedicated circulation fans to promote uniform temperature and humidity</td>
+                  </tr>
+                  <tr>
+                    <td>Sterilization</td>
+                    <td>Model: TKLN-007 10g/h sterilization system</td>
+                  </tr>
+                  <tr>
+                    <td>Communication</td>
+                    <td>485 communication module for smart platform unified control</td>
+                  </tr>
+                </table>
+              </div>
+              
+              <p class="specs-price">Total System Price: $33,000 USD</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Production Information Section -->
+    <section id="production-info">
+      <h2>Production Information</h2>
+      <div class="production-container">
+        <!-- Leafy Greens Production Info -->
+        <div class="production-card">
+          <div class="production-header">
+            <h3>Leafy Greens & Berries</h3>
+            <div class="system-badge">NFT System</div>
+          </div>
+          
+          <div class="production-metrics">
+            <div class="metric">
+              <div class="metric-value">5,880</div>
+              <div class="metric-label">Plants per Cycle</div>
+              <div class="metric-icon"><i class="fas fa-seedling"></i></div>
+            </div>
+            
+            <div class="metric">
+              <div class="metric-value">45-60</div>
+              <div class="metric-label">Days to Harvest</div>
+              <div class="metric-icon"><i class="fas fa-calendar-alt"></i></div>
+            </div>
+            
+            <div class="metric">
+              <div class="metric-value">450-650</div>
+              <div class="metric-label">kg Monthly Yield</div>
+              <div class="metric-icon"><i class="fas fa-weight-hanging"></i></div>
+            </div>
+          </div>
+          
+          <div class="production-details">
+            <div class="detail-item">
+              <div class="detail-label"><i class="fas fa-bolt"></i> Power Consumption</div>
+              <div class="detail-value">12-14 kWh/day</div>
+            </div>
+            
+            <div class="detail-item">
+              <div class="detail-label"><i class="fas fa-tint"></i> Water Usage</div>
+              <div class="detail-value">400-600 L/week (90% less than field farming)</div>
+            </div>
+            
+            <div class="detail-item">
+              <div class="detail-label"><i class="fas fa-temperature-high"></i> Optimal Temperature</div>
+              <div class="detail-value">18-24°C (64-75°F)</div>
+            </div>
+            
+            <div class="detail-item">
+              <div class="detail-label"><i class="fas fa-chart-line"></i> ROI Timeline</div>
+              <div class="detail-value">24-36 months</div>
+            </div>
+          </div>
+          
+          <div class="crop-examples">
+            <h4>Ideal Crops</h4>
+            <div class="crop-tags">
+              <span>Lettuce</span>
+              <span>Kale</span>
+              <span>Spinach</span>
+              <span>Basil</span>
+              <span>Strawberries</span>
+              <span>Bok Choy</span>
+              <span>Swiss Chard</span>
+              <span>Arugula</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Mushroom Production Info -->
+        <div class="production-card">
+          <div class="production-header">
+            <h3>Mushroom Cultivation</h3>
+            <div class="system-badge">Controlled Environment</div>
+          </div>
+          
+          <div class="production-metrics">
+            <div class="metric">
+              <div class="metric-value">300-400</div>
+              <div class="metric-label">kg Monthly Yield</div>
+              <div class="metric-icon"><i class="fas fa-weight-hanging"></i></div>
+            </div>
+            
+            <div class="metric">
+              <div class="metric-value">21-60</div>
+              <div class="metric-label">Days to Harvest</div>
+              <div class="metric-icon"><i class="fas fa-calendar-alt"></i></div>
+            </div>
+            
+            <div class="metric">
+              <div class="metric-value">4-5</div>
+              <div class="metric-label">Harvests per Month</div>
+              <div class="metric-icon"><i class="fas fa-sync"></i></div>
+            </div>
+          </div>
+          
+          <div class="production-details">
+            <div class="detail-item">
+              <div class="detail-label"><i class="fas fa-bolt"></i> Power Consumption</div>
+              <div class="detail-value">8-10 kWh/day</div>
+            </div>
+            
+            <div class="detail-item">
+              <div class="detail-label"><i class="fas fa-tint"></i> Humidity Requirement</div>
+              <div class="detail-value">85-95% during fruiting</div>
+            </div>
+            
+            <div class="detail-item">
+              <div class="detail-label"><i class="fas fa-temperature-high"></i> Optimal Temperature</div>
+              <div class="detail-value">18-22°C (64-72°F)</div>
+            </div>
+            
+            <div class="detail-item">
+              <div class="detail-label"><i class="fas fa-chart-line"></i> ROI Timeline</div>
+              <div class="detail-value">18-30 months</div>
+            </div>
+          </div>
+          
+          <div class="crop-examples">
+            <h4>Ideal Varieties</h4>
+            <div class="crop-tags">
+              <span>Oyster</span>
+              <span>Shiitake</span>
+              <span>Lion's Mane</span>
+              <span>King Trumpet</span>
+              <span>Reishi</span>
+              <span>Maitake</span>
+              <span>Enoki</span>
+              <span>Button</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Microgreens Production Info -->
+        <div class="production-card">
+          <div class="production-header">
+            <h3>Microgreens & Fodder</h3>
+            <div class="system-badge">High-Density System</div>
+          </div>
+          
+          <div class="production-metrics">
+            <div class="metric">
+              <div class="metric-value">350-500</div>
+              <div class="metric-label">kg Monthly Yield</div>
+              <div class="metric-icon"><i class="fas fa-weight-hanging"></i></div>
+            </div>
+            
+            <div class="metric">
+              <div class="metric-value">7-14</div>
+              <div class="metric-label">Days to Harvest</div>
+              <div class="metric-icon"><i class="fas fa-calendar-alt"></i></div>
+            </div>
+            
+            <div class="metric">
+              <div class="metric-value">360</div>
+              <div class="metric-label">Growing Trays</div>
+              <div class="metric-icon"><i class="fas fa-border-all"></i></div>
+            </div>
+          </div>
+          
+          <div class="production-details">
+            <div class="detail-item">
+              <div class="detail-label"><i class="fas fa-bolt"></i> Power Consumption</div>
+              <div class="detail-value">10-12 kWh/day</div>
+            </div>
+            
+            <div class="detail-item">
+              <div class="detail-label"><i class="fas fa-tint"></i> Water Usage</div>
+              <div class="detail-value">250-350 L/week</div>
+            </div>
+            
+            <div class="detail-item">
+              <div class="detail-label"><i class="fas fa-temperature-high"></i> Optimal Temperature</div>
+              <div class="detail-value">18-24°C (65-75°F)</div>
+            </div>
+            
+            <div class="detail-item">
+              <div class="detail-label"><i class="fas fa-chart-line"></i> ROI Timeline</div>
+              <div class="detail-value">14-24 months</div>
+            </div>
+          </div>
+          
+          <div class="crop-examples">
+            <h4>Ideal Crops</h4>
+            <div class="crop-tags">
+              <span>Sunflower</span>
+              <span>Pea Shoots</span>
+              <span>Radish</span>
+              <span>Broccoli</span>
+              <span>Wheatgrass</span>
+              <span>Barley Fodder</span>
+              <span>Arugula</span>
+              <span>Amaranth</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="production-calculator">
+        <h3>Annual Production Value Calculator</h3>
+        <p>Based on current market prices and optimal operation, each container system can generate the following estimated annual revenues:</p>
+        
+        <div class="calculator-cards">
+          <div class="calculator-card">
+            <div class="calculator-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <div class="calculator-details">
+              <h4>Leafy Greens</h4>
+              <div class="calc-value">$84,000 - $130,000</div>
+              <p>Annual gross revenue potential</p>
+            </div>
+          </div>
+          
+          <div class="calculator-card">
+            <div class="calculator-icon">
+              <i class="fas fa-moon"></i>
+            </div>
+            <div class="calculator-details">
+              <h4>Mushrooms</h4>
+              <div class="calc-value">$70,000 - $120,000</div>
+              <p>Annual gross revenue potential</p>
+            </div>
+          </div>
+          
+          <div class="calculator-card">
+            <div class="calculator-icon">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <div class="calculator-details">
+              <h4>Microgreens</h4>
+              <div class="calc-value">$90,000 - $150,000</div>
+              <p>Annual gross revenue potential</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="calculator-note">
+          <p><i class="fas fa-info-circle"></i> Values based on optimal production and average market prices. Actual results may vary based on location, market conditions, and management.</p>
+        </div>
+      </div>
+    </section>
   </div>
 
   <!-- Footer -->
@@ -980,5 +2266,30 @@
   <script src="js/bg-animation.js"></script>
   <!-- Shared JS -->
   <script src="js/script.js"></script>
+  <!-- Update the JavaScript to handle multiple toggle buttons -->
+  <script>
+    // JavaScript to toggle specs visibility for all specification tables
+    document.addEventListener('DOMContentLoaded', function() {
+      const specsToggles = document.querySelectorAll('.specs-toggle');
+      
+      specsToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+          // Toggle active class for the button
+          this.classList.toggle('active');
+          
+          // Find the specs table that is a sibling of this button
+          const specsTable = this.nextElementSibling;
+          
+          if (specsTable && specsTable.classList.contains('specs-table')) {
+            if (specsTable.style.display === 'block') {
+              specsTable.style.display = 'none';
+            } else {
+              specsTable.style.display = 'block';
+            }
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html> 

@@ -124,9 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
   scene.add(directionalLight2);
   
   // Animation loop
-  function animate() {
-    requestAnimationFrame(animate);
-    
+function animate() {
+  requestAnimationFrame(animate);
+  
     // Rotate each cube at different speeds for more dynamic movement
     cubes.forEach(({ cube, wireframe, innerWireframe }, index) => {
       const speed = 0.001 + (index % 3) * 0.001;
@@ -143,15 +143,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Slowly move camera to create parallax effect
     camera.position.x = Math.sin(Date.now() * 0.00008) * 5;
     camera.position.y = Math.cos(Date.now() * 0.00008) * 5;
-    
-    renderer.render(scene, camera);
-  }
-  
+
+  renderer.render(scene, camera);
+}
+
   // Handle window resize
-  window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+window.addEventListener('resize', () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
   });
   
   // Make sure the canvas is positioned correctly
