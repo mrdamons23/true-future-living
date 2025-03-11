@@ -184,7 +184,7 @@
       grid-row: span 2;
     }
 
-    /* Mobile responsive gallery */
+    /* Mobile responsive gallery - fixed image height issue */
     @media (max-width: 768px) {
       .gallery-grid {
         grid-template-columns: 1fr;
@@ -197,11 +197,17 @@
         grid-column: 1;
         grid-row: auto;
         width: 100%;
+        height: 250px !important; /* Force consistent height with !important */
       }
       
       .gallery-item {
-        height: 250px;
         margin: 0;
+      }
+      
+      .gallery-item img {
+        width: 100%;
+        height: 100% !important;
+        object-fit: cover !important; /* Ensure images maintain aspect ratio */
       }
       
       .aquaponics-gallery {
@@ -432,8 +438,7 @@
   <div id="mainContent">
     <section class="aquaponics-intro">
       <h1>Aquaponic Container Farming</h1>
-      <p>Welcome to the future of sustainable agriculture. Our container-based aquaponic systems represent the perfect fusion of modern technology and natural farming methods. By combining aquaculture (raising fish) with hydroponics (growing plants in water), we've created a self-sustaining ecosystem that maximizes food production while minimizing resource consumption.</p>
-      <p>Each of our container systems is designed to be a complete, turnkey solution that can be integrated with any of our living spaces or operated as a standalone unit. Whether you're looking to ensure your own food security, start a commercial operation, or contribute to community sustainability, our aquaponic systems provide an efficient, space-saving solution.</p>
+      <p>Welcome to the future of sustainable agriculture. Each of our container systems is designed to be a complete, turnkey solution that can be integrated with any of our living spaces or operated as a standalone unit. Whether you're looking to ensure your own food security, start a commercial operation, or contribute to community sustainability, our aquaponic systems provide an efficient, space-saving solution.</p>
     </section>
 
     <!-- New Image Collage Section -->
