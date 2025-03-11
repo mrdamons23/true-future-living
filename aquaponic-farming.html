@@ -381,6 +381,28 @@
       margin: 0 auto 15px;
       display: block;
     }
+
+    /* Add this to your CSS section */
+    #advantages h2 {
+      position: relative;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5em;
+      text-align: center;
+      margin-bottom: 50px;
+      padding-bottom: 15px;
+    }
+
+    #advantages h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(135deg, #00c3ff, #ffff1c);
+      border-radius: 2px;
+    }
   </style>
 </head>
 <body>
@@ -450,41 +472,45 @@
       </div>
     </section>
 
-    <section class="advantages-grid">
-      <div class="advantage-card">
-        <i class="fas fa-water"></i>
-        <h3>90% Less Water Usage</h3>
-        <p>Our aquaponic systems use up to 90% less water than traditional farming methods through continuous water recycling and minimal evaporation in the controlled environment.</p>
-      </div>
-
-      <div class="advantage-card">
-        <i class="fas fa-leaf"></i>
-        <h3>Organic Production</h3>
-        <p>Produce naturally organic fruits, vegetables, and fish without the need for artificial fertilizers or pesticides. The ecosystem maintains itself naturally.</p>
-      </div>
-
-      <div class="advantage-card">
-        <i class="fas fa-calendar-alt"></i>
-        <h3>Year-Round Growing</h3>
-        <p>Climate-controlled environment allows for continuous production regardless of external weather conditions, ensuring consistent yield throughout the year.</p>
-      </div>
-
-      <div class="advantage-card">
-        <i class="fas fa-arrows-alt"></i>
-        <h3>Space Efficiency</h3>
-        <p>Vertical growing systems maximize production in a minimal footprint, producing up to 4-5 times more per square meter than traditional farming.</p>
-      </div>
-
-      <div class="advantage-card">
-        <i class="fas fa-robot"></i>
-        <h3>Smart Automation</h3>
-        <p>Advanced monitoring systems and automation ensure optimal growing conditions while minimizing daily maintenance requirements.</p>
-      </div>
-
-      <div class="advantage-card">
-        <i class="fas fa-sync"></i>
-        <h3>Sustainable Ecosystem</h3>
-        <p>Fish waste provides natural fertilizer for plants, while plants filter water for fish, creating a perfect symbiotic relationship that benefits both systems.</p>
+    <!-- Advantages Section -->
+    <section id="advantages">
+      <h2>Advantages of Aquaponic Container Farming</h2>
+      <div class="advantages-grid">
+        <div class="advantage-card">
+          <i class="fas fa-leaf"></i>
+          <h3>Reduced Water Usage</h3>
+          <p>Aquaponic systems use up to 90% less water than traditional farming methods, recirculating water between fish tanks and growing beds.</p>
+        </div>
+        
+        <div class="advantage-card">
+          <i class="fas fa-robot"></i>
+          <h3>Smart Automation</h3>
+          <p>Advanced monitoring systems and automation ensure optimal growing conditions while minimizing daily maintenance requirements.</p>
+        </div>
+        
+        <div class="advantage-card">
+          <i class="fas fa-box"></i>
+          <h3>Space Optimization</h3>
+          <p>Vertical growing techniques maximize production capacity, allowing for 3-4 times more crops per square foot than conventional farming.</p>
+        </div>
+        
+        <div class="advantage-card">
+          <i class="fas fa-globe-americas"></i>
+          <h3>Independent Environment</h3>
+          <p>Container systems create a fully controlled growing environment, enabling successful cultivation in regions with extreme climates, poor soil quality, or challenging growing conditions where traditional farming would be impossible.</p>
+        </div>
+        
+        <div class="advantage-card">
+          <i class="fas fa-truck"></i>
+          <h3>Reduced Food Miles</h3>
+          <p>Urban placement of container farms dramatically cuts transportation costs and carbon emissions while providing fresher produce to local communities.</p>
+        </div>
+        
+        <div class="advantage-card">
+          <i class="fas fa-calendar-alt"></i>
+          <h3>Year-Round Harvests</h3>
+          <p>Climate-controlled environments allow for continuous growing cycles regardless of external weather conditions or seasonal changes.</p>
+        </div>
       </div>
     </section>
 
