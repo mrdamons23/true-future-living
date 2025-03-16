@@ -988,6 +988,1013 @@
     .container-card .container-image {
       display: none;
     }
+
+    /* Enquiry Section Styles */
+    #enquiry-section {
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #f9f9f9, #f0f0f0);
+    }
+    
+    .enquiry-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      background: #fff;
+    }
+    
+    .enquiry-content {
+      padding: 50px;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .enquiry-content h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.2em;
+      margin-bottom: 20px;
+      color: #000;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .enquiry-content h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(135deg, #00c3ff, #ffff1c);
+      border-radius: 2px;
+    }
+    
+    .enquiry-content p {
+      color: #555;
+      margin-bottom: 30px;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+    
+    .enquiry-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .form-group label {
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #f9f9f9;
+      font-size: 1em;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #00c3ff;
+      box-shadow: 0 0 0 3px rgba(0, 195, 255, 0.2);
+      outline: none;
+    }
+    
+    .model-selection {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 10px;
+    }
+    
+    .model-button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      border: 2px solid #eee;
+      border-radius: 10px;
+      background: #f9f9f9;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .model-button i {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #777;
+      transition: color 0.3s ease;
+    }
+    
+    .model-button span {
+      font-size: 0.9em;
+      font-weight: 600;
+      text-align: center;
+      color: #555;
+      transition: color 0.3s ease;
+    }
+    
+    .model-button:hover {
+      border-color: #00c3ff;
+      background: rgba(0, 195, 255, 0.05);
+    }
+    
+    .model-button:hover i,
+    .model-button:hover span {
+      color: #00c3ff;
+    }
+    
+    .model-button.active {
+      border-color: #00c3ff;
+      background: rgba(0, 195, 255, 0.1);
+    }
+    
+    .model-button.active i,
+    .model-button.active span {
+      color: #00c3ff;
+    }
+    
+    .submit-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #00c3ff, #00a2ff);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 15px 30px;
+      font-size: 1.1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-top: 10px;
+    }
+    
+    .submit-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 195, 255, 0.4);
+    }
+    
+    .submit-button i {
+      transition: transform 0.3s ease;
+    }
+    
+    .submit-button:hover i {
+      transform: translateX(5px);
+    }
+    
+    .enquiry-image {
+      position: relative;
+      height: 100%;
+    }
+    
+    .enquiry-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .enquiry-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+      padding: 30px;
+      display: flex;
+      justify-content: space-around;
+    }
+    
+    .enquiry-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #fff;
+    }
+    
+    .stat-number {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8em;
+      font-weight: bold;
+    }
+    
+    .stat-text {
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .enquiry-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .model-selection {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .enquiry-content {
+        padding: 30px;
+      }
+      
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Model Option Styles to match homepage */
+    .model-option {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 17px 21px;
+      margin: 7px;
+      border: 2px solid #eee;
+      border-radius: 10px;
+      background: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      min-height: 102px;
+    }
+    
+    .model-option input[type="checkbox"] {
+      display: none;
+    }
+    
+    .model-option-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
+    
+    .model-option i {
+      font-size: 1.87em;
+      margin-bottom: 10px;
+      color: #555;
+    }
+    
+    .model-option span {
+      font-size: 0.94em;
+      font-weight: 600;
+      line-height: 1.4;
+      white-space: normal;
+    }
+    
+    .model-option:hover {
+      border-color: #00c3ff;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .model-option:has(input[type="checkbox"]:checked) {
+      background: linear-gradient(45deg, #ffea00, #00bfff, #00ff7f);
+      border-color: transparent;
+      transform: scale(1.05);
+      box-shadow: 0 0 12px rgba(0,255,204,0.8);
+    }
+    
+    .model-option:has(input[type="checkbox"]:checked) i,
+    .model-option:has(input[type="checkbox"]:checked) span {
+      color: #000;
+    }
+    
+    .model-selection {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 13px;
+      margin-top: 13px;
+    }
+    
+    #selectedModelsTally {
+      margin-top: 10px;
+      padding: 10px;
+      background: #f5f5f5;
+      border-radius: 8px;
+    }
+    
+    #selectedModelsList {
+      margin-top: 5px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    
+    #selectedModelsList .selected-tag {
+      background: #e0f7ff;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.9em;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    #selectedModelsList .selected-tag i {
+      color: #00c3ff;
+    }
+    
+    @media (max-width: 768px) {
+      .model-selection {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Advanced Calculator Styles */
+    .production-calculator {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      margin-top: 60px;
+    }
+    
+    .production-calculator h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      color: #000;
+      text-align: center;
+    }
+    
+    .production-calculator p {
+      color: #555;
+      text-align: center;
+      margin-bottom: 30px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .calculator-interface {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 30px;
+    }
+    
+    .calculator-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .input-section {
+      background: #f9f9f9;
+      border-radius: 15px;
+      padding: 20px 25px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    .input-section h4 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.2em;
+      margin-bottom: 15px;
+      color: #333;
+      border-bottom: 2px solid rgba(0, 195, 255, 0.3);
+      padding-bottom: 8px;
+    }
+    
+    .input-group {
+      margin-bottom: 15px;
+    }
+    
+    .input-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #555;
+      font-size: 0.95em;
+    }
+    
+    .input-group small {
+      display: block;
+      color: #888;
+      font-size: 0.8em;
+      margin-top: 3px;
+    }
+    
+    .calc-control {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1em;
+      background: #fff;
+    }
+    
+    .calc-control:focus {
+      outline: none;
+      border-color: #00c3ff;
+      box-shadow: 0 0 0 3px rgba(0, 195, 255, 0.2);
+    }
+    
+    .range-with-value {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .range-slider {
+      flex-grow: 1;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 6px;
+      background: #ddd;
+      border-radius: 3px;
+      margin: 0;
+    }
+    
+    .range-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00c3ff, #00a2ff);
+      cursor: pointer;
+    }
+    
+    .range-slider::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00c3ff, #00a2ff);
+      cursor: pointer;
+      border: none;
+    }
+    
+    .range-value {
+      min-width: 40px;
+      text-align: center;
+      font-weight: bold;
+      color: #333;
+      background: #f0f0f0;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    
+    .calculator-results {
+      background: linear-gradient(135deg, rgba(0, 195, 255, 0.05), rgba(255, 255, 28, 0.05));
+      border-radius: 15px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .calculator-results h4 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      color: #333;
+      text-align: center;
+    }
+    
+    .result-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    
+    .result-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .result-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .result-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #00c3ff, #ffff1c);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+    
+    .result-icon i {
+      color: #fff;
+      font-size: 1.2em;
+    }
+    
+    .result-details {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .result-label {
+      font-size: 0.9em;
+      color: #666;
+      margin-bottom: 3px;
+    }
+    
+    .result-value {
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #333;
+      font-family: 'Orbitron', sans-serif;
+      display: flex;
+      align-items: baseline;
+    }
+    
+    .result-unit {
+      font-size: 0.8em;
+      color: #666;
+      margin-left: 5px;
+    }
+    
+    .profit-result .result-icon {
+      background: linear-gradient(135deg, #00c3ff, #00ff7f);
+    }
+    
+    .costs-result .result-icon {
+      background: linear-gradient(135deg, #ff5e62, #ff9966);
+    }
+    
+    .result-summary {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    
+    .result-summary h5 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1em;
+      margin-bottom: 15px;
+      color: #333;
+      border-bottom: 2px solid rgba(0, 195, 255, 0.3);
+      padding-bottom: 8px;
+      text-align: center;
+    }
+    
+    .result-summary h6 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.95em;
+      margin: 0 0 10px 0;
+      color: #444;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .result-summary h6 i {
+      color: #00c3ff;
+      width: 20px;
+      text-align: center;
+    }
+    
+    .summary-section {
+      margin-bottom: 15px;
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(249, 249, 249, 0.6);
+      transition: all 0.3s ease;
+    }
+    
+    .summary-section:hover {
+      background: rgba(249, 249, 249, 0.9);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+    
+    .summary-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 15px;
+    }
+    
+    .summary-list li {
+      font-size: 0.9em;
+      color: #555;
+      line-height: 1.4;
+      padding: 3px 0;
+    }
+    
+    .summary-list li strong {
+      color: #333;
+      font-weight: 500;
+    }
+    
+    .summary-conclusion {
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(0, 195, 255, 0.1), rgba(0, 255, 127, 0.1));
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+    
+    .summary-conclusion p {
+      margin: 0;
+      color: #444;
+    }
+    
+    .summary-conclusion strong {
+      font-weight: 600;
+      color: #222;
+    }
+    
+    /* Profitability colors */
+    .profitability-not-profitable {
+      color: #ff3b30;
+      font-weight: 500;
+    }
+    
+    .profitability-marginally-profitable {
+      color: #ff9500;
+      font-weight: 500;
+    }
+    
+    .profitability-moderately-profitable {
+      color: #34c759;
+      font-weight: 500;
+    }
+    
+    .profitability-highly-profitable {
+      color: #007aff;
+      font-weight: 500;
+    }
+    
+    .profitability-exceptionally-profitable {
+      color: #5856d6;
+      font-weight: 500;
+    }
+    
+    @media (max-width: 768px) {
+      .summary-list {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .calculator-notes {
+      font-size: 0.8em;
+      color: #777;
+      text-align: left;
+      padding: 10px;
+      border-top: 1px dashed #ddd;
+      margin-top: auto;
+    }
+    
+    .calculator-notes i {
+      color: #00c3ff;
+      margin-right: 5px;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .calculator-interface {
+        grid-template-columns: 1fr;
+      }
+      
+      .production-calculator {
+        padding: 25px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .input-section {
+        padding: 15px;
+      }
+      
+      .production-calculator h3 {
+        font-size: 1.5em;
+      }
+    }
+
+    /* Enhanced input styles */
+    .enhanced-input {
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 12px 15px;
+      font-size: 1em;
+      transition: all 0.3s ease;
+      background: #f8f9fa;
+      color: #333;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    .enhanced-input:focus {
+      border-color: #00c3ff;
+      box-shadow: 0 0 0 3px rgba(0, 195, 255, 0.2), inset 0 1px 3px rgba(0,0,0,0.05);
+      background: #fff;
+    }
+    
+    .enhanced-input:hover {
+      border-color: #ccc;
+    }
+    
+    /* Enhanced select styles */
+    .enhanced-select-wrapper {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+    
+    .enhanced-select {
+      width: 100%;
+      height: 45px;
+      padding: 0 15px;
+      border-radius: 8px;
+      border: 2px solid #e0e0e0;
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem;
+      color: #333;
+      -webkit-appearance: none;
+      appearance: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .enhanced-select:focus {
+      border-color: #00c3ff;
+      box-shadow: 0 0 0 3px rgba(0, 195, 255, 0.2), inset 0 1px 3px rgba(0,0,0,0.05);
+      background: #fff;
+      outline: none;
+    }
+    
+    .enhanced-select:hover {
+      border-color: #ccc;
+    }
+    
+    .select-arrow {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #888;
+      pointer-events: none;
+      transition: color 0.3s ease;
+    }
+    
+    .enhanced-select:focus + .select-arrow {
+      color: #00c3ff;
+    }
+    
+    /* Enhanced range slider */
+    .range-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 8px;
+      background: linear-gradient(to right, #00c3ff, #00a2ff);
+      border-radius: 4px;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+    
+    .range-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      cursor: pointer;
+      border: 2px solid #00c3ff;
+      transition: all 0.3s ease;
+    }
+    
+    .range-slider::-moz-range-thumb {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      cursor: pointer;
+      border: 2px solid #00c3ff;
+      transition: all 0.3s ease;
+    }
+    
+    .range-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.1);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    }
+    
+    .range-slider::-moz-range-thumb:hover {
+      transform: scale(1.1);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    }
+    
+    .range-value {
+      min-width: 50px;
+      text-align: center;
+      font-weight: bold;
+      color: #333;
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      padding: 5px 12px;
+      border-radius: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border: 1px solid #dee2e6;
+    }
+    
+    /* Enhanced section styles */
+    .input-section {
+      background: linear-gradient(135deg, #ffffff, #f8f9fa);
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      border: 1px solid #f0f0f0;
+      transition: all 0.3s ease;
+    }
+    
+    .input-section:hover {
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+    
+    .input-section h4 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      color: #333;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .input-section h4:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(135deg, #00c3ff, #00a2ff);
+      border-radius: 3px;
+    }
+    
+    .input-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #444;
+      font-size: 0.95em;
+    }
+    
+    .input-group small {
+      display: block;
+      color: #888;
+      font-size: 0.8em;
+      margin-top: 5px;
+      font-style: italic;
+    }
+
+    /* Country Selection Dropdown Styling */
+    .country-select-container {
+      margin-bottom: 20px;
+    }
+    
+    .country-select {
+      width: 100%;
+      padding: 12px 15px;
+      border-radius: 8px;
+      border: 2px solid #e0e0e0;
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem;
+      color: #333;
+      -webkit-appearance: none;
+      appearance: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .country-select:hover, .country-select:focus {
+      border-color: #00c3ff;
+      box-shadow: 0 0 10px rgba(0, 195, 255, 0.3);
+      background: linear-gradient(135deg, #e9ecef, #f8f9fa);
+    }
+    
+    .select-wrapper {
+      position: relative;
+    }
+    
+    .select-wrapper::after {
+      content: "\f078";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #00c3ff;
+      pointer-events: none;
+      transition: transform 0.3s ease;
+    }
+    
+    .select-wrapper:focus-within::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+    
+    /* Country label styling */
+    .country-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #444;
+      font-size: 1.05rem;
+    }
+    
+    /* Adding some spacing in the calculator */
+    .roi-calculator .input-group {
+      margin-bottom: 15px;
+    }
+    
+    /* Cost highlight */
+    .electricity-cost-highlight {
+      background: linear-gradient(to right, rgba(0,255,204,0.1), transparent);
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+    
+    /* Price updated animation */
+    .price-updated {
+      animation: price-pulse 1.5s ease-in-out;
+    }
+    
+    @keyframes price-pulse {
+      0% { background-color: #f8f9fa; }
+      30% { background-color: rgba(0, 255, 204, 0.2); }
+      100% { background-color: #f8f9fa; }
+    }
+    
+    /* Detailed price information */
+    .price-info {
+      font-size: 0.85em;
+      color: #555;
+      margin-top: 5px;
+      padding: 5px 0;
+      border-top: 1px dashed #e0e0e0;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .price-info-label {
+      color: #777;
+    }
+    
+    .price-info-value {
+      font-weight: 500;
+      padding: 2px 5px;
+      border-radius: 4px;
+      background: rgba(0, 195, 255, 0.1);
+      color: #333;
+    }
+    
+    /* Extra info for price variations */
+    .price-variation-note {
+      font-size: 0.8em;
+      color: #888;
+      margin-top: 5px;
+      font-style: italic;
+      line-height: 1.4;
+    }
   </style>
 </head>
 <body>
@@ -1997,245 +3004,328 @@
         </div>
       </div>
     </section>
-
-    <!-- Production Information Section -->
-    <section id="production-info">
-      <h2>Production Information</h2>
-      <div class="production-container">
-        <!-- Leafy Greens Production Info -->
-        <div class="production-card">
-          <div class="production-header">
-            <h3>Leafy Greens & Berries</h3>
-            <div class="system-badge">NFT System</div>
-          </div>
-          
-          <div class="production-metrics">
-            <div class="metric">
-              <div class="metric-value">5,880</div>
-              <div class="metric-label">Plants per Cycle</div>
-              <div class="metric-icon"><i class="fas fa-seedling"></i></div>
-            </div>
-            
-            <div class="metric">
-              <div class="metric-value">45-60</div>
-              <div class="metric-label">Days to Harvest</div>
-              <div class="metric-icon"><i class="fas fa-calendar-alt"></i></div>
-            </div>
-            
-            <div class="metric">
-              <div class="metric-value">450-650</div>
-              <div class="metric-label">kg Monthly Yield</div>
-              <div class="metric-icon"><i class="fas fa-weight-hanging"></i></div>
-            </div>
-          </div>
-          
-          <div class="production-details">
-            <div class="detail-item">
-              <div class="detail-label"><i class="fas fa-bolt"></i> Power Consumption</div>
-              <div class="detail-value">12-14 kWh/day</div>
-            </div>
-            
-            <div class="detail-item">
-              <div class="detail-label"><i class="fas fa-tint"></i> Water Usage</div>
-              <div class="detail-value">400-600 L/week (90% less than field farming)</div>
-            </div>
-            
-            <div class="detail-item">
-              <div class="detail-label"><i class="fas fa-temperature-high"></i> Optimal Temperature</div>
-              <div class="detail-value">18-24°C (64-75°F)</div>
-            </div>
-            
-            <div class="detail-item">
-              <div class="detail-label"><i class="fas fa-chart-line"></i> ROI Timeline</div>
-              <div class="detail-value">24-36 months</div>
-            </div>
-          </div>
-          
-          <div class="crop-examples">
-            <h4>Ideal Crops</h4>
-            <div class="crop-tags">
-              <span>Lettuce</span>
-              <span>Kale</span>
-              <span>Spinach</span>
-              <span>Basil</span>
-              <span>Strawberries</span>
-              <span>Bok Choy</span>
-              <span>Swiss Chard</span>
-              <span>Arugula</span>
-            </div>
-          </div>
-        </div>
+      
+      <div class="production-calculator">
+        <h3>Aquaponic Production & Profitability Calculator</h3>
+        <p>Use this advanced calculator to estimate the economic potential of your container farming investment.</p>
         
-        <!-- Mushroom Production Info -->
-        <div class="production-card">
-          <div class="production-header">
-            <h3>Mushroom Cultivation</h3>
-            <div class="system-badge">Controlled Environment</div>
+        <div class="calculator-interface">
+          <div class="calculator-inputs">
+            <div class="input-section">
+              <h4>System Configuration</h4>
+              
+              <div class="input-group">
+                <label for="system-type">Container Type</label>
+                <div class="enhanced-select-wrapper">
+                  <select id="system-type" class="calc-control enhanced-select">
+                    <option value="leafy-greens">Leafy Greens & Berries System</option>
+                    <option value="mushroom">Mushroom Cultivation System</option>
+                    <option value="microgreens">Microgreens & Fodder System</option>
+                  </select>
+                  <div class="select-arrow">
+                    <i class="fas fa-chevron-down"></i>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="input-group">
+                <label for="num-containers">Number of Containers</label>
+                <div class="range-with-value">
+                  <input type="range" id="num-containers" class="calc-control range-slider" min="1" max="250" value="1">
+                  <span class="range-value" id="num-containers-value">1</span>
+                </div>
+              </div>
+              
+              <div class="input-group">
+                <label for="utilization-rate">Production Utilization Rate (%)</label>
+                <div class="range-with-value">
+                  <input type="range" id="utilization-rate" class="calc-control range-slider" min="50" max="100" value="85">
+                  <span class="range-value" id="utilization-rate-value">85%</span>
+                </div>
+                <small>Accounts for growth cycles, maintenance, and learning curve</small>
+              </div>
+            </div>
+            
+            <div class="input-section">
+              <h4>Market Parameters</h4>
+              
+              <div class="input-group">
+                <label for="produce-type">Select Specific Produce Type</label>
+                <div class="enhanced-select-wrapper">
+                  <select id="produce-type" class="calc-control enhanced-select">
+                    <option value="spinach">Spinach</option>
+                    <option value="lettuce">Lettuce</option>
+                    <option value="kale">Kale</option>
+                    <option value="herbs">Culinary Herbs</option>
+                    <option value="strawberries">Strawberries</option>
+                    <option value="tomatoes">Tomatoes</option>
+                    <option value="mushroom-oyster">Mushroom - Oyster</option>
+                    <option value="mushroom-shiitake">Mushroom - Shiitake</option>
+                    <option value="mushroom-button">Mushroom - Button</option>
+                    <option value="onions">Onions</option>
+                    <option value="squash">Squash</option>
+                    <option value="microgreens-sunflower">Microgreens - Sunflower</option>
+                    <option value="microgreens-pea">Microgreens - Pea Shoots</option>
+                    <option value="microgreens-radish">Microgreens - Radish</option>
+                    <option value="microgreens-wheatgrass">Microgreens - Wheatgrass</option>
+                  </select>
+                  <div class="select-arrow">
+                    <i class="fas fa-chevron-down"></i>
+                  </div>
+                </div>
+                <small>Select the specific crop you want to grow and sell.</small>
+              </div>
+              
+              <div class="input-group">
+                <label for="produce-price">Market Price ($/kg)</label>
+                <input type="number" id="produce-price" class="calc-control enhanced-input" value="10.50" min="1" max="100" step="0.5">
+                <small>Average market price for selected produce in your area.</small>
+                <div class="price-info">
+                  <span class="price-info-label">Current Selection:</span>
+                  <span class="price-info-value" id="produce-name-display">Spinach</span>
+                </div>
+                <p id="price-variation-note" class="price-variation-note">Prices automatically update when you select a country or produce type, but can be manually adjusted to match your specific local market.</p>
+              </div>
+              
+              <div class="input-group">
+                <label for="market-reach">Market Reach (%)</label>
+                <div class="range-with-value">
+                  <input type="range" id="market-reach" class="calc-control range-slider" min="50" max="100" value="80">
+                  <span class="range-value" id="market-reach-value">80%</span>
+                </div>
+                <small>Percentage of production you can consistently sell at the stated price.</small>
+              </div>
+            </div>
+            
+            <div class="input-section">
+              <h4>Operating Costs</h4>
+              
+              <div class="input-group">
+                <label for="country-select" class="country-label">Select Country for Electricity Rates</label>
+                <div class="select-wrapper">
+                  <select id="countrySelect" class="country-select">
+                    <option value="">-- Select a Country --</option>
+                    <option value="Bermuda">Bermuda ($0.458/kWh)</option>
+                    <option value="Denmark">Denmark ($0.384/kWh)</option>
+                    <option value="Germany">Germany ($0.365/kWh)</option>
+                    <option value="United Kingdom">United Kingdom ($0.368/kWh)</option>
+                    <option value="Portugal">Portugal ($0.320/kWh)</option>
+                    <option value="Belgium">Belgium ($0.320/kWh)</option>
+                    <option value="Cayman Islands">Cayman Islands ($0.310/kWh)</option>
+                    <option value="Bahamas">Bahamas ($0.310/kWh)</option>
+                    <option value="Cape Verde">Cape Verde ($0.300/kWh)</option>
+                    <option value="Ireland">Ireland ($0.290/kWh)</option>
+                    <option value="Japan">Japan ($0.280/kWh)</option>
+                    <option value="Italy">Italy ($0.270/kWh)</option>
+                    <option value="Spain">Spain ($0.260/kWh)</option>
+                    <option value="Austria">Austria ($0.250/kWh)</option>
+                    <option value="Sweden">Sweden ($0.240/kWh)</option>
+                    <option value="Netherlands">Netherlands ($0.230/kWh)</option>
+                    <option value="Greece">Greece ($0.220/kWh)</option>
+                    <option value="New Zealand">New Zealand ($0.220/kWh)</option>
+                    <option value="Australia">Australia ($0.210/kWh)</option>
+                    <option value="Finland">Finland ($0.200/kWh)</option>
+                    <option value="France">France ($0.190/kWh)</option>
+                    <option value="South Africa">South Africa ($0.180/kWh)</option>
+                    <option value="Canada">Canada ($0.170/kWh)</option>
+                    <option value="United States">United States ($0.160/kWh)</option>
+                    <option value="Brazil">Brazil ($0.150/kWh)</option>
+                    <option value="China">China ($0.140/kWh)</option>
+                    <option value="Argentina">Argentina ($0.130/kWh)</option>
+                    <option value="Russia">Russia ($0.120/kWh)</option>
+                    <option value="India">India ($0.100/kWh)</option>
+                    <option value="Saudi Arabia">Saudi Arabia ($0.050/kWh)</option>
+                    <option value="Kazakhstan">Kazakhstan ($0.030/kWh)</option>
+                    <option value="Uzbekistan">Uzbekistan ($0.030/kWh)</option>
+                    <option value="Qatar">Qatar ($0.030/kWh)</option>
+                    <option value="Egypt">Egypt ($0.020/kWh)</option>
+                    <option value="Iran">Iran ($0.002/kWh)</option>
+                  </select>
+                </div>
+                <small>Select your country to auto-fill local electricity rates or enter a custom value below</small>
+              </div>
+              
+              <div class="input-group">
+                <label for="electricity-cost">Electricity Cost ($/kWh)</label>
+                <input type="number" id="electricityCost" class="calc-control enhanced-input" value="0.15" min="0.001" max="1" step="0.001">
+                <small>Average electricity cost in your region. Select a country above or enter manually.</small>
+              </div>
+              
+              <div class="input-group">
+                <label for="water-cost">Water Cost ($/1000L)</label>
+                <input type="number" id="water-cost" class="calc-control enhanced-input" value="2.00" min="0.5" max="10" step="0.1">
+              </div>
+              
+              <!-- Labor costs removed as the system is automated -->
+            </div>
           </div>
           
-          <div class="production-metrics">
-            <div class="metric">
-              <div class="metric-value">300-400</div>
-              <div class="metric-label">kg Monthly Yield</div>
-              <div class="metric-icon"><i class="fas fa-weight-hanging"></i></div>
+          <div class="calculator-results">
+            <h4>Estimated Annual Metrics</h4>
+            <div class="result-container">
+              <div class="result-card production-result">
+                <div class="result-icon">
+                  <i class="fas fa-seedling"></i>
+                </div>
+                <div class="result-details">
+                  <span class="result-label">Annual Production</span>
+                  <span class="result-value" id="annual-production">-</span>
+                  <span class="result-unit" id="production-unit">kg</span>
+                </div>
+              </div>
+              
+              <div class="result-card revenue-result">
+                <div class="result-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="result-details">
+                  <span class="result-label">Annual Gross Revenue</span>
+                  <span class="result-value" id="annual-revenue">-</span>
+                </div>
+              </div>
+              
+              <!-- Container System Cost Box -->
+              <div class="result-card container-cost-result">
+                <div class="result-icon">
+                  <i class="fas fa-shipping-fast"></i>
+                </div>
+                <div class="result-details">
+                  <span class="result-label">Container System Cost</span>
+                  <span class="result-value" id="container-cost">-</span>
+                </div>
+              </div>
+              
+              <div class="result-card costs-result">
+                <div class="result-icon">
+                  <i class="fas fa-bolt"></i>
+                </div>
+                <div class="result-details">
+                  <span class="result-label">Annual Operating Costs</span>
+                  <span class="result-value" id="annual-costs">-</span>
+                </div>
+              </div>
+              
+              <div class="result-card profit-result">
+                <div class="result-icon">
+                  <i class="fas fa-dollar-sign"></i>
+                </div>
+                <div class="result-details">
+                  <span class="result-label">Estimated Net Profit</span>
+                  <span class="result-value" id="annual-profit">-</span>
+                </div>
+              </div>
+              
+              <div class="result-card roi-result">
+                <div class="result-icon">
+                  <i class="fas fa-undo"></i>
+                </div>
+                <div class="result-details">
+                  <span class="result-label">ROI Timeline</span>
+                  <span class="result-value" id="roi-timeline">-</span>
+                </div>
+              </div>
             </div>
             
-            <div class="metric">
-              <div class="metric-value">21-60</div>
-              <div class="metric-label">Days to Harvest</div>
-              <div class="metric-icon"><i class="fas fa-calendar-alt"></i></div>
+            <div class="result-summary">
+              <h5>Summary Report</h5>
+              <p id="calculation-summary">Adjust the parameters to generate a financial projection for your container farming operation.</p>
             </div>
             
-            <div class="metric">
-              <div class="metric-value">4-5</div>
-              <div class="metric-label">Harvests per Month</div>
-              <div class="metric-icon"><i class="fas fa-sync"></i></div>
-            </div>
-          </div>
-          
-          <div class="production-details">
-            <div class="detail-item">
-              <div class="detail-label"><i class="fas fa-bolt"></i> Power Consumption</div>
-              <div class="detail-value">8-10 kWh/day</div>
-            </div>
-            
-            <div class="detail-item">
-              <div class="detail-label"><i class="fas fa-tint"></i> Humidity Requirement</div>
-              <div class="detail-value">85-95% during fruiting</div>
-            </div>
-            
-            <div class="detail-item">
-              <div class="detail-label"><i class="fas fa-temperature-high"></i> Optimal Temperature</div>
-              <div class="detail-value">18-22°C (64-72°F)</div>
-            </div>
-            
-            <div class="detail-item">
-              <div class="detail-label"><i class="fas fa-chart-line"></i> ROI Timeline</div>
-              <div class="detail-value">18-30 months</div>
-            </div>
-          </div>
-          
-          <div class="crop-examples">
-            <h4>Ideal Varieties</h4>
-            <div class="crop-tags">
-              <span>Oyster</span>
-              <span>Shiitake</span>
-              <span>Lion's Mane</span>
-              <span>King Trumpet</span>
-              <span>Reishi</span>
-              <span>Maitake</span>
-              <span>Enoki</span>
-              <span>Button</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Microgreens Production Info -->
-        <div class="production-card">
-          <div class="production-header">
-            <h3>Microgreens & Fodder</h3>
-            <div class="system-badge">High-Density System</div>
-          </div>
-          
-          <div class="production-metrics">
-            <div class="metric">
-              <div class="metric-value">350-500</div>
-              <div class="metric-label">kg Monthly Yield</div>
-              <div class="metric-icon"><i class="fas fa-weight-hanging"></i></div>
-            </div>
-            
-            <div class="metric">
-              <div class="metric-value">7-14</div>
-              <div class="metric-label">Days to Harvest</div>
-              <div class="metric-icon"><i class="fas fa-calendar-alt"></i></div>
-            </div>
-            
-            <div class="metric">
-              <div class="metric-value">360</div>
-              <div class="metric-label">Growing Trays</div>
-              <div class="metric-icon"><i class="fas fa-border-all"></i></div>
-            </div>
-          </div>
-          
-          <div class="production-details">
-            <div class="detail-item">
-              <div class="detail-label"><i class="fas fa-bolt"></i> Power Consumption</div>
-              <div class="detail-value">10-12 kWh/day</div>
-            </div>
-            
-            <div class="detail-item">
-              <div class="detail-label"><i class="fas fa-tint"></i> Water Usage</div>
-              <div class="detail-value">250-350 L/week</div>
-            </div>
-            
-            <div class="detail-item">
-              <div class="detail-label"><i class="fas fa-temperature-high"></i> Optimal Temperature</div>
-              <div class="detail-value">18-24°C (65-75°F)</div>
-            </div>
-            
-            <div class="detail-item">
-              <div class="detail-label"><i class="fas fa-chart-line"></i> ROI Timeline</div>
-              <div class="detail-value">14-24 months</div>
-            </div>
-          </div>
-          
-          <div class="crop-examples">
-            <h4>Ideal Crops</h4>
-            <div class="crop-tags">
-              <span>Sunflower</span>
-              <span>Pea Shoots</span>
-              <span>Radish</span>
-              <span>Broccoli</span>
-              <span>Wheatgrass</span>
-              <span>Barley Fodder</span>
-              <span>Arugula</span>
-              <span>Amaranth</span>
+            <div class="calculator-notes">
+              <p><i class="fas fa-info-circle"></i> This calculator provides estimates based on industry averages and typical performance. Actual results may vary based on environmental factors, management practices, and local market conditions.</p>
             </div>
           </div>
         </div>
       </div>
-      
-      <div class="production-calculator">
-        <h3>Annual Production Value Calculator</h3>
-        <p>Based on current market prices and optimal operation, each container system can generate the following estimated annual revenues:</p>
-        
-        <div class="calculator-cards">
-          <div class="calculator-card">
-            <div class="calculator-icon">
-              <i class="fas fa-leaf"></i>
-            </div>
-            <div class="calculator-details">
-              <h4>Leafy Greens</h4>
-              <div class="calc-value">$84,000 - $130,000</div>
-              <p>Annual gross revenue potential</p>
-            </div>
-          </div>
+    </section>
+
+    <!-- Enquiry Section -->
+    <section id="enquiry-section">
+      <div class="enquiry-container">
+        <div class="enquiry-content">
+          <h2>Ready to Start Your Aquaponic Journey?</h2>
+          <p>Our team of experts is ready to help you select the perfect container farming solution. Fill out the form below, and we'll get back to you within 24 hours.</p>
           
-          <div class="calculator-card">
-            <div class="calculator-icon">
-              <i class="fas fa-moon"></i>
+          <form id="enquiry-form" class="enquiry-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="ce93f93e-6030-4904-9aab-d71a48dab1f0">
+            <input type="hidden" name="subject" value="New Aquaponic Container Farming Enquiry">
+            <input type="hidden" name="from_name" id="from_name">
+            <input type="hidden" name="full_enquiry_details" id="fullEnquiryDetails">
+            <input type="hidden" name="selected_models" id="selectedModelsInput">
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+              </div>
             </div>
-            <div class="calculator-details">
-              <h4>Mushrooms</h4>
-              <div class="calc-value">$70,000 - $120,000</div>
-              <p>Annual gross revenue potential</p>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="company">Company (Optional)</label>
+                <input type="text" id="company" name="company" placeholder="Enter your company name">
+              </div>
             </div>
-          </div>
-          
-          <div class="calculator-card">
-            <div class="calculator-icon">
-              <i class="fas fa-seedling"></i>
+            
+            <div class="form-group">
+              <label for="budget">Budget (USD)</label>
+              <input type="number" id="budget" name="budget" placeholder="Your budget (optional)" min="0">
             </div>
-            <div class="calculator-details">
-              <h4>Microgreens</h4>
-              <div class="calc-value">$90,000 - $150,000</div>
-              <p>Annual gross revenue potential</p>
+            
+            <div class="form-group">
+              <label>Container System</label>
+              <div id="modelSelectionContainer" class="model-selection">
+                <label class="model-option">
+                  <input type="checkbox" name="selectedModels[]" value="Leafy Greens & Berries">
+                  <div class="model-option-content">
+                    <i class="fas fa-leaf"></i>
+                    <span>Leafy Greens & Berries</span>
+                  </div>
+                </label>
+                <label class="model-option">
+                  <input type="checkbox" name="selectedModels[]" value="Mushroom Cultivation">
+                  <div class="model-option-content">
+                    <i class="fas fa-spa"></i>
+                    <span>Mushroom Cultivation</span>
+                  </div>
+                </label>
+                <label class="model-option">
+                  <input type="checkbox" name="selectedModels[]" value="Microgreens & Fodder">
+                  <div class="model-option-content">
+                    <i class="fas fa-seedling"></i>
+                    <span>Microgreens & Fodder</span>
+                  </div>
+                </label>
+              </div>
             </div>
-          </div>
-        </div>
-        
-        <div class="calculator-note">
-          <p><i class="fas fa-info-circle"></i> Values based on optimal production and average market prices. Actual results may vary based on location, market conditions, and management.</p>
+            
+            <div class="form-group" id="selectedModelsTally">
+              <strong>Selected Systems:</strong> <span id="selectedCount">0</span>
+              <div id="selectedModelsList"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about your project or ask questions..." required></textarea>
+            </div>
+            
+            <div class="form-group">
+              <button type="submit" class="submit-button">
+                <span>Submit Enquiry</span>
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -2289,6 +3379,816 @@
           }
         });
       });
+    });
+  </script>
+
+  <script>
+    // JavaScript for model selection functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const modelOptions = document.querySelectorAll('#modelSelectionContainer input[type="checkbox"]');
+      const selectedModelsList = document.getElementById('selectedModelsList');
+      const selectedCount = document.getElementById('selectedCount');
+      const selectedModelsInput = document.getElementById('selectedModelsInput');
+      const enquiryForm = document.getElementById('enquiry-form');
+      
+      // Function to update selected models display
+      function updateSelectedModels() {
+        selectedModelsList.innerHTML = '';
+        let count = 0;
+        let selectedValues = [];
+        
+        modelOptions.forEach(option => {
+          if (option.checked) {
+            count++;
+            selectedValues.push(option.value);
+            
+            // Create a tag for each selected model
+            const tag = document.createElement('span');
+            tag.className = 'selected-tag';
+            
+            // Add appropriate icon based on the model
+            let iconClass = 'fa-leaf';
+            if (option.value.includes('Mushroom')) {
+              iconClass = 'fa-spa';
+            } else if (option.value.includes('Microgreens')) {
+              iconClass = 'fa-seedling';
+            }
+            
+            tag.innerHTML = `<i class="fas ${iconClass}"></i>${option.value}`;
+            selectedModelsList.appendChild(tag);
+          }
+        });
+        
+        // Update the count and hidden input
+        selectedCount.textContent = count;
+        selectedModelsInput.value = selectedValues.join(', ');
+      }
+      
+      // Add change event listeners to all checkboxes
+      modelOptions.forEach(option => {
+        option.addEventListener('change', updateSelectedModels);
+      });
+      
+      // Handle form submission
+      enquiryForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const company = document.getElementById('company').value;
+        const budget = document.getElementById('budget').value;
+        const message = document.getElementById('message').value;
+        
+        // Set hidden values for submission
+        document.getElementById('from_name').value = name;
+        document.getElementById('fullEnquiryDetails').value = `
+          Name: ${name}
+          Email: ${email}
+          Phone: ${phone}
+          Company: ${company || 'Not provided'}
+          Budget: ${budget ? '$' + budget + ' USD' : 'Not specified'}
+          Selected Models: ${selectedModelsInput.value || 'None selected'}
+          Message: ${message}
+        `;
+        
+        // Submit the form
+        this.submit();
+      });
+      
+      // Initialize the selected models display
+      updateSelectedModels();
+    });
+  </script>
+
+  <script>
+    // Advanced Production Calculator Logic
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get all input elements
+      const systemType = document.getElementById('system-type');
+      const produceType = document.getElementById('produce-type');
+      const producePrice = document.getElementById('produce-price');
+      const produceNameDisplay = document.getElementById('produce-name-display');
+      const numContainers = document.getElementById('num-containers');
+      const numContainersValue = document.getElementById('num-containers-value');
+      const utilizationRate = document.getElementById('utilization-rate');
+      const utilizationRateValue = document.getElementById('utilization-rate-value');
+      const marketReach = document.getElementById('market-reach');
+      const marketReachValue = document.getElementById('market-reach-value');
+      const electricityCost = document.getElementById('electricityCost');
+      const waterCost = document.getElementById('water-cost');
+      const countrySelect = document.getElementById('countrySelect');
+      const priceVariationNote = document.getElementById('price-variation-note');
+      
+      // Electricity rates by country in USD per kWh
+      const electricityRates = {
+        "Bermuda": 0.458,
+        "Denmark": 0.384,
+        "Germany": 0.365,
+        "United Kingdom": 0.368,
+        "Portugal": 0.320,
+        "Belgium": 0.320,
+        "Cayman Islands": 0.310,
+        "Bahamas": 0.310,
+        "Cape Verde": 0.300,
+        "Ireland": 0.290,
+        "Japan": 0.280,
+        "Italy": 0.270,
+        "Spain": 0.260,
+        "Austria": 0.250,
+        "Sweden": 0.240,
+        "Netherlands": 0.230,
+        "Greece": 0.220,
+        "New Zealand": 0.220,
+        "Australia": 0.210,
+        "Finland": 0.200,
+        "France": 0.190,
+        "South Africa": 0.180,
+        "Canada": 0.170,
+        "United States": 0.160,
+        "Brazil": 0.150,
+        "China": 0.140,
+        "Argentina": 0.130,
+        "Russia": 0.120,
+        "India": 0.100,
+        "Saudi Arabia": 0.050,
+        "Kazakhstan": 0.030,
+        "Uzbekistan": 0.030,
+        "Qatar": 0.030,
+        "Egypt": 0.020,
+        "Iran": 0.002
+      };
+      
+      // Detailed produce prices by country (USD per kg)
+      // Sample data for key countries - in a real implementation, this would be more comprehensive
+      const produceRates = {
+        "Bermuda": {
+          "spinach": 18.50,
+          "lettuce": 16.75,
+          "kale": 17.25,
+          "herbs": 25.00,
+          "strawberries": 22.50,
+          "tomatoes": 15.50,
+          "mushroom-oyster": 24.00,
+          "mushroom-shiitake": 32.00,
+          "mushroom-button": 18.50,
+          "onions": 8.50,
+          "squash": 12.75,
+          "microgreens-sunflower": 42.00,
+          "microgreens-pea": 38.00,
+          "microgreens-radish": 40.00,
+          "microgreens-wheatgrass": 35.00
+        },
+        "Japan": {
+          "spinach": 17.00,
+          "lettuce": 15.25,
+          "kale": 15.75,
+          "herbs": 23.00,
+          "strawberries": 20.50,
+          "tomatoes": 14.50,
+          "mushroom-oyster": 25.00,
+          "mushroom-shiitake": 32.00,
+          "mushroom-button": 18.50,
+          "onions": 8.00,
+          "squash": 12.25,
+          "microgreens-sunflower": 42.00,
+          "microgreens-pea": 39.00,
+          "microgreens-radish": 40.00,
+          "microgreens-wheatgrass": 36.00
+        },
+        "United States": {
+          "spinach": 10.50,
+          "lettuce": 8.75,
+          "kale": 9.25,
+          "herbs": 15.00,
+          "strawberries": 12.50,
+          "tomatoes": 7.50,
+          "mushroom-oyster": 16.00,
+          "mushroom-shiitake": 22.00,
+          "mushroom-button": 11.50,
+          "onions": 4.50,
+          "squash": 5.75,
+          "microgreens-sunflower": 28.00,
+          "microgreens-pea": 25.00,
+          "microgreens-radish": 26.00,
+          "microgreens-wheatgrass": 22.00
+        },
+        "India": {
+          "spinach": 6.50,
+          "lettuce": 5.75,
+          "kale": 6.25,
+          "herbs": 12.00,
+          "strawberries": 9.50,
+          "tomatoes": 4.00,
+          "mushroom-oyster": 12.00,
+          "mushroom-shiitake": 18.00,
+          "mushroom-button": 8.50,
+          "onions": 2.50,
+          "squash": 3.75,
+          "microgreens-sunflower": 22.00,
+          "microgreens-pea": 19.00,
+          "microgreens-radish": 20.00,
+          "microgreens-wheatgrass": 17.00
+        }
+      };
+      
+      // Region-based pricing for countries not specifically listed
+      const regionMultipliers = {
+        // Multipliers relative to US prices
+        "Bermuda": 1.75,
+        "Denmark": 1.65,
+        "Germany": 1.55,
+        "United Kingdom": 1.60,
+        "Portugal": 1.35,
+        "Belgium": 1.55,
+        "Cayman Islands": 1.70,
+        "Bahamas": 1.65,
+        "Cape Verde": 1.30,
+        "Ireland": 1.55,
+        "Japan": 1.65,
+        "Italy": 1.40,
+        "Spain": 1.35,
+        "Austria": 1.50,
+        "Sweden": 1.60,
+        "Netherlands": 1.50,
+        "Greece": 1.30,
+        "New Zealand": 1.45,
+        "Australia": 1.40,
+        "Finland": 1.55,
+        "France": 1.45,
+        "South Africa": 1.10,
+        "Canada": 1.15,
+        "United States": 1.00, // Base reference
+        "Brazil": 0.90,
+        "China": 0.75,
+        "Argentina": 0.85,
+        "Russia": 0.90,
+        "India": 0.60,
+        "Saudi Arabia": 1.25,
+        "Kazakhstan": 0.70,
+        "Uzbekistan": 0.65,
+        "Qatar": 1.30,
+        "Egypt": 0.60,
+        "Iran": 0.55
+      };
+      
+      // Production data for different produce types (monthly in kg per container)
+      const produceProductionData = {
+        // Leafy greens
+        "spinach": {
+          productionPerMonth: 480,
+          electricityPerDay: 12,
+          waterPerWeek: 450,
+          seedsAndNutrients: 400,
+          systemCategory: "leafy-greens"
+        },
+        "lettuce": {
+          productionPerMonth: 520,
+          electricityPerDay: 12,
+          waterPerWeek: 470,
+          seedsAndNutrients: 380,
+          systemCategory: "leafy-greens"
+        },
+        "kale": {
+          productionPerMonth: 420,
+          electricityPerDay: 11,
+          waterPerWeek: 430,
+          seedsAndNutrients: 350,
+          systemCategory: "leafy-greens"
+        },
+        "herbs": {
+          productionPerMonth: 350,
+          electricityPerDay: 10,
+          waterPerWeek: 380,
+          seedsAndNutrients: 450,
+          systemCategory: "leafy-greens"
+        },
+        "strawberries": {
+          productionPerMonth: 380,
+          electricityPerDay: 14,
+          waterPerWeek: 520,
+          seedsAndNutrients: 520,
+          systemCategory: "leafy-greens"
+        },
+        "tomatoes": {
+          productionPerMonth: 450,
+          electricityPerDay: 15,
+          waterPerWeek: 550,
+          seedsAndNutrients: 480,
+          systemCategory: "leafy-greens"
+        },
+        // Mushrooms
+        "mushroom-oyster": {
+          productionPerMonth: 380,
+          electricityPerDay: 8,
+          waterPerWeek: 180,
+          seedsAndNutrients: 380,
+          systemCategory: "mushroom"
+        },
+        "mushroom-shiitake": {
+          productionPerMonth: 320,
+          electricityPerDay: 9,
+          waterPerWeek: 160,
+          seedsAndNutrients: 420,
+          systemCategory: "mushroom"
+        },
+        "mushroom-button": {
+          productionPerMonth: 400,
+          electricityPerDay: 7,
+          waterPerWeek: 190,
+          seedsAndNutrients: 340,
+          systemCategory: "mushroom"
+        },
+        // Others that can work in aquaponics
+        "onions": {
+          productionPerMonth: 380,
+          electricityPerDay: 10,
+          waterPerWeek: 400,
+          seedsAndNutrients: 320,
+          systemCategory: "leafy-greens"
+        },
+        "squash": {
+          productionPerMonth: 420,
+          electricityPerDay: 12,
+          waterPerWeek: 480,
+          seedsAndNutrients: 370,
+          systemCategory: "leafy-greens"
+        },
+        // Microgreens
+        "microgreens-sunflower": {
+          productionPerMonth: 450,
+          electricityPerDay: 10,
+          waterPerWeek: 280,
+          seedsAndNutrients: 420,
+          systemCategory: "microgreens"
+        },
+        "microgreens-pea": {
+          productionPerMonth: 480,
+          electricityPerDay: 10,
+          waterPerWeek: 290,
+          seedsAndNutrients: 430,
+          systemCategory: "microgreens"
+        },
+        "microgreens-radish": {
+          productionPerMonth: 420,
+          electricityPerDay: 11,
+          waterPerWeek: 270,
+          seedsAndNutrients: 390,
+          systemCategory: "microgreens"
+        },
+        "microgreens-wheatgrass": {
+          productionPerMonth: 520,
+          electricityPerDay: 9,
+          waterPerWeek: 260,
+          seedsAndNutrients: 350,
+          systemCategory: "microgreens"
+        }
+      };
+      
+      // System base data (per container)
+      const systemData = {
+        'leafy-greens': {
+          name: 'Leafy Greens & Berries',
+          initialCost: 45000, // USD
+          maintenanceCost: 300, // USD per month
+        },
+        'mushroom': {
+          name: 'Mushroom Cultivation',
+          initialCost: 30000, // USD
+          maintenanceCost: 250, // USD per month
+        },
+        'microgreens': {
+          name: 'Microgreens & Fodder',
+          initialCost: 33000, // USD
+          maintenanceCost: 280, // USD per month
+        }
+      };
+      
+      // Function to get produce price based on country and produce type
+      function getProducePrice(country, produceType) {
+        // First, check if we have specific data for this country and produce
+        if (produceRates[country] && produceRates[country][produceType]) {
+          return produceRates[country][produceType];
+        }
+        
+        // If not, use the US base price and apply a country multiplier
+        const usBasePrice = produceRates["United States"][produceType];
+        const multiplier = regionMultipliers[country] || 1.0; // Default to 1.0 if no multiplier found
+        
+        return usBasePrice * multiplier;
+      }
+      
+      // Set up produce type selection to update price
+      if (produceType) {
+        produceType.addEventListener('change', function() {
+          const selectedProduceType = this.value;
+          const selectedCountry = countrySelect.value || "United States";
+          
+          // Update produce name display
+          produceNameDisplay.textContent = this.options[this.selectedIndex].text;
+          
+          // Update price based on country and produce type
+          producePrice.value = getProducePrice(selectedCountry, selectedProduceType).toFixed(2);
+          
+          // Also update the system type to match the produce category
+          if (systemType) {
+            const category = produceProductionData[selectedProduceType].systemCategory;
+            systemType.value = category;
+          }
+          
+          // Add visual indication that price has been updated
+          producePrice.classList.add('price-updated');
+          setTimeout(() => {
+            producePrice.classList.remove('price-updated');
+          }, 1500);
+          
+          // Update the price variation note
+          if (priceVariationNote) {
+            const produceName = produceType.options[produceType.selectedIndex].text;
+            priceVariationNote.innerHTML = `Price shown is the average market rate for <strong>${produceName}</strong> in <strong>${selectedCountry}</strong>. Prices can vary by season and quality.`;
+          }
+          
+          // Recalculate
+          calculateResults();
+        });
+      }
+      
+      // Set up country selection to update electricity cost AND produce prices
+      if (countrySelect) {
+        countrySelect.addEventListener('change', function() {
+          const selectedCountry = this.value;
+          const selectedProduceType = produceType ? produceType.value : "spinach";
+          
+          // Update electricity cost
+          if (selectedCountry && electricityRates[selectedCountry]) {
+            electricityCost.value = electricityRates[selectedCountry].toFixed(3);
+          }
+          
+          // Update produce price based on country and produce type
+          if (selectedCountry && produceType) {
+            producePrice.value = getProducePrice(selectedCountry, selectedProduceType).toFixed(2);
+            
+            // Add visual indication that price has been updated
+            producePrice.classList.add('price-updated');
+            setTimeout(() => {
+              producePrice.classList.remove('price-updated');
+            }, 1500);
+            
+            // Update the price variation note
+            if (priceVariationNote) {
+              const produceName = produceType.options[produceType.selectedIndex].text;
+              priceVariationNote.innerHTML = `Price shown is the average market rate for <strong>${produceName}</strong> in <strong>${selectedCountry}</strong>. Prices can vary by season and quality.`;
+            }
+          }
+          
+          // Recalculate after changing rates
+          calculateResults();
+        });
+      }
+      
+      // Get all result elements
+      const annualProduction = document.getElementById('annual-production');
+      const productionUnit = document.getElementById('production-unit');
+      const annualRevenue = document.getElementById('annual-revenue');
+      const annualCosts = document.getElementById('annual-costs');
+      const annualProfit = document.getElementById('annual-profit');
+      const roiTimeline = document.getElementById('roi-timeline');
+      const calculationSummary = document.getElementById('calculation-summary');
+      
+      // Update range value displays
+      numContainers.addEventListener('input', function() {
+        numContainersValue.textContent = this.value;
+        calculateResults();
+      });
+      
+      utilizationRate.addEventListener('input', function() {
+        utilizationRateValue.textContent = this.value + '%';
+        calculateResults();
+      });
+      
+      marketReach.addEventListener('input', function() {
+        marketReachValue.textContent = this.value + '%';
+        calculateResults();
+      });
+      
+      // Show/hide appropriate price inputs based on system type
+      systemType.addEventListener('change', function() {
+        const priceGroups = document.querySelectorAll('.produce-price-group');
+        priceGroups.forEach(group => group.style.display = 'none');
+        
+        if (this.value === 'leafy-greens') {
+          document.getElementById('leafy-greens-inputs').style.display = 'block';
+        } else if (this.value === 'mushroom') {
+          document.getElementById('mushroom-inputs').style.display = 'block';
+        } else if (this.value === 'microgreens') {
+          document.getElementById('microgreens-inputs').style.display = 'block';
+        }
+        
+        calculateResults();
+      });
+      
+      // Add event listeners for all inputs
+      const allInputs = document.querySelectorAll('.calc-control');
+      allInputs.forEach(input => {
+        input.addEventListener('change', calculateResults);
+        input.addEventListener('input', calculateResults);
+      });
+      
+      // Initialize price inputs visibility
+      document.getElementById('leafy-greens-inputs').style.display = 'block';
+      
+      // Initialize price inputs with default selection
+      if (produceType && countrySelect) {
+        const initialProduceType = produceType.value;
+        const initialCountry = countrySelect.value || "United States";
+        producePrice.value = getProducePrice(initialCountry, initialProduceType).toFixed(2);
+        produceNameDisplay.textContent = produceType.options[produceType.selectedIndex].text;
+        
+        // Also initialize the price variation note
+        if (priceVariationNote) {
+          const produceName = produceType.options[produceType.selectedIndex].text;
+          priceVariationNote.innerHTML = `Price shown is the average market rate for <strong>${produceName}</strong> in <strong>${initialCountry || "your location"}</strong>. Prices can vary by season and quality.`;
+        }
+      }
+      
+      // Show appropriate system type based on produce selection
+      if (produceType && systemType) {
+        const selectedProduceType = produceType.value;
+        if (produceProductionData[selectedProduceType]) {
+          const category = produceProductionData[selectedProduceType].systemCategory;
+          systemType.value = category;
+        }
+      }
+      
+      // Main calculation function
+      function calculateResults() {
+        // Get current values
+        const system = systemData[systemType.value];
+        const selectedProduceType = produceType.value;
+        const produceData = produceProductionData[selectedProduceType];
+        const containers = parseInt(numContainers.value);
+        const utilization = parseInt(utilizationRate.value) / 100;
+        const market = parseInt(marketReach.value) / 100;
+        
+        // Get current price for the selected produce
+        const pricePerKg = parseFloat(producePrice.value);
+        
+        // Get utility costs
+        const elecCost = parseFloat(electricityCost.value);
+        const waterCostValue = parseFloat(waterCost.value);
+        
+        // Calculate production
+        const monthlyProduction = produceData.productionPerMonth * containers * utilization;
+        const annualProductionValue = monthlyProduction * 12 * market;
+        
+        // Calculate revenue
+        const monthlyRevenue = monthlyProduction * pricePerKg * market;
+        const annualRevenueValue = monthlyRevenue * 12;
+        
+        // Calculate costs
+        const monthlySeedsNutrients = produceData.seedsAndNutrients * containers;
+        const monthlyMaintenance = system.maintenanceCost * containers;
+        const monthlyElectricity = produceData.electricityPerDay * 30 * elecCost * containers;
+        const monthlyWater = (produceData.waterPerWeek * 4 / 1000) * waterCostValue * containers;
+        
+        const monthlyOperatingCosts = monthlySeedsNutrients + monthlyMaintenance + 
+                                     monthlyElectricity + monthlyWater;
+        const annualCostsValue = monthlyOperatingCosts * 12;
+        
+        // Calculate profit
+        const annualProfitValue = annualRevenueValue - annualCostsValue;
+        
+        // Calculate ROI
+        const initialInvestment = system.initialCost * containers;
+        let roiYears = initialInvestment / annualProfitValue;
+        
+        // Update results
+        annualProduction.textContent = Math.round(annualProductionValue).toLocaleString();
+        productionUnit.textContent = 'kg/year';
+        annualRevenue.textContent = '$' + Math.round(annualRevenueValue).toLocaleString();
+        
+        // Update container cost display
+        const containerCostDisplay = document.getElementById('container-cost');
+        if (containerCostDisplay) {
+          containerCostDisplay.textContent = '$' + Math.round(initialInvestment).toLocaleString();
+        }
+        
+        annualCosts.textContent = '$' + Math.round(annualCostsValue).toLocaleString();
+        annualProfit.textContent = '$' + Math.round(annualProfitValue).toLocaleString();
+        
+        // Format ROI timeline
+        let roiTimelineText;
+        if (annualProfitValue <= 0) {
+          roiTimelineText = 'N/A (No Profit)';
+          roiTimeline.textContent = roiTimelineText;
+        } else {
+          const roiYearsRounded = Math.round(roiYears * 10) / 10;
+          const roiMonths = Math.round(roiYears * 12);
+          
+          if (roiYears < 1) {
+            roiTimelineText = roiMonths + ' months';
+            roiTimeline.textContent = roiTimelineText;
+          } else if (roiYears > 10) {
+            roiTimelineText = '10+ years';
+            roiTimeline.textContent = roiTimelineText;
+          } else {
+            roiTimelineText = roiYearsRounded + ' years';
+            roiTimeline.textContent = roiTimelineText;
+          }
+        }
+        
+        // Get selected country name
+        let countryName = "your location";
+        if (countrySelect && countrySelect.value) {
+          countryName = countrySelect.value;
+        }
+        
+        // Get produce display name
+        let produceDisplayName = produceType.options[produceType.selectedIndex].text;
+        
+        // Calculate detailed costs
+        const annualElectricity = monthlyElectricity * 12;
+        const annualWater = monthlyWater * 12;
+        const annualMaintenance = monthlyMaintenance * 12;
+        const annualSeedsNutrients = monthlySeedsNutrients * 12;
+        
+        // Calculate percentages of total costs
+        const totalAnnualCost = annualCostsValue;
+        const elecCostPercent = Math.round((annualElectricity / totalAnnualCost) * 100);
+        const waterCostPercent = Math.round((annualWater / totalAnnualCost) * 100);
+        const maintenanceCostPercent = Math.round((annualMaintenance / totalAnnualCost) * 100);
+        const seedsNutrientsCostPercent = Math.round((annualSeedsNutrients / totalAnnualCost) * 100);
+        
+        // Calculate key metrics
+        const yieldPerContainer = Math.round(annualProductionValue / containers);
+        const profitPerContainer = Math.round(annualProfitValue / containers);
+        const revenuePerKg = Math.round((annualRevenueValue / annualProductionValue) * 100) / 100;
+        const costPerKg = Math.round((annualCostsValue / annualProductionValue) * 100) / 100;
+        const profitMarginPercent = Math.round((annualProfitValue / annualRevenueValue) * 100);
+        
+        // Determine profitability level
+        let profitability = '';
+        if (annualProfitValue <= 0) {
+          profitability = 'Not profitable';
+        } else if (annualProfitValue < 20000) {
+          profitability = 'Marginally profitable';
+        } else if (annualProfitValue < 50000) {
+          profitability = 'Moderately profitable';
+        } else if (annualProfitValue < 100000) {
+          profitability = 'Highly profitable';
+        } else {
+          profitability = 'Exceptionally profitable';
+        }
+        
+        // Create a comprehensive, well-structured report
+        calculationSummary.innerHTML = `
+          <h5>Financial Analysis Summary</h5>
+          
+          <div class="summary-section">
+            <h6><i class="fas fa-cogs"></i> System Configuration</h6>
+            <ul class="summary-list">
+              <li><strong>Container Type:</strong> ${system.name}</li>
+              <li><strong>Number of Containers:</strong> ${containers}</li>
+              <li><strong>Primary Crop:</strong> ${produceDisplayName}</li>
+              <li><strong>Location:</strong> ${countryName}</li>
+              <li><strong>Utilization Rate:</strong> ${utilization*100}%</li>
+            </ul>
+          </div>
+          
+          <div class="summary-section">
+            <h6><i class="fas fa-chart-line"></i> Market Parameters</h6>
+            <ul class="summary-list">
+              <li><strong>Market Price:</strong> $${pricePerKg.toFixed(2)}/kg</li>
+              <li><strong>Market Reach:</strong> ${market*100}%</li>
+              <li><strong>Revenue Per kg:</strong> $${revenuePerKg.toFixed(2)}</li>
+              <li><strong>Profit Margin:</strong> ${profitMarginPercent}%</li>
+            </ul>
+          </div>
+          
+          <div class="summary-section">
+            <h6><i class="fas fa-dollar-sign"></i> Operating Costs (Annual)</h6>
+            <ul class="summary-list">
+              <li><strong>Electricity:</strong> $${Math.round(annualElectricity).toLocaleString()} (${elecCostPercent}%)</li>
+              <li><strong>Water:</strong> $${Math.round(annualWater).toLocaleString()} (${waterCostPercent}%)</li>
+              <li><strong>Seeds & Nutrients:</strong> $${Math.round(annualSeedsNutrients).toLocaleString()} (${seedsNutrientsCostPercent}%)</li>
+              <li><strong>Maintenance:</strong> $${Math.round(annualMaintenance).toLocaleString()} (${maintenanceCostPercent}%)</li>
+              <li><strong>Total Operating Costs:</strong> $${Math.round(annualCostsValue).toLocaleString()}</li>
+              <li><strong>Cost Per kg Produced:</strong> $${costPerKg.toFixed(2)}</li>
+            </ul>
+          </div>
+          
+          <div class="summary-section">
+            <h6><i class="fas fa-seedling"></i> Annual Production Metrics</h6>
+            <ul class="summary-list">
+              <li><strong>Total Production:</strong> ${Math.round(annualProductionValue).toLocaleString()} kg</li>
+              <li><strong>Production Per Container:</strong> ${yieldPerContainer.toLocaleString()} kg</li>
+              <li><strong>Monthly Production:</strong> ${Math.round(monthlyProduction * market).toLocaleString()} kg</li>
+              <li><strong>Annual Revenue:</strong> $${Math.round(annualRevenueValue).toLocaleString()}</li>
+              <li><strong>Annual Profit:</strong> $${Math.round(annualProfitValue).toLocaleString()}</li>
+              <li><strong>Profit Per Container:</strong> $${profitPerContainer.toLocaleString()}</li>
+            </ul>
+          </div>
+          
+          <div class="summary-section">
+            <h6><i class="fas fa-balance-scale"></i> Investment Analysis</h6>
+            <ul class="summary-list">
+              <li><strong>Initial Investment:</strong> $${Math.round(initialInvestment).toLocaleString()}</li>
+              <li><strong>ROI Timeline:</strong> ${roiTimelineText}</li>
+              <li><strong>Profitability Assessment:</strong> <span class="profitability-${profitability.toLowerCase().replace(/\s+/g, '-')}">${profitability}</span></li>
+            </ul>
+          </div>
+          
+          <div class="summary-conclusion">
+            <p>Based on the analysis, this ${system.name.toLowerCase()} operation growing ${produceDisplayName.toLowerCase()} in ${countryName} is <strong>${profitability.toLowerCase()}</strong>. The automated system would produce ${Math.round(annualProductionValue).toLocaleString()} kg annually, generating $${Math.round(annualRevenueValue).toLocaleString()} in revenue with $${Math.round(annualProfitValue).toLocaleString()} profit.</p>
+          </div>
+        `;
+        
+        // Style profit/loss
+        if (annualProfitValue < 0) {
+          annualProfit.style.color = '#ff3b30';
+        } else {
+          annualProfit.style.color = '#34c759';
+        }
+      }
+      
+      // Make the calculateResults function available to the global scope
+      // so it can be called from other scripts
+      window.updateCalculations = calculateResults;
+      
+      // Calculate initial results
+      calculateResults();
+    });
+  </script>
+
+  <script>
+    // Add this script at the end of the body or in your scripts section
+    document.addEventListener("DOMContentLoaded", function() {
+      // Country electricity rates data in USD per kWh
+      const electricityRates = {
+        "Bermuda": 0.458,
+        "Denmark": 0.384,
+        "Germany": 0.365,
+        "United Kingdom": 0.368,
+        "Portugal": 0.320,
+        "Belgium": 0.320,
+        "Cayman Islands": 0.310,
+        "Bahamas": 0.310,
+        "Cape Verde": 0.300,
+        "Ireland": 0.290,
+        "Japan": 0.280,
+        "Italy": 0.270,
+        "Spain": 0.260,
+        "Austria": 0.250,
+        "Sweden": 0.240,
+        "Netherlands": 0.230,
+        "Greece": 0.220,
+        "New Zealand": 0.220,
+        "Australia": 0.210,
+        "Finland": 0.200,
+        "France": 0.190,
+        "South Africa": 0.180,
+        "Canada": 0.170,
+        "United States": 0.160,
+        "Brazil": 0.150,
+        "China": 0.140,
+        "Argentina": 0.130,
+        "Russia": 0.120,
+        "India": 0.100,
+        "Saudi Arabia": 0.050,
+        "Kazakhstan": 0.030,
+        "Uzbekistan": 0.030,
+        "Qatar": 0.030,
+        "Egypt": 0.020,
+        "Iran": 0.002
+      };
+      
+      // Get references to the country select and electricity cost input elements
+      const countrySelect = document.getElementById("countrySelect");
+      const electricityCostInput = document.getElementById("electricityCost");
+      
+      if (countrySelect && electricityCostInput) {
+        // Update the electricity cost when country is selected
+        countrySelect.addEventListener("change", function() {
+          const selectedCountry = this.value;
+          if (selectedCountry && electricityRates[selectedCountry]) {
+            electricityCostInput.value = electricityRates[selectedCountry].toFixed(3);
+            // Trigger any calculation update functions that might exist
+            if (typeof updateCalculations === 'function') {
+              updateCalculations();
+            }
+          }
+        });
+        
+        // Allow manual override by directly editing the input field
+        electricityCostInput.addEventListener("input", function() {
+          // If user manually changes the value, keep their custom entry
+          // Any calculations will use this value instead of the country-based one
+          if (typeof updateCalculations === 'function') {
+            updateCalculations();
+          }
+        });
+      }
     });
   </script>
 </body>
